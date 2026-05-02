@@ -1,0 +1,139 @@
+<link rel="stylesheet" href="style.css">
+
+<div id="widget-root">
+  <button class="widget-launcher" id="launcher-btn">
+    <div class="launcher-orb">W</div>
+    Your WorldMark Concierge
+  </button>
+
+  <div class="widget-panel hidden" id="widget-panel">
+
+    <div class="panel-header">
+      <div>
+        <div class="header-logo">WorldMark<span>by Wyndham</span></div>
+      </div>
+      <div class="header-divider"></div>
+      <div class="header-status">
+        <div class="agent-name-head" id="agent-name-head">Your Travel Agent</div>
+        <div class="agent-status-dot"><span class="dot" id="status-dot"></span><span id="status-text">Ready to assist</span></div>
+      </div>
+      <button class="header-close" id="close-btn">✕</button>
+    </div>
+
+    <div id="setup-view">
+      <div class="setup-screen">
+        <div>
+          <div class="setup-title">Welcome to your personal concierge.</div>
+          <div class="setup-subtitle">Tell us a little about yourself to personalize your experience.</div>
+        </div>
+
+        <div class="setup-row">
+          <div class="setup-field">
+            <label>First name</label>
+            <input type="text" id="s-first" placeholder="Sarah" />
+          </div>
+          <div class="setup-field">
+            <label>Last name</label>
+            <input type="text" id="s-last" placeholder="Mitchell" />
+          </div>
+        </div>
+
+        <div class="setup-row">
+          <div class="setup-field">
+            <label>Membership tier</label>
+            <select id="s-tier">
+              <option value="Explorer">Explorer</option>
+              <option value="Gold" selected>Gold</option>
+              <option value="Platinum">Platinum</option>
+              <option value="Presidential">Presidential</option>
+            </select>
+          </div>
+          <div class="setup-field">
+            <label>Available credits</label>
+            <input type="number" id="s-credits" placeholder="12,500" value="12500" />
+          </div>
+        </div>
+
+        <div class="setup-field">
+          <label>Home resort</label>
+          <select id="s-resort">
+            <option value="WorldMark Anaheim">WorldMark Anaheim</option>
+            <option value="WorldMark Las Vegas — Tropicana">WorldMark Las Vegas — Tropicana</option>
+            <option value="WorldMark Seaside" selected>WorldMark Seaside</option>
+            <option value="WorldMark Birch Bay">WorldMark Birch Bay</option>
+            <option value="WorldMark Depoe Bay">WorldMark Depoe Bay</option>
+            <option value="WorldMark Palm Springs">WorldMark Palm Springs</option>
+            <option value="Wyndham Grand Orlando">Wyndham Grand Orlando</option>
+            <option value="Club Wyndham Smoky Mountains">Club Wyndham Smoky Mountains</option>
+          </select>
+        </div>
+
+        <div class="setup-field">
+          <label>Upcoming reservation (optional)</label>
+          <input type="text" id="s-booking" placeholder="e.g. WorldMark Birch Bay, July 12–19" />
+        </div>
+
+        <div class="setup-field">
+          <label>Travel preferences (select all that apply)</label>
+          <div class="tag-row" id="pref-tags">
+            <div class="pref-tag selected" data-val="Beach & Coastal">Beach & Coastal</div>
+            <div class="pref-tag" data-val="Mountains & Ski">Mountains & Ski</div>
+            <div class="pref-tag selected" data-val="Family trips">Family trips</div>
+            <div class="pref-tag" data-val="Couples getaways">Couples getaways</div>
+            <div class="pref-tag" data-val="City exploration">City exploration</div>
+            <div class="pref-tag" data-val="National Parks">National Parks</div>
+            <div class="pref-tag" data-val="International travel">International travel</div>
+            <div class="pref-tag" data-val="Golf">Golf</div>
+          </div>
+        </div>
+
+        <button class="setup-submit" id="start-btn">Start my concierge experience →</button>
+      </div>
+    </div>
+
+    <div id="chat-view" style="display:none; flex-direction:column; flex:1; overflow:hidden;">
+      <div class="owner-banner">
+        <div class="owner-info">
+          <div class="owner-avatar" id="ow-avatar">SM</div>
+          <div class="owner-text">
+            <div class="owner-name" id="ow-name">Sarah Mitchell</div>
+            <div class="owner-tier" id="ow-tier">Gold Member · WorldMark Seaside</div>
+          </div>
+        </div>
+        <div class="owner-points">
+          <strong id="ow-credits">12,500</strong>
+          credits available
+        </div>
+      </div>
+
+      <div class="personality-bar">
+        <span class="personality-label">Style</span>
+        <button class="personality-btn" data-p="luxury">Luxury</button>
+        <button class="personality-btn active" data-p="friendly">Friendly</button>
+        <button class="personality-btn" data-p="professional">Professional</button>
+      </div>
+
+      <div class="chat-area" id="chat-area"></div>
+
+      <div class="quick-replies" id="quick-replies">
+        <button class="quick-btn" data-q="What resorts are available for my dates?">Browse resorts</button>
+        <button class="quick-btn" data-q="How many credits does a 7-night stay typically cost?">Credit costs</button>
+        <button class="quick-btn" data-q="What's the best time to book for summer?">Booking tips</button>
+        <button class="quick-btn" data-q="Tell me about my home resort">My resort</button>
+      </div>
+
+      <div class="input-row">
+        <input type="text" id="chat-input" placeholder="Ask anything about your ownership…" />
+        <button class="send-btn" id="send-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script  type="module"src="start.js"></script>

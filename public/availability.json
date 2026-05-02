@@ -1,0 +1,264 @@
+{
+  "resorts": [
+    {
+      "id": "anaheim",
+      "name": "WorldMark Anaheim",
+      "location": "Anaheim, CA",
+      "nearbyAttractions": ["Disneyland", "Disney California Adventure", "Angel Stadium", "Honda Center"],
+      "units": [
+        { "type": "Studio", "maxGuests": 4 },
+        { "type": "1BR", "maxGuests": 6 },
+        { "type": "2BR", "maxGuests": 8 }
+      ],
+      "availability": [
+        { "checkIn": "2025-06-01", "checkOut": "2025-06-08", "unitType": "Studio", "creditsPerNight": 700, "status": "available" },
+        { "checkIn": "2025-06-01", "checkOut": "2025-06-08", "unitType": "1BR",    "creditsPerNight": 1050, "status": "available" },
+        { "checkIn": "2025-06-01", "checkOut": "2025-06-08", "unitType": "2BR",    "creditsPerNight": 1700, "status": "waitlist" },
+        { "checkIn": "2025-06-15", "checkOut": "2025-06-22", "unitType": "Studio", "creditsPerNight": 700, "status": "available" },
+        { "checkIn": "2025-06-15", "checkOut": "2025-06-22", "unitType": "1BR",    "creditsPerNight": 1050, "status": "available" },
+        { "checkIn": "2025-06-15", "checkOut": "2025-06-22", "unitType": "2BR",    "creditsPerNight": 1700, "status": "available" },
+        { "checkIn": "2025-07-04", "checkOut": "2025-07-11", "unitType": "Studio", "creditsPerNight": 800, "status": "waitlist" },
+        { "checkIn": "2025-07-04", "checkOut": "2025-07-11", "unitType": "1BR",    "creditsPerNight": 1200, "status": "waitlist" },
+        { "checkIn": "2025-07-04", "checkOut": "2025-07-11", "unitType": "2BR",    "creditsPerNight": 1900, "status": "waitlist" },
+        { "checkIn": "2025-08-03", "checkOut": "2025-08-10", "unitType": "Studio", "creditsPerNight": 750, "status": "available" },
+        { "checkIn": "2025-08-03", "checkOut": "2025-08-10", "unitType": "1BR",    "creditsPerNight": 1100, "status": "available" },
+        { "checkIn": "2025-09-07", "checkOut": "2025-09-14", "unitType": "Studio", "creditsPerNight": 600, "status": "available" },
+        { "checkIn": "2025-09-07", "checkOut": "2025-09-14", "unitType": "1BR",    "creditsPerNight": 900, "status": "available" },
+        { "checkIn": "2025-09-07", "checkOut": "2025-09-14", "unitType": "2BR",    "creditsPerNight": 1500, "status": "available" },
+        { "checkIn": "2025-12-20", "checkOut": "2025-12-27", "unitType": "Studio", "creditsPerNight": 850, "status": "waitlist" },
+        { "checkIn": "2025-12-20", "checkOut": "2025-12-27", "unitType": "1BR",    "creditsPerNight": 1250, "status": "waitlist" }
+      ]
+    },
+    {
+      "id": "las-vegas-tropicana",
+      "name": "WorldMark Las Vegas — Tropicana",
+      "location": "Las Vegas, NV",
+      "nearbyAttractions": ["Las Vegas Strip", "T-Mobile Arena", "MGM Grand", "Park MGM"],
+      "units": [
+        { "type": "Studio", "maxGuests": 4 },
+        { "type": "1BR", "maxGuests": 6 },
+        { "type": "2BR", "maxGuests": 8 }
+      ],
+      "availability": [
+        { "checkIn": "2025-06-01", "checkOut": "2025-06-08", "unitType": "Studio", "creditsPerNight": 600, "status": "available" },
+        { "checkIn": "2025-06-01", "checkOut": "2025-06-08", "unitType": "1BR",    "creditsPerNight": 900, "status": "available" },
+        { "checkIn": "2025-06-01", "checkOut": "2025-06-08", "unitType": "2BR",    "creditsPerNight": 1400, "status": "available" },
+        { "checkIn": "2025-07-04", "checkOut": "2025-07-11", "unitType": "Studio", "creditsPerNight": 700, "status": "available" },
+        { "checkIn": "2025-07-04", "checkOut": "2025-07-11", "unitType": "1BR",    "creditsPerNight": 1050, "status": "available" },
+        { "checkIn": "2025-07-04", "checkOut": "2025-07-11", "unitType": "2BR",    "creditsPerNight": 1600, "status": "available" },
+        { "checkIn": "2025-08-10", "checkOut": "2025-08-17", "unitType": "Studio", "creditsPerNight": 650, "status": "available" },
+        { "checkIn": "2025-08-10", "checkOut": "2025-08-17", "unitType": "1BR",    "creditsPerNight": 950, "status": "available" },
+        { "checkIn": "2025-09-14", "checkOut": "2025-09-21", "unitType": "Studio", "creditsPerNight": 550, "status": "available" },
+        { "checkIn": "2025-09-14", "checkOut": "2025-09-21", "unitType": "2BR",    "creditsPerNight": 1300, "status": "available" },
+        { "checkIn": "2025-10-12", "checkOut": "2025-10-19", "unitType": "Studio", "creditsPerNight": 550, "status": "available" },
+        { "checkIn": "2025-10-12", "checkOut": "2025-10-19", "unitType": "1BR",    "creditsPerNight": 850, "status": "available" },
+        { "checkIn": "2025-12-27", "checkOut": "2026-01-03", "unitType": "Studio", "creditsPerNight": 800, "status": "waitlist" },
+        { "checkIn": "2025-12-27", "checkOut": "2026-01-03", "unitType": "1BR",    "creditsPerNight": 1150, "status": "waitlist" }
+      ]
+    },
+    {
+      "id": "seaside",
+      "name": "WorldMark Seaside",
+      "location": "Seaside, OR",
+      "nearbyAttractions": ["Seaside Beach", "Seaside Aquarium", "Cannon Beach", "Haystack Rock", "Fort Stevens State Park"],
+      "units": [
+        { "type": "Studio", "maxGuests": 4 },
+        { "type": "1BR", "maxGuests": 6 },
+        { "type": "2BR", "maxGuests": 8 }
+      ],
+      "availability": [
+        { "checkIn": "2025-06-07", "checkOut": "2025-06-14", "unitType": "Studio", "creditsPerNight": 550, "status": "available" },
+        { "checkIn": "2025-06-07", "checkOut": "2025-06-14", "unitType": "1BR",    "creditsPerNight": 800, "status": "available" },
+        { "checkIn": "2025-06-07", "checkOut": "2025-06-14", "unitType": "2BR",    "creditsPerNight": 1250, "status": "available" },
+        { "checkIn": "2025-07-06", "checkOut": "2025-07-13", "unitType": "Studio", "creditsPerNight": 650, "status": "available" },
+        { "checkIn": "2025-07-06", "checkOut": "2025-07-13", "unitType": "1BR",    "creditsPerNight": 950, "status": "available" },
+        { "checkIn": "2025-07-06", "checkOut": "2025-07-13", "unitType": "2BR",    "creditsPerNight": 1500, "status": "waitlist" },
+        { "checkIn": "2025-07-20", "checkOut": "2025-07-27", "unitType": "Studio", "creditsPerNight": 650, "status": "available" },
+        { "checkIn": "2025-07-20", "checkOut": "2025-07-27", "unitType": "1BR",    "creditsPerNight": 950, "status": "available" },
+        { "checkIn": "2025-08-03", "checkOut": "2025-08-10", "unitType": "2BR",    "creditsPerNight": 1500, "status": "available" },
+        { "checkIn": "2025-08-17", "checkOut": "2025-08-24", "unitType": "Studio", "creditsPerNight": 600, "status": "available" },
+        { "checkIn": "2025-09-01", "checkOut": "2025-09-08", "unitType": "1BR",    "creditsPerNight": 750, "status": "available" },
+        { "checkIn": "2025-09-01", "checkOut": "2025-09-08", "unitType": "2BR",    "creditsPerNight": 1200, "status": "available" },
+        { "checkIn": "2025-10-05", "checkOut": "2025-10-12", "unitType": "Studio", "creditsPerNight": 480, "status": "available" },
+        { "checkIn": "2025-10-05", "checkOut": "2025-10-12", "unitType": "1BR",    "creditsPerNight": 700, "status": "available" }
+      ]
+    },
+    {
+      "id": "birch-bay",
+      "name": "WorldMark Birch Bay",
+      "location": "Birch Bay, WA",
+      "nearbyAttractions": ["Birch Bay State Park", "Semiahmoo Resort", "Blaine Harbor", "Peace Arch State Park"],
+      "units": [
+        { "type": "Studio", "maxGuests": 4 },
+        { "type": "1BR", "maxGuests": 6 },
+        { "type": "2BR", "maxGuests": 8 }
+      ],
+      "availability": [
+        { "checkIn": "2025-06-07", "checkOut": "2025-06-14", "unitType": "Studio", "creditsPerNight": 500, "status": "available" },
+        { "checkIn": "2025-06-07", "checkOut": "2025-06-14", "unitType": "1BR",    "creditsPerNight": 750, "status": "available" },
+        { "checkIn": "2025-06-07", "checkOut": "2025-06-14", "unitType": "2BR",    "creditsPerNight": 1150, "status": "available" },
+        { "checkIn": "2025-07-06", "checkOut": "2025-07-13", "unitType": "Studio", "creditsPerNight": 600, "status": "available" },
+        { "checkIn": "2025-07-06", "checkOut": "2025-07-13", "unitType": "1BR",    "creditsPerNight": 900, "status": "available" },
+        { "checkIn": "2025-07-06", "checkOut": "2025-07-13", "unitType": "2BR",    "creditsPerNight": 1400, "status": "available" },
+        { "checkIn": "2025-07-20", "checkOut": "2025-07-27", "unitType": "Studio", "creditsPerNight": 600, "status": "waitlist" },
+        { "checkIn": "2025-07-20", "checkOut": "2025-07-27", "unitType": "1BR",    "creditsPerNight": 900, "status": "available" },
+        { "checkIn": "2025-08-10", "checkOut": "2025-08-17", "unitType": "2BR",    "creditsPerNight": 1400, "status": "available" },
+        { "checkIn": "2025-09-07", "checkOut": "2025-09-14", "unitType": "Studio", "creditsPerNight": 450, "status": "available" },
+        { "checkIn": "2025-09-07", "checkOut": "2025-09-14", "unitType": "1BR",    "creditsPerNight": 680, "status": "available" }
+      ]
+    },
+    {
+      "id": "depoe-bay",
+      "name": "WorldMark Depoe Bay",
+      "location": "Depoe Bay, OR",
+      "nearbyAttractions": ["Whale watching", "Depoe Bay Seawall", "Devils Punchbowl", "Oregon Coast Aquarium", "Newport Historic Bayfront"],
+      "units": [
+        { "type": "Studio", "maxGuests": 4 },
+        { "type": "1BR", "maxGuests": 6 },
+        { "type": "2BR", "maxGuests": 8 }
+      ],
+      "availability": [
+        { "checkIn": "2025-06-14", "checkOut": "2025-06-21", "unitType": "Studio", "creditsPerNight": 520, "status": "available" },
+        { "checkIn": "2025-06-14", "checkOut": "2025-06-21", "unitType": "1BR",    "creditsPerNight": 780, "status": "available" },
+        { "checkIn": "2025-06-14", "checkOut": "2025-06-21", "unitType": "2BR",    "creditsPerNight": 1200, "status": "available" },
+        { "checkIn": "2025-07-13", "checkOut": "2025-07-20", "unitType": "Studio", "creditsPerNight": 620, "status": "available" },
+        { "checkIn": "2025-07-13", "checkOut": "2025-07-20", "unitType": "1BR",    "creditsPerNight": 920, "status": "available" },
+        { "checkIn": "2025-07-13", "checkOut": "2025-07-20", "unitType": "2BR",    "creditsPerNight": 1450, "status": "waitlist" },
+        { "checkIn": "2025-08-17", "checkOut": "2025-08-24", "unitType": "Studio", "creditsPerNight": 580, "status": "available" },
+        { "checkIn": "2025-08-17", "checkOut": "2025-08-24", "unitType": "1BR",    "creditsPerNight": 870, "status": "available" },
+        { "checkIn": "2025-09-14", "checkOut": "2025-09-21", "unitType": "Studio", "creditsPerNight": 460, "status": "available" },
+        { "checkIn": "2025-09-14", "checkOut": "2025-09-21", "unitType": "2BR",    "creditsPerNight": 1100, "status": "available" },
+        { "checkIn": "2025-10-19", "checkOut": "2025-10-26", "unitType": "Studio", "creditsPerNight": 420, "status": "available" },
+        { "checkIn": "2025-10-19", "checkOut": "2025-10-26", "unitType": "1BR",    "creditsPerNight": 640, "status": "available" }
+      ]
+    },
+    {
+      "id": "palm-springs",
+      "name": "WorldMark Palm Springs",
+      "location": "Palm Springs, CA",
+      "nearbyAttractions": ["Palm Springs Aerial Tramway", "Joshua Tree National Park", "El Paseo Shopping", "Coachella Valley Preserve"],
+      "units": [
+        { "type": "Studio", "maxGuests": 4 },
+        { "type": "1BR", "maxGuests": 6 },
+        { "type": "2BR", "maxGuests": 8 }
+      ],
+      "availability": [
+        { "checkIn": "2025-06-01", "checkOut": "2025-06-08", "unitType": "Studio", "creditsPerNight": 480, "status": "available" },
+        { "checkIn": "2025-06-01", "checkOut": "2025-06-08", "unitType": "1BR",    "creditsPerNight": 720, "status": "available" },
+        { "checkIn": "2025-06-01", "checkOut": "2025-06-08", "unitType": "2BR",    "creditsPerNight": 1100, "status": "available" },
+        { "checkIn": "2025-07-06", "checkOut": "2025-07-13", "unitType": "Studio", "creditsPerNight": 460, "status": "available" },
+        { "checkIn": "2025-07-06", "checkOut": "2025-07-13", "unitType": "1BR",    "creditsPerNight": 690, "status": "available" },
+        { "checkIn": "2025-09-07", "checkOut": "2025-09-14", "unitType": "Studio", "creditsPerNight": 500, "status": "available" },
+        { "checkIn": "2025-09-07", "checkOut": "2025-09-14", "unitType": "1BR",    "creditsPerNight": 750, "status": "available" },
+        { "checkIn": "2025-09-07", "checkOut": "2025-09-14", "unitType": "2BR",    "creditsPerNight": 1200, "status": "available" },
+        { "checkIn": "2025-10-05", "checkOut": "2025-10-12", "unitType": "Studio", "creditsPerNight": 520, "status": "available" },
+        { "checkIn": "2025-10-05", "checkOut": "2025-10-12", "unitType": "1BR",    "creditsPerNight": 780, "status": "available" },
+        { "checkIn": "2025-10-05", "checkOut": "2025-10-12", "unitType": "2BR",    "creditsPerNight": 1250, "status": "available" },
+        { "checkIn": "2025-11-02", "checkOut": "2025-11-09", "unitType": "Studio", "creditsPerNight": 540, "status": "available" },
+        { "checkIn": "2025-11-02", "checkOut": "2025-11-09", "unitType": "1BR",    "creditsPerNight": 810, "status": "available" },
+        { "checkIn": "2025-11-02", "checkOut": "2025-11-09", "unitType": "2BR",    "creditsPerNight": 1300, "status": "available" }
+      ]
+    },
+    {
+      "id": "las-vegas-boulevard",
+      "name": "WorldMark Las Vegas — Boulevard",
+      "location": "Las Vegas, NV",
+      "nearbyAttractions": ["Las Vegas Strip", "Bellagio Fountains", "High Roller Observation Wheel", "Fremont Street Experience"],
+      "units": [
+        { "type": "Studio", "maxGuests": 4 },
+        { "type": "1BR", "maxGuests": 6 },
+        { "type": "2BR", "maxGuests": 8 }
+      ],
+      "availability": [
+        { "checkIn": "2025-06-08", "checkOut": "2025-06-15", "unitType": "Studio", "creditsPerNight": 620, "status": "available" },
+        { "checkIn": "2025-06-08", "checkOut": "2025-06-15", "unitType": "1BR",    "creditsPerNight": 930, "status": "available" },
+        { "checkIn": "2025-06-08", "checkOut": "2025-06-15", "unitType": "2BR",    "creditsPerNight": 1450, "status": "available" },
+        { "checkIn": "2025-07-13", "checkOut": "2025-07-20", "unitType": "Studio", "creditsPerNight": 720, "status": "available" },
+        { "checkIn": "2025-07-13", "checkOut": "2025-07-20", "unitType": "1BR",    "creditsPerNight": 1080, "status": "available" },
+        { "checkIn": "2025-08-03", "checkOut": "2025-08-10", "unitType": "Studio", "creditsPerNight": 680, "status": "available" },
+        { "checkIn": "2025-08-03", "checkOut": "2025-08-10", "unitType": "2BR",    "creditsPerNight": 1600, "status": "available" },
+        { "checkIn": "2025-09-21", "checkOut": "2025-09-28", "unitType": "Studio", "creditsPerNight": 580, "status": "available" },
+        { "checkIn": "2025-09-21", "checkOut": "2025-09-28", "unitType": "1BR",    "creditsPerNight": 870, "status": "available" },
+        { "checkIn": "2025-10-26", "checkOut": "2025-11-02", "unitType": "Studio", "creditsPerNight": 600, "status": "available" },
+        { "checkIn": "2025-10-26", "checkOut": "2025-11-02", "unitType": "1BR",    "creditsPerNight": 900, "status": "available" },
+        { "checkIn": "2025-12-28", "checkOut": "2026-01-04", "unitType": "Studio", "creditsPerNight": 820, "status": "waitlist" }
+      ]
+    },
+    {
+      "id": "solvang",
+      "name": "WorldMark Solvang",
+      "location": "Solvang, CA",
+      "nearbyAttractions": ["Solvang Village", "Santa Barbara Wine Country", "Mission Santa Ines", "Nojoqui Falls", "Pismo Beach"],
+      "units": [
+        { "type": "Studio", "maxGuests": 4 },
+        { "type": "1BR", "maxGuests": 6 },
+        { "type": "2BR", "maxGuests": 8 }
+      ],
+      "availability": [
+        { "checkIn": "2025-06-14", "checkOut": "2025-06-21", "unitType": "Studio", "creditsPerNight": 560, "status": "available" },
+        { "checkIn": "2025-06-14", "checkOut": "2025-06-21", "unitType": "1BR",    "creditsPerNight": 840, "status": "available" },
+        { "checkIn": "2025-06-14", "checkOut": "2025-06-21", "unitType": "2BR",    "creditsPerNight": 1300, "status": "available" },
+        { "checkIn": "2025-07-20", "checkOut": "2025-07-27", "unitType": "Studio", "creditsPerNight": 640, "status": "available" },
+        { "checkIn": "2025-07-20", "checkOut": "2025-07-27", "unitType": "1BR",    "creditsPerNight": 960, "status": "available" },
+        { "checkIn": "2025-08-24", "checkOut": "2025-08-31", "unitType": "Studio", "creditsPerNight": 600, "status": "available" },
+        { "checkIn": "2025-08-24", "checkOut": "2025-08-31", "unitType": "2BR",    "creditsPerNight": 1400, "status": "available" },
+        { "checkIn": "2025-09-28", "checkOut": "2025-10-05", "unitType": "Studio", "creditsPerNight": 520, "status": "available" },
+        { "checkIn": "2025-09-28", "checkOut": "2025-10-05", "unitType": "1BR",    "creditsPerNight": 780, "status": "available" },
+        { "checkIn": "2025-11-09", "checkOut": "2025-11-16", "unitType": "Studio", "creditsPerNight": 500, "status": "available" },
+        { "checkIn": "2025-11-09", "checkOut": "2025-11-16", "unitType": "1BR",    "creditsPerNight": 750, "status": "available" },
+        { "checkIn": "2025-11-09", "checkOut": "2025-11-16", "unitType": "2BR",    "creditsPerNight": 1200, "status": "available" }
+      ]
+    },
+    {
+      "id": "running-y",
+      "name": "WorldMark Running Y",
+      "location": "Klamath Falls, OR",
+      "nearbyAttractions": ["Crater Lake National Park", "Running Y Golf Course", "Klamath Basin National Wildlife Refuge", "Upper Klamath Lake"],
+      "units": [
+        { "type": "Studio", "maxGuests": 4 },
+        { "type": "1BR", "maxGuests": 6 },
+        { "type": "2BR", "maxGuests": 8 }
+      ],
+      "availability": [
+        { "checkIn": "2025-06-07", "checkOut": "2025-06-14", "unitType": "Studio", "creditsPerNight": 440, "status": "available" },
+        { "checkIn": "2025-06-07", "checkOut": "2025-06-14", "unitType": "1BR",    "creditsPerNight": 660, "status": "available" },
+        { "checkIn": "2025-06-07", "checkOut": "2025-06-14", "unitType": "2BR",    "creditsPerNight": 1000, "status": "available" },
+        { "checkIn": "2025-07-06", "checkOut": "2025-07-13", "unitType": "Studio", "creditsPerNight": 520, "status": "available" },
+        { "checkIn": "2025-07-06", "checkOut": "2025-07-13", "unitType": "1BR",    "creditsPerNight": 780, "status": "available" },
+        { "checkIn": "2025-07-06", "checkOut": "2025-07-13", "unitType": "2BR",    "creditsPerNight": 1200, "status": "available" },
+        { "checkIn": "2025-08-03", "checkOut": "2025-08-10", "unitType": "Studio", "creditsPerNight": 500, "status": "available" },
+        { "checkIn": "2025-08-03", "checkOut": "2025-08-10", "unitType": "1BR",    "creditsPerNight": 750, "status": "available" },
+        { "checkIn": "2025-09-07", "checkOut": "2025-09-14", "unitType": "Studio", "creditsPerNight": 420, "status": "available" },
+        { "checkIn": "2025-09-07", "checkOut": "2025-09-14", "unitType": "2BR",    "creditsPerNight": 980, "status": "available" },
+        { "checkIn": "2025-10-05", "checkOut": "2025-10-12", "unitType": "Studio", "creditsPerNight": 400, "status": "available" },
+        { "checkIn": "2025-10-05", "checkOut": "2025-10-12", "unitType": "1BR",    "creditsPerNight": 600, "status": "available" }
+      ]
+    },
+    {
+      "id": "windsor",
+      "name": "WorldMark Windsor",
+      "location": "Windsor, CA",
+      "nearbyAttractions": ["Sonoma Wine Country", "Russian River Valley", "Healdsburg Plaza", "Armstrong Redwoods State Reserve", "Bodega Bay"],
+      "units": [
+        { "type": "Studio", "maxGuests": 4 },
+        { "type": "1BR", "maxGuests": 6 },
+        { "type": "2BR", "maxGuests": 8 }
+      ],
+      "availability": [
+        { "checkIn": "2025-06-08", "checkOut": "2025-06-15", "unitType": "Studio", "creditsPerNight": 580, "status": "available" },
+        { "checkIn": "2025-06-08", "checkOut": "2025-06-15", "unitType": "1BR",    "creditsPerNight": 870, "status": "available" },
+        { "checkIn": "2025-06-08", "checkOut": "2025-06-15", "unitType": "2BR",    "creditsPerNight": 1350, "status": "available" },
+        { "checkIn": "2025-07-13", "checkOut": "2025-07-20", "unitType": "Studio", "creditsPerNight": 660, "status": "available" },
+        { "checkIn": "2025-07-13", "checkOut": "2025-07-20", "unitType": "1BR",    "creditsPerNight": 990, "status": "available" },
+        { "checkIn": "2025-07-13", "checkOut": "2025-07-20", "unitType": "2BR",    "creditsPerNight": 1550, "status": "waitlist" },
+        { "checkIn": "2025-08-17", "checkOut": "2025-08-24", "unitType": "Studio", "creditsPerNight": 620, "status": "available" },
+        { "checkIn": "2025-08-17", "checkOut": "2025-08-24", "unitType": "1BR",    "creditsPerNight": 930, "status": "available" },
+        { "checkIn": "2025-09-21", "checkOut": "2025-09-28", "unitType": "Studio", "creditsPerNight": 540, "status": "available" },
+        { "checkIn": "2025-09-21", "checkOut": "2025-09-28", "unitType": "2BR",    "creditsPerNight": 1300, "status": "available" },
+        { "checkIn": "2025-10-19", "checkOut": "2025-10-26", "unitType": "Studio", "creditsPerNight": 560, "status": "available" },
+        { "checkIn": "2025-10-19", "checkOut": "2025-10-26", "unitType": "1BR",    "creditsPerNight": 840, "status": "available" },
+        { "checkIn": "2025-10-19", "checkOut": "2025-10-26", "unitType": "2BR",    "creditsPerNight": 1320, "status": "available" }
+      ]
+    }
+  ]
+}
