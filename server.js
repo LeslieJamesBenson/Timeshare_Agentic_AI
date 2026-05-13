@@ -169,6 +169,38 @@ app.post('/api/chat', async (req, res) => {
   }
 });
 
+// ── SALES AGENT ENDPOINT ────────────────────────────────────────────────────
+// Internal rep-facing tool — not owner-facing. No tool use needed here;
+// the agent is purely conversational with a compliance-guardrailed system prompt.
+app.post('/api/sales-chat', async (req, res) => {
+  try {
+    const { model, max_tokens, system, messages } = req.body;
+
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': ANTHROPIC_API_KEY,
+        'anthropic-version': '2023-06-01'
+      },
+      body: JSON.stringify({ model, max_tokens, system, messages })
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      return res.status(response.status).json(data);
+    }
+
+    return res.json(data);
+  } catch (err) {
+    console.error('Sales chat proxy error:', err);
+    res.status(500).json({ error: 'Proxy request failed' });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Timeshare AI running at http://localhost:${PORT}`);
+  console.log(`Owner concierge: http://localhost:${PORT}/index.html`);
+  console.log(`Sales rep agent: http://localhost:${PORT}/sales-agent.html`);
 });
