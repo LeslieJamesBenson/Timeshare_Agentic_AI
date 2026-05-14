@@ -1,0 +1,57 @@
+{
+  "resort": "San Francisco",
+  "state": "California",
+  "source": "CreditChart.png",
+  "seasons": [
+    {
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "date_ranges": {
+        "2026": ["Jan 1", "Feb 6 - Oct 1", "Nov 13 - Dec 31"],
+        "2027": ["Feb 5 - Sep 30", "Nov 12 - Dec 31"]
+      },
+      "rooms": [
+        {
+          "type": "Studio Hotel",
+          "features": {"kitchen": "partial", "accessible": true, "multi_phase": true},
+          "credits": {"mon_thur": 950, "fri_sat": 1825, "sun": 1050, "week": 8500}
+        },
+        {
+          "type": "1 BR Hotel",
+          "features": {"kitchen": "partial", "accessible": true, "multi_phase": true},
+          "credits": {"mon_thur": 1250, "fri_sat": 2475, "sun": 1550, "week": 11500}
+        },
+        {
+          "type": "1 BR Compact Hotel",
+          "features": {"kitchen": "partial", "accessible": true},
+          "credits": {"mon_thur": 1250, "fri_sat": 2475, "sun": 1550, "week": 11500}
+        }
+      ]
+    },
+    {
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "date_ranges": {
+        "2026": ["Jan 2 - Feb 5", "Oct 2 - Nov 12"],
+        "2027": ["Jan 1 - Feb 4", "Oct 1 - Nov 11"]
+      },
+      "rooms": [
+        {
+          "type": "Studio Hotel",
+          "features": {"kitchen": "partial", "accessible": true, "multi_phase": true},
+          "credits": {"mon_thur": 775, "fri_sat": 1550, "sun": 800, "week": 7000}
+        },
+        {
+          "type": "1 BR Hotel",
+          "features": {"kitchen": "partial", "accessible": true, "multi_phase": true},
+          "credits": {"mon_thur": 1100, "fri_sat": 2200, "sun": 1200, "week": 10000}
+        },
+        {
+          "type": "1 BR Compact Hotel",
+          "features": {"kitchen": "partial", "accessible": true},
+          "credits": {"mon_thur": 1100, "fri_sat": 2200, "sun": 1200, "week": 10000}
+        }
+      ]
+    }
+  ]
+}

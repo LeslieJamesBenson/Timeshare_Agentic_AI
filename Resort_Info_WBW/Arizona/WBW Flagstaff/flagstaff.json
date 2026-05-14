@@ -1,0 +1,97 @@
+{
+  "resort": "Flagstaff",
+  "state": "Arizona",
+  "source": "CreditChart.png",
+  "seasons": [
+    {
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "date_ranges": {
+        "2026": ["Jan 1", "Apr 17 - Oct 29", "Nov 20 - Dec 3", "Dec 18 - Dec 31"],
+        "2027": ["Apr 16 - Oct 28", "Nov 19 - Dec 2", "Dec 17 - Dec 31"]
+      },
+      "rooms": [
+        {
+          "type": "1 BR Ridgewood",
+          "features": {},
+          "credits": {"mon_thur": 850, "fri_sat": 1700, "sun": 1200, "week": 8000}
+        },
+        {
+          "type": "1 BR Deluxe Ridgewood",
+          "features": {},
+          "credits": {"mon_thur": 950, "fri_sat": 1900, "sun": 1400, "week": 9000}
+        },
+        {
+          "type": "2 BR Deluxe Ridgewood Tanglewood",
+          "features": {},
+          "credits": {"mon_thur": 1150, "fri_sat": 2300, "sun": 1800, "week": 11000}
+        },
+        {
+          "type": "2 BR Loft Ridgewood Tanglewood",
+          "features": {},
+          "credits": {"mon_thur": 1350, "fri_sat": 2700, "sun": 2200, "week": 13000}
+        }
+      ]
+    },
+    {
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "date_ranges": {
+        "2026": ["Mar 6 - Apr 16", "Oct 30 - Nov 19"],
+        "2027": ["Mar 5 - Apr 15", "Oct 29 - Nov 18"]
+      },
+      "rooms": [
+        {
+          "type": "1 BR Ridgewood",
+          "features": {},
+          "credits": {"mon_thur": 650, "fri_sat": 1300, "sun": 800, "week": 6000}
+        },
+        {
+          "type": "1 BR Deluxe Ridgewood",
+          "features": {},
+          "credits": {"mon_thur": 750, "fri_sat": 1500, "sun": 1000, "week": 7000}
+        },
+        {
+          "type": "2 BR Deluxe Ridgewood Tanglewood",
+          "features": {},
+          "credits": {"mon_thur": 950, "fri_sat": 1900, "sun": 1400, "week": 9000}
+        },
+        {
+          "type": "2 BR Loft Ridgewood Tanglewood",
+          "features": {},
+          "credits": {"mon_thur": 1150, "fri_sat": 2300, "sun": 1800, "week": 11000}
+        }
+      ]
+    },
+    {
+      "name": "slow",
+      "meaning": "Off-peak - not the best time to visit",
+      "date_ranges": {
+        "2026": ["Jan 2 - Mar 5", "Dec 4 - Dec 17"],
+        "2027": ["Jan 1 - Mar 4", "Dec 3 - Dec 16"]
+      },
+      "rooms": [
+        {
+          "type": "1 BR Ridgewood",
+          "features": {},
+          "credits": {"mon_thur": 450, "fri_sat": 825, "sun": 550, "week": 4000}
+        },
+        {
+          "type": "1 BR Deluxe Ridgewood",
+          "features": {},
+          "credits": {"mon_thur": 550, "fri_sat": 1100, "sun": 600, "week": 5000}
+        },
+        {
+          "type": "2 BR Deluxe Ridgewood Tanglewood",
+          "features": {},
+          "credits": {"mon_thur": 750, "fri_sat": 1500, "sun": 1000, "week": 7000}
+        },
+        {
+          "type": "2 BR Loft Ridgewood Tanglewood",
+          "features": {},
+          "credits": {"mon_thur": 950, "fri_sat": 1900, "sun": 1400, "week": 9000}
+        }
+      ]
+    }
+  ]
+}

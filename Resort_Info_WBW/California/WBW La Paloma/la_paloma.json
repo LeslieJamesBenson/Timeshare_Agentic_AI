@@ -1,0 +1,52 @@
+{
+  "resort": "La Paloma",
+  "state": "California",
+  "source": "CreditChart.png",
+  "seasons": [
+    {
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "date_ranges": {
+        "2026": ["Jan 1", "Feb 13 - Feb 26", "Mar 20 - Sep 10", "Nov 20 - Dec 3", "Dec 11 - Dec 31"],
+        "2027": ["Feb 12 - Feb 25", "Mar 19 - Sep 9", "Nov 19 - Dec 2", "Dec 10 - Dec 31"]
+      },
+      "rooms": [
+        {
+          "type": "2 BR",
+          "features": {"kitchen": "full", "accessible": true, "multi_phase": true},
+          "credits": {"mon_thur": 1100, "fri_sat": 2200, "sun": 1200, "week": 10000}
+        }
+      ]
+    },
+    {
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "date_ranges": {
+        "2026": ["Jan 16 - Feb 12", "Feb 27 - Mar 19", "Sep 11 - Oct 15"],
+        "2027": ["Jan 15 - Feb 11", "Feb 26 - Mar 18", "Sep 10 - Oct 14"]
+      },
+      "rooms": [
+        {
+          "type": "2 BR",
+          "features": {"kitchen": "full", "accessible": true, "multi_phase": true},
+          "credits": {"mon_thur": 775, "fri_sat": 1550, "sun": 800, "week": 7000}
+        }
+      ]
+    },
+    {
+      "name": "slow",
+      "meaning": "Off-peak - not the best time to visit",
+      "date_ranges": {
+        "2026": ["Jan 2 - Jan 15", "Oct 16 - Nov 19", "Dec 4 - Dec 10"],
+        "2027": ["Jan 1 - Jan 14", "Oct 15 - Nov 18", "Dec 3 - Dec 9"]
+      },
+      "rooms": [
+        {
+          "type": "2 BR",
+          "features": {"kitchen": "full", "accessible": true, "multi_phase": true},
+          "credits": {"mon_thur": 550, "fri_sat": 1100, "sun": 600, "week": 5000}
+        }
+      ]
+    }
+  ]
+}

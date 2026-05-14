@@ -1,0 +1,24 @@
+{
+  "resort": "Anaheim",
+  "state": "California",
+  "source": "CreditChart.png",
+  "seasons": [
+    {
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "date_ranges": {
+        "2026": ["Jan 1 - Dec 31"],
+        "2027": ["Jan 1 - Dec 31"]
+      },
+      "rooms": [
+        {"type": "Studio", "features": {"kitchen": "mini", "accessible": true}, "credits": {"mon_thur": 1100, "fri_sat": 2200, "sun": 1700, "week": 10500}},
+        {"type": "1 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1350, "fri_sat": 2700, "sun": 2200, "week": 13000}},
+        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1650, "fri_sat": 3300, "sun": 2800, "week": 16000}},
+        {"type": "2 BR Presidential", "features": {"kitchen": "full", "multi_phase": true}, "credits": {"mon_thur": 3050, "fri_sat": 6100, "sun": 5600, "week": 30000}},
+        {"type": "3 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2050, "fri_sat": 4100, "sun": 3600, "week": 20000}},
+        {"type": "3 BR Presidential", "features": {"kitchen": "full"}, "credits": {"mon_thur": 3550, "fri_sat": 7100, "sun": 6600, "week": 35000}},
+        {"type": "4 BR Presidential", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 4050, "fri_sat": 8100, "sun": 7600, "week": 40000}}
+      ]
+    }
+  ]
+}
