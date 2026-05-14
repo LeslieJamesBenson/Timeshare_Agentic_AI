@@ -29,8 +29,8 @@
         {"type": "1 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 700, "fri_sat": 1125, "sun": 950, "week": 6000}},
         {"type": "2 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 850, "fri_sat": 1250, "sun": 1100, "week": 7000}},
         {"type": "2 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1750, "fri_sat": 2450, "sun": 2100, "week": 14000}},
-        {"type": "3 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1100, "fri_sat": 1450, "sun": 1100, "week": 8000}},
-        {"type": "3 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2000, "fri_sat": 2500, "sun": 2500, "week": 16000}}
+        {"type": "3 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1000, "fri_sat": 1450, "sun": 1100, "week": 8000}},
+        {"type": "3 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2000, "fri_sat": 2750, "sun": 2500, "week": 16000}}
       ]
     },
     {
@@ -43,9 +43,9 @@
       "rooms": [
         {"type": "1 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 450, "fri_sat": 825, "sun": 550, "week": 4000}},
         {"type": "2 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 600, "fri_sat": 925, "sun": 750, "week": 5000}},
-        {"type": "2 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1500, "fri_sat": 2700, "sun": 1800, "week": 12000}},
+        {"type": "2 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1500, "fri_sat": 2100, "sun": 1800, "week": 12000}},
         {"type": "3 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 700, "fri_sat": 1125, "sun": 950, "week": 6000}},
-        {"type": "3 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1750, "fri_sat": 2450, "sun": 2200, "week": 14000}}
+        {"type": "3 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1750, "fri_sat": 2450, "sun": 2100, "week": 14000}}
       ]
     }
   ]
