@@ -1,0 +1,43 @@
+{
+  "resort": "Grand Palms",
+  "state": "South Carolina",
+  "source": "CreditChart.png",
+  "seasons": [
+    {
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "date_ranges": {"2026": ["Dec 18 - Dec 24"], "2027": ["Dec 17 - Dec 23"]},
+      "rooms": [
+        {"type": "Studio Double", "features": {"kitchen": "partial"}, "credits": {"mon_thur": 800, "fri_sat": 1600, "sun": 1100, "week": 7500}},
+        {"type": "Studio King", "features": {"kitchen": "partial"}, "credits": {"mon_thur": 800, "fri_sat": 1600, "sun": 1100, "week": 7500}},
+        {"type": "Studio Parlor", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1000, "fri_sat": 2000, "sun": 1500, "week": 9500}},
+        {"type": "Studio Parlor Loft", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1150, "fri_sat": 2300, "sun": 1800, "week": 11000}}
+      ]
+    },
+    {
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "date_ranges": {
+        "2026": ["Jan 1 - Apr 23", "Dec 25 - Dec 31"],
+        "2027": ["Jan 1 - Apr 22", "Dec 24 - Dec 31"]
+      },
+      "rooms": [
+        {"type": "Studio Double", "features": {"kitchen": "partial"}, "credits": {"mon_thur": 750, "fri_sat": 1500, "sun": 1000, "week": 7000}},
+        {"type": "Studio King", "features": {"kitchen": "partial"}, "credits": {"mon_thur": 750, "fri_sat": 1500, "sun": 1000, "week": 7000}},
+        {"type": "Studio Parlor", "features": {"kitchen": "full"}, "credits": {"mon_thur": 950, "fri_sat": 1900, "sun": 1300, "week": 7500}},
+        {"type": "Studio Parlor Loft", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1100, "fri_sat": 2200, "sun": 1500, "week": 9500}}
+      ]
+    },
+    {
+      "name": "slow",
+      "meaning": "Off-peak - not the best time to visit",
+      "date_ranges": {"2026": ["Apr 24 - Dec 17"], "2027": ["Apr 23 - Dec 16"]},
+      "rooms": [
+        {"type": "Studio Double", "features": {"kitchen": "partial"}, "credits": {"mon_thur": 700, "fri_sat": 1400, "sun": 900, "week": 6500}},
+        {"type": "Studio King", "features": {"kitchen": "partial"}, "credits": {"mon_thur": 700, "fri_sat": 1400, "sun": 900, "week": 6500}},
+        {"type": "Studio Parlor", "features": {"kitchen": "full"}, "credits": {"mon_thur": 750, "fri_sat": 1500, "sun": 1000, "week": 7000}},
+        {"type": "Studio Parlor Loft", "features": {"kitchen": "full"}, "credits": {"mon_thur": 800, "fri_sat": 1600, "sun": 1200, "week": 7500}}
+      ]
+    }
+  ]
+}

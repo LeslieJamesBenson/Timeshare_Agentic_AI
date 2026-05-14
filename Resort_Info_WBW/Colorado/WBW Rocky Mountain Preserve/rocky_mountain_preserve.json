@@ -1,0 +1,43 @@
+{
+  "resort": "Rocky Mountain Preserve",
+  "state": "Colorado",
+  "source": "CreditChart.png",
+  "seasons": [
+    {
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "date_ranges": {
+        "2026": ["Jan 1", "Feb 6 - Oct 1", "Nov 20 - Dec 3", "Dec 18 - Dec 31"],
+        "2027": ["Feb 5 - Sep 30", "Nov 19 - Dec 2", "Dec 17 - Dec 31"]
+      },
+      "rooms": [
+        {"type": "Studio", "features": {"kitchen": "partial"}, "credits": {"mon_thur": 1050, "fri_sat": 2100, "sun": 1600, "week": 10000}},
+        {"type": "1 BR Deluxe", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1250, "fri_sat": 2500, "sun": 2000, "week": 12000}},
+        {"type": "2 BR Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1450, "fri_sat": 2900, "sun": 2400, "week": 14000}},
+        {"type": "2 BR Presidential Casita", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2650, "fri_sat": 5300, "sun": 4800, "week": 26000}},
+        {"type": "3 BR Presidential", "features": {"kitchen": "full"}, "credits": {"mon_thur": 3050, "fri_sat": 6100, "sun": 5600, "week": 30000}},
+        {"type": "3 BR Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 3050, "fri_sat": 6100, "sun": 5600, "week": 30000}},
+        {"type": "3 BR Presidential Casita", "features": {"kitchen": "full"}, "credits": {"mon_thur": 3050, "fri_sat": 6100, "sun": 5600, "week": 30000}},
+        {"type": "4 BR Presidential Casita", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 3550, "fri_sat": 7100, "sun": 6600, "week": 35000}}
+      ]
+    },
+    {
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "date_ranges": {
+        "2026": ["Jan 2 - Feb 5", "Oct 2 - Nov 19", "Dec 4 - Dec 17"],
+        "2027": ["Jan 1 - Feb 4", "Oct 1 - Nov 18", "Dec 3 - Dec 16"]
+      },
+      "rooms": [
+        {"type": "Studio", "features": {"kitchen": "partial"}, "credits": {"mon_thur": 850, "fri_sat": 1700, "sun": 1200, "week": 8000}},
+        {"type": "1 BR Deluxe", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1000, "fri_sat": 2100, "sun": 1600, "week": 10000}},
+        {"type": "2 BR Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1250, "fri_sat": 2500, "sun": 2000, "week": 12000}},
+        {"type": "2 BR Presidential Casita", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2450, "fri_sat": 4900, "sun": 4200, "week": 24000}},
+        {"type": "3 BR Presidential", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2850, "fri_sat": 5700, "sun": 5200, "week": 28000}},
+        {"type": "3 BR Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2850, "fri_sat": 5700, "sun": 5200, "week": 28000}},
+        {"type": "3 BR Presidential Casita", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2850, "fri_sat": 5700, "sun": 5200, "week": 28000}},
+        {"type": "4 BR Presidential Casita", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 3550, "fri_sat": 6700, "sun": 6200, "week": 33000}}
+      ]
+    }
+  ]
+}

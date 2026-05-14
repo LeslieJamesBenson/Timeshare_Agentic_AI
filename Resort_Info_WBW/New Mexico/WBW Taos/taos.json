@@ -1,0 +1,49 @@
+{
+  "resort": "Taos",
+  "state": "New Mexico",
+  "source": "CreditChart.png",
+  "seasons": [
+    {
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "date_ranges": {
+        "2026": ["Jan 1", "Feb 6 - Mar 12", "Apr 10 - Sep 24", "Nov 13 - Dec 31"],
+        "2027": ["Feb 5 - Mar 11", "Apr 9 - Sep 23", "Nov 12 - Dec 31"]
+      },
+      "rooms": [
+        {"type": "Studio", "features": {"kitchen": "partial"}, "credits": {"mon_thur": 1100, "fri_sat": 2325, "sun": 1250, "week": 10500}},
+        {"type": "Studio Deluxe", "features": {"kitchen": "partial"}, "credits": {"mon_thur": 1250, "fri_sat": 2475, "sun": 1300, "week": 11500}},
+        {"type": "1 BR", "features": {"kitchen": "partial", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1375, "fri_sat": 2750, "sun": 1500, "week": 12500}},
+        {"type": "2 BR", "features": {"kitchen": "partial", "accessible": true}, "credits": {"mon_thur": 1550, "fri_sat": 3100, "sun": 2150, "week": 14500}}
+      ]
+    },
+    {
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "date_ranges": {
+        "2026": ["Jan 2 - Feb 5", "Sep 25 - Oct 15"],
+        "2027": ["Jan 1 - Feb 4", "Sep 24 - Oct 14"]
+      },
+      "rooms": [
+        {"type": "Studio", "features": {"kitchen": "partial"}, "credits": {"mon_thur": 1000, "fri_sat": 1950, "sun": 1100, "week": 9000}},
+        {"type": "Studio Deluxe", "features": {"kitchen": "partial"}, "credits": {"mon_thur": 1100, "fri_sat": 2200, "sun": 1200, "week": 10000}},
+        {"type": "1 BR", "features": {"kitchen": "partial", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1100, "fri_sat": 2200, "sun": 1200, "week": 10000}},
+        {"type": "2 BR", "features": {"kitchen": "partial", "accessible": true}, "credits": {"mon_thur": 1300, "fri_sat": 2600, "sun": 1700, "week": 12000}}
+      ]
+    },
+    {
+      "name": "slow",
+      "meaning": "Off-peak - not the best time to visit",
+      "date_ranges": {
+        "2026": ["Mar 13 - Apr 9", "Oct 16 - Nov 12"],
+        "2027": ["Mar 12 - Apr 8", "Oct 15 - Nov 11"]
+      },
+      "rooms": [
+        {"type": "Studio", "features": {"kitchen": "partial"}, "credits": {"mon_thur": 775, "fri_sat": 1550, "sun": 800, "week": 7000}},
+        {"type": "Studio Deluxe", "features": {"kitchen": "partial"}, "credits": {"mon_thur": 875, "fri_sat": 1750, "sun": 1000, "week": 8000}},
+        {"type": "1 BR", "features": {"kitchen": "partial", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 875, "fri_sat": 1750, "sun": 1000, "week": 8000}},
+        {"type": "2 BR", "features": {"kitchen": "partial", "accessible": true}, "credits": {"mon_thur": 1100, "fri_sat": 2150, "sun": 1300, "week": 10000}}
+      ]
+    }
+  ]
+}

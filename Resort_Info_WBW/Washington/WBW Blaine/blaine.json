@@ -1,0 +1,43 @@
+{
+  "resort": "Blaine",
+  "state": "Washington",
+  "source": "CreditChart.png",
+  "seasons": [
+    {
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "date_ranges": {
+        "2026": ["Jan 1", "Feb 13 - Feb 26", "Apr 10 - Sep 17", "Nov 13 - Dec 31"],
+        "2027": ["Feb 12 - Feb 25", "Apr 9 - Sep 16", "Nov 12 - Dec 31"]
+      },
+      "rooms": [
+        {"type": "1 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 950, "fri_sat": 1900, "sun": 1400, "week": 9000}},
+        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1150, "fri_sat": 2300, "sun": 1800, "week": 11000}},
+        {"type": "3 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1350, "fri_sat": 2700, "sun": 2200, "week": 13000}}
+      ]
+    },
+    {
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "date_ranges": {
+        "2026": ["Jan 2 - Feb 12", "Feb 27 - Apr 9", "Sep 18 - Oct 29"],
+        "2027": ["Jan 1 - Feb 11", "Feb 26 - Apr 8", "Sep 17 - Oct 28"]
+      },
+      "rooms": [
+        {"type": "1 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 750, "fri_sat": 1500, "sun": 1000, "week": 7000}},
+        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 850, "fri_sat": 1700, "sun": 1100, "week": 8000}},
+        {"type": "3 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 950, "fri_sat": 1900, "sun": 1400, "week": 9000}}
+      ]
+    },
+    {
+      "name": "slow",
+      "meaning": "Off-peak - not the best time to visit",
+      "date_ranges": {"2026": ["Oct 30 - Nov 12"], "2027": ["Oct 29 - Nov 11"]},
+      "rooms": [
+        {"type": "1 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 450, "fri_sat": 900, "sun": 500, "week": 4000}},
+        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 650, "fri_sat": 1300, "sun": 800, "week": 6000}},
+        {"type": "3 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 750, "fri_sat": 1500, "sun": 1000, "week": 7000}}
+      ]
+    }
+  ]
+}

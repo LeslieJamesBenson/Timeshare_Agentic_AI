@@ -1,0 +1,36 @@
+{
+  "resort": "Zihuatanejo",
+  "state": "Mexico",
+  "source": "CreditChart.png",
+  "seasons": [
+    {
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "date_ranges": {
+        "2026": ["Jan 1 - Aug 20", "Oct 16 - Dec 31"],
+        "2027": ["Jan 1 - Aug 19", "Oct 15 - Dec 31"]
+      },
+      "rooms": [
+        {"type": "Hotel", "features": {}, "credits": {"mon_thur": 550, "fri_sat": 1100, "sun": 600, "week": 5000}},
+        {"type": "Studio Hotel", "features": {"multi_phase": true}, "credits": {"mon_thur": 750, "fri_sat": 1500, "sun": 1000, "week": 7000}},
+        {"type": "Studio", "features": {}, "credits": {"mon_thur": 950, "fri_sat": 1900, "sun": 1400, "week": 9000}},
+        {"type": "Studio Deluxe", "features": {"kitchen": "mini"}, "credits": {"mon_thur": 1050, "fri_sat": 2100, "sun": 1600, "week": 10000}},
+        {"type": "1 BR Penthouse", "features": {}, "credits": {"mon_thur": 1450, "fri_sat": 2900, "sun": 2400, "week": 14000}},
+        {"type": "1 BR Presidential", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2050, "fri_sat": 4100, "sun": 3600, "week": 20000}}
+      ]
+    },
+    {
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "date_ranges": {"2026": ["Aug 21 - Oct 15"], "2027": ["Aug 20 - Oct 14"]},
+      "rooms": [
+        {"type": "Hotel", "features": {}, "credits": {"mon_thur": 350, "fri_sat": 700, "sun": 400, "week": 3000}},
+        {"type": "Studio Hotel", "features": {"multi_phase": true}, "credits": {"mon_thur": 550, "fri_sat": 1100, "sun": 600, "week": 5000}},
+        {"type": "Studio", "features": {}, "credits": {"mon_thur": 750, "fri_sat": 1500, "sun": 1000, "week": 7000}},
+        {"type": "Studio Deluxe", "features": {"kitchen": "mini"}, "credits": {"mon_thur": 850, "fri_sat": 1700, "sun": 1200, "week": 8000}},
+        {"type": "1 BR Penthouse", "features": {}, "credits": {"mon_thur": 1250, "fri_sat": 2500, "sun": 2000, "week": 12000}},
+        {"type": "1 BR Presidential", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1850, "fri_sat": 3700, "sun": 3200, "week": 18000}}
+      ]
+    }
+  ]
+}

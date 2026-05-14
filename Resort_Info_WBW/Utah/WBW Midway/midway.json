@@ -1,0 +1,40 @@
+{
+  "resort": "Midway",
+  "state": "Utah",
+  "source": "CreditChart.png",
+  "seasons": [
+    {
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "date_ranges": {
+        "2026": ["Jan 1 - Mar 19", "Apr 24 - Sep 10", "Oct 30 - Dec 31"],
+        "2027": ["Jan 1 - Mar 18", "Apr 23 - Sep 9", "Oct 29 - Dec 31"]
+      },
+      "rooms": [
+        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1100, "fri_sat": 2200, "sun": 1200, "week": 10000}},
+        {"type": "2 BR Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1200, "fri_sat": 2450, "sun": 1300, "week": 11000}}
+      ]
+    },
+    {
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "date_ranges": {
+        "2026": ["Mar 20 - Apr 23", "Sep 11 - Oct 15"],
+        "2027": ["Mar 19 - Apr 22", "Sep 10 - Oct 14"]
+      },
+      "rooms": [
+        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 875, "fri_sat": 1750, "sun": 1000, "week": 8000}},
+        {"type": "2 BR Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1000, "fri_sat": 1900, "sun": 1100, "week": 9000}}
+      ]
+    },
+    {
+      "name": "slow",
+      "meaning": "Off-peak - not the best time to visit",
+      "date_ranges": {"2026": ["Oct 16 - Oct 29"], "2027": ["Oct 15 - Oct 28"]},
+      "rooms": [
+        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 675, "fri_sat": 1300, "sun": 700, "week": 6000}},
+        {"type": "2 BR Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 775, "fri_sat": 1550, "sun": 800, "week": 7000}}
+      ]
+    }
+  ]
+}

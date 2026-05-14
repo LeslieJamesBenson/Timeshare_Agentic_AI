@@ -1,0 +1,61 @@
+{
+  "resort": "Seventh Mountain Resort",
+  "state": "Oregon",
+  "source": "CreditChart.png",
+  "seasons": [
+    {
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "date_ranges": {
+        "2026": ["Jan 1", "Feb 13 - Feb 19", "Mar 20 - Apr 16", "May 22 - Sep 3", "Nov 20 - Dec 3", "Dec 18 - Dec 31"],
+        "2027": ["Feb 12 - Feb 18", "Mar 19 - Apr 15", "May 21 - Sep 2", "Nov 19 - Dec 2", "Dec 17 - Dec 31"]
+      },
+      "rooms": [
+        {"type": "Studio", "features": {"kitchen": "mini"}, "credits": {"mon_thur": 850, "fri_sat": 1500, "sun": 1100, "week": 7000}},
+        {"type": "1 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1000, "fri_sat": 1700, "sun": 1200, "week": 8000}},
+        {"type": "1 BR Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1150, "fri_sat": 1900, "sun": 1400, "week": 9000}},
+        {"type": "1 BR Loft", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1250, "fri_sat": 2500, "sun": 2000, "week": 12000}},
+        {"type": "1 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1450, "fri_sat": 2900, "sun": 2400, "week": 14000}},
+        {"type": "2 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1050, "fri_sat": 2100, "sun": 1600, "week": 10000}},
+        {"type": "2 BR Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1350, "fri_sat": 2300, "sun": 1800, "week": 13000}},
+        {"type": "2 BR Loft", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1450, "fri_sat": 2900, "sun": 2400, "week": 14000}}
+      ]
+    },
+    {
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "date_ranges": {
+        "2026": ["Feb 6 - Apr 23", "Oct 2 - Nov 19"],
+        "2027": ["Feb 5 - Apr 22", "Oct 1 - Nov 18"]
+      },
+      "rooms": [
+        {"type": "Studio", "features": {"kitchen": "mini"}, "credits": {"mon_thur": 550, "fri_sat": 1100, "sun": 600, "week": 5000}},
+        {"type": "1 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 600, "fri_sat": 1300, "sun": 750, "week": 6000}},
+        {"type": "1 BR Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 750, "fri_sat": 1500, "sun": 1000, "week": 7000}},
+        {"type": "1 BR Loft", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1050, "fri_sat": 1700, "sun": 1300, "week": 8000}},
+        {"type": "1 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1200, "fri_sat": 1900, "sun": 1700, "week": 9000}},
+        {"type": "2 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 850, "fri_sat": 1700, "sun": 1100, "week": 8000}},
+        {"type": "2 BR Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1150, "fri_sat": 2300, "sun": 1400, "week": 11000}},
+        {"type": "2 BR Loft", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1250, "fri_sat": 2500, "sun": 1400, "week": 12000}}
+      ]
+    },
+    {
+      "name": "slow",
+      "meaning": "Off-peak - not the best time to visit",
+      "date_ranges": {
+        "2026": ["Jan 2 - Feb 5", "Dec 4 - Dec 17"],
+        "2027": ["Jan 1 - Feb 4", "Dec 3 - Dec 16"]
+      },
+      "rooms": [
+        {"type": "Studio", "features": {"kitchen": "mini"}, "credits": {"mon_thur": 350, "fri_sat": 700, "sun": 400, "week": 3000}},
+        {"type": "1 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 450, "fri_sat": 900, "sun": 500, "week": 4000}},
+        {"type": "1 BR Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 600, "fri_sat": 1100, "sun": 700, "week": 5000}},
+        {"type": "1 BR Loft", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1100, "fri_sat": 1700, "sun": 1300, "week": 8000}},
+        {"type": "1 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1250, "fri_sat": 1900, "sun": 1400, "week": 9000}},
+        {"type": "2 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 750, "fri_sat": 1500, "sun": 950, "week": 6000}},
+        {"type": "2 BR Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 950, "fri_sat": 1900, "sun": 1400, "week": 9000}},
+        {"type": "2 BR Loft", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1050, "fri_sat": 2100, "sun": 1400, "week": 10000}}
+      ]
+    }
+  ]
+}

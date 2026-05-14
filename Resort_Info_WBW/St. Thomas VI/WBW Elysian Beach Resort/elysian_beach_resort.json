@@ -1,0 +1,37 @@
+{
+  "resort": "Elysian Beach Resort",
+  "state": "St. Thomas VI",
+  "source": "CreditChart.png",
+  "seasons": [
+    {
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "date_ranges": {
+        "2026": ["Jan 1", "Feb 6 - Nov 26", "Dec 11 - Dec 31"],
+        "2027": ["Feb 5 - Nov 25", "Dec 10 - Dec 31"]
+      },
+      "rooms": [
+        {"type": "Studio Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1050, "fri_sat": 2100, "sun": 1600, "week": 10000}},
+        {"type": "Studio Presidential", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1850, "fri_sat": 3700, "sun": 3200, "week": 18000}},
+        {"type": "1 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1350, "fri_sat": 2700, "sun": 2200, "week": 13000}},
+        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1550, "fri_sat": 3100, "sun": 2600, "week": 15000}},
+        {"type": "2 BR Presidential", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2850, "fri_sat": 5700, "sun": 5200, "week": 28000}}
+      ]
+    },
+    {
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "date_ranges": {
+        "2026": ["Jan 2 - Feb 5", "Nov 27 - Dec 10"],
+        "2027": ["Jan 1 - Feb 4", "Nov 26 - Dec 9"]
+      },
+      "rooms": [
+        {"type": "Studio Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 850, "fri_sat": 1700, "sun": 1200, "week": 8000}},
+        {"type": "Studio Presidential", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1650, "fri_sat": 3300, "sun": 2800, "week": 16000}},
+        {"type": "1 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1150, "fri_sat": 2300, "sun": 2000, "week": 11000}},
+        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1300, "fri_sat": 2700, "sun": 2200, "week": 13000}},
+        {"type": "2 BR Presidential", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2650, "fri_sat": 5300, "sun": 4800, "week": 26000}}
+      ]
+    }
+  ]
+}

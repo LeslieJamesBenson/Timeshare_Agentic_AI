@@ -1,0 +1,55 @@
+{
+  "resort": "Eagle Crest",
+  "state": "Oregon",
+  "source": "CreditChart.png",
+  "seasons": [
+    {
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "date_ranges": {
+        "2026": ["Jan 1", "Feb 13 - Feb 26", "Apr 3 - Sep 17", "Nov 20 - Dec 3", "Dec 11 - Dec 31"],
+        "2027": ["Feb 12 - Feb 25", "Apr 2 - Sep 16", "Nov 19 - Dec 2", "Dec 10 - Dec 31"]
+      },
+      "rooms": [
+        {"type": "1 BR Suite (Hotel)", "features": {"kitchen": "mini", "accessible": true}, "credits": {"mon_thur": 1000, "fri_sat": 1450, "sun": 1100, "week": 8000}},
+        {"type": "1 BR Hotel or 2 BR Suite", "features": {"kitchen": "mini", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1100, "fri_sat": 1600, "sun": 1400, "week": 9000}},
+        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1250, "fri_sat": 1800, "sun": 1400, "week": 10000}},
+        {"type": "2 BR Chalet", "features": {"kitchen": "full", "multi_phase": true}, "credits": {"mon_thur": 1750, "fri_sat": 2450, "sun": 2100, "week": 14000}},
+        {"type": "3 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1500, "fri_sat": 2100, "sun": 1800, "week": 12000}},
+        {"type": "3 BR Chalet", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1900, "fri_sat": 2600, "sun": 2200, "week": 15000}}
+      ]
+    },
+    {
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "date_ranges": {
+        "2026": ["Feb 27 - Apr 2", "Sep 18 - Oct 8"],
+        "2027": ["Feb 26 - Apr 1", "Sep 17 - Oct 7"]
+      },
+      "rooms": [
+        {"type": "1 BR Suite (Hotel)", "features": {"kitchen": "mini", "accessible": true}, "credits": {"mon_thur": 700, "fri_sat": 1125, "sun": 950, "week": 6000}},
+        {"type": "1 BR Hotel or 2 BR Suite", "features": {"kitchen": "mini", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 850, "fri_sat": 1250, "sun": 1100, "week": 7000}},
+        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 850, "fri_sat": 1450, "sun": 1100, "week": 7000}},
+        {"type": "2 BR Chalet", "features": {"kitchen": "full", "multi_phase": true}, "credits": {"mon_thur": 1300, "fri_sat": 1800, "sun": 1400, "week": 10000}},
+        {"type": "3 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1100, "fri_sat": 1800, "sun": 1400, "week": 9000}},
+        {"type": "3 BR Chalet", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1400, "fri_sat": 2100, "sun": 2200, "week": 12000}}
+      ]
+    },
+    {
+      "name": "slow",
+      "meaning": "Off-peak - not the best time to visit",
+      "date_ranges": {
+        "2026": ["Jan 2 - Feb 12", "Oct 9 - Nov 19", "Dec 4 - Dec 10"],
+        "2027": ["Jan 1 - Feb 11", "Oct 8 - Nov 18", "Dec 3 - Dec 9"]
+      },
+      "rooms": [
+        {"type": "1 BR Suite (Hotel)", "features": {"kitchen": "mini", "accessible": true}, "credits": {"mon_thur": 400, "fri_sat": 825, "sun": 550, "week": 4000}},
+        {"type": "1 BR Hotel or 2 BR Suite", "features": {"kitchen": "mini", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 600, "fri_sat": 925, "sun": 750, "week": 5000}},
+        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 600, "fri_sat": 1450, "sun": 750, "week": 5000}},
+        {"type": "2 BR Chalet", "features": {"kitchen": "full", "multi_phase": true}, "credits": {"mon_thur": 1000, "fri_sat": 1800, "sun": 1100, "week": 8000}},
+        {"type": "3 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 850, "fri_sat": 1450, "sun": 1100, "week": 7000}},
+        {"type": "3 BR Chalet", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1100, "fri_sat": 2100, "sun": 1400, "week": 9000}}
+      ]
+    }
+  ]
+}

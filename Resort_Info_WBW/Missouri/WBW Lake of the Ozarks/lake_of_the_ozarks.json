@@ -1,0 +1,52 @@
+{
+  "resort": "Lake of the Ozarks",
+  "state": "Missouri",
+  "source": "CreditChart.png",
+  "seasons": [
+    {
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "date_ranges": {
+        "2026": ["Jan 1", "Mar 13 - Apr 2", "Apr 17 - Oct 8", "Nov 20 - Dec 3", "Dec 18 - Dec 31"],
+        "2027": ["Mar 12 - Apr 1", "Apr 16 - Oct 7", "Nov 19 - Dec 2", "Dec 17 - Dec 31"]
+      },
+      "rooms": [
+        {"type": "1 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 875, "fri_sat": 1750, "sun": 1000, "week": 8000}},
+        {"type": "2 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1100, "fri_sat": 2200, "sun": 1200, "week": 10000}},
+        {"type": "3 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1300, "fri_sat": 2600, "sun": 1800, "week": 12000}},
+        {"type": "3 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2000, "fri_sat": 3900, "sun": 2200, "week": 18000}},
+        {"type": "4 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2300, "fri_sat": 4200, "sun": 2400, "week": 20000}}
+      ]
+    },
+    {
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "date_ranges": {
+        "2026": ["Feb 27 - Mar 12", "Apr 3 - Apr 16", "Oct 9 - Nov 19"],
+        "2027": ["Feb 26 - Mar 11", "Apr 2 - Apr 15", "Oct 8 - Nov 17"]
+      },
+      "rooms": [
+        {"type": "1 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 675, "fri_sat": 1300, "sun": 700, "week": 6000}},
+        {"type": "2 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 875, "fri_sat": 1750, "sun": 1000, "week": 8000}},
+        {"type": "3 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1100, "fri_sat": 2200, "sun": 1200, "week": 10000}},
+        {"type": "3 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1750, "fri_sat": 3450, "sun": 2100, "week": 16000}},
+        {"type": "4 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2000, "fri_sat": 3900, "sun": 2300, "week": 18000}}
+      ]
+    },
+    {
+      "name": "slow",
+      "meaning": "Off-peak - not the best time to visit",
+      "date_ranges": {
+        "2026": ["Jan 2 - Feb 26", "Dec 4 - Dec 17"],
+        "2027": ["Jan 1 - Feb 25", "Dec 3 - Dec 16"]
+      },
+      "rooms": [
+        {"type": "1 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 450, "fri_sat": 825, "sun": 550, "week": 4000}},
+        {"type": "2 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 675, "fri_sat": 1300, "sun": 700, "week": 6000}},
+        {"type": "3 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 875, "fri_sat": 1750, "sun": 1000, "week": 8000}},
+        {"type": "3 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1550, "fri_sat": 3050, "sun": 1700, "week": 14000}},
+        {"type": "4 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1750, "fri_sat": 3450, "sun": 2100, "week": 16000}}
+      ]
+    }
+  ]
+}
