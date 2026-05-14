@@ -1,0 +1,57 @@
+{
+  "resort": "Havasu Dunes",
+  "state": "Arizona",
+  "source": "CreditChart.png",
+  "seasons": [
+    {
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "date_ranges": {
+        "2026": ["Jan 1", "Mar 13 - Oct 1", "Nov 6 - Dec 31"],
+        "2027": ["Mar 12 - Sep 30", "Nov 5 - Dec 31"]
+      },
+      "rooms": [
+        {
+          "type": "Studio",
+          "features": {"kitchen": "partial"},
+          "credits": {"mon_thur": 750, "fri_sat": 1500, "sun": 1000, "week": 7000}
+        },
+        {
+          "type": "1 BR",
+          "features": {"kitchen": "full"},
+          "credits": {"mon_thur": 850, "fri_sat": 1700, "sun": 1200, "week": 8000}
+        },
+        {
+          "type": "2 BR",
+          "features": {"kitchen": "full"},
+          "credits": {"mon_thur": 1050, "fri_sat": 2100, "sun": 1600, "week": 10000}
+        }
+      ]
+    },
+    {
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "date_ranges": {
+        "2026": ["Jan 2 - Mar 12", "Oct 2 - Nov 5"],
+        "2027": ["Jan 1 - Mar 11", "Oct 1 - Nov 4"]
+      },
+      "rooms": [
+        {
+          "type": "Studio",
+          "features": {"kitchen": "partial"},
+          "credits": {"mon_thur": 550, "fri_sat": 1100, "sun": 600, "week": 5000}
+        },
+        {
+          "type": "1 BR",
+          "features": {"kitchen": "full"},
+          "credits": {"mon_thur": 650, "fri_sat": 1300, "sun": 800, "week": 6000}
+        },
+        {
+          "type": "2 BR",
+          "features": {"kitchen": "full"},
+          "credits": {"mon_thur": 850, "fri_sat": 1700, "sun": 1200, "week": 8000}
+        }
+      ]
+    }
+  ]
+}

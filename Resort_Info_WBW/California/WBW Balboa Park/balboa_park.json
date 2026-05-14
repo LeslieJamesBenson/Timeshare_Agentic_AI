@@ -1,0 +1,27 @@
+{
+  "resort": "Balboa Park",
+  "state": "California",
+  "source": "CreditChart.png",
+  "seasons": [
+    {
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "date_ranges": {
+        "2026": ["Jan 1 - Dec 31"],
+        "2027": ["Jan 1 - Dec 31"]
+      },
+      "rooms": [
+        {
+          "type": "Studio Hotel",
+          "features": {"kitchen": "mini", "accessible": true, "multi_phase": true},
+          "credits": {"mon_thur": 1200, "fri_sat": 2350, "sun": 1500, "week": 11000}
+        },
+        {
+          "type": "1 BR Hotel",
+          "features": {"kitchen": "mini"},
+          "credits": {"mon_thur": 1400, "fri_sat": 2950, "sun": 2000, "week": 13500}
+        }
+      ]
+    }
+  ]
+}

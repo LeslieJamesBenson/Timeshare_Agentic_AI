@@ -1,0 +1,27 @@
+{
+  "resort": "Mission Valley",
+  "state": "California",
+  "source": "CreditChart.png",
+  "seasons": [
+    {
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "date_ranges": {
+        "2026": ["Jan 1 - Dec 31"],
+        "2027": ["Jan 1 - Dec 31"]
+      },
+      "rooms": [
+        {
+          "type": "1 BR",
+          "features": {"kitchen": "full", "accessible": true, "multi_phase": true},
+          "credits": {"mon_thur": 1250, "fri_sat": 2450, "sun": 1600, "week": 11500}
+        },
+        {
+          "type": "2 BR",
+          "features": {"kitchen": "full", "accessible": true, "multi_phase": true},
+          "credits": {"mon_thur": 1600, "fri_sat": 3200, "sun": 2200, "week": 15000}
+        }
+      ]
+    }
+  ]
+}
