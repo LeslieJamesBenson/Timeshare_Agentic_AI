@@ -24,7 +24,7 @@
       "meaning": "Solid time to visit - moderate demand",
       "date_ranges": {"2026": ["Aug 21 - Oct 15"], "2027": ["Aug 20 - Oct 14"]},
       "rooms": [
-        {"type": "Hotel", "features": {}, "credits": {"mon_thur": 350, "fri_sat": 700, "sun": 400, "week": 3000}},
+        {"type": "Hotel", "features": {}, "credits": {"mon_thur": 350, "fri_sat": 700, "sun": 200, "week": 3000}},
         {"type": "Studio Hotel", "features": {"multi_phase": true}, "credits": {"mon_thur": 550, "fri_sat": 1100, "sun": 600, "week": 5000}},
         {"type": "Studio", "features": {}, "credits": {"mon_thur": 750, "fri_sat": 1500, "sun": 1000, "week": 7000}},
         {"type": "Studio Deluxe", "features": {"kitchen": "mini"}, "credits": {"mon_thur": 850, "fri_sat": 1700, "sun": 1200, "week": 8000}},

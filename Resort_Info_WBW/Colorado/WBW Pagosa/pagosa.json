@@ -12,9 +12,9 @@
       },
       "rooms": [
         {"type": "1 BR Suite", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 550, "fri_sat": 1100, "sun": 600, "week": 5000}},
-        {"type": "1 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 700, "fri_sat": 1400, "sun": 900, "week": 6600}},
+        {"type": "1 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 700, "fri_sat": 1400, "sun": 1000, "week": 6600}},
         {"type": "2 BR Deluxe", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1050, "fri_sat": 2100, "sun": 1400, "week": 9800}},
-        {"type": "2 BR Loft", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1300, "fri_sat": 2400, "sun": 1700, "week": 11600}}
+        {"type": "2 BR Loft", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1200, "fri_sat": 2400, "sun": 2000, "week": 11600}}
       ]
     },
     {
@@ -25,10 +25,10 @@
         "2027": ["Jan 29 - Mar 4", "Sep 3 - Sep 23", "Nov 12 - Dec 9"]
       },
       "rooms": [
-        {"type": "1 BR Suite", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 525, "fri_sat": 1050, "sun": 550, "week": 4800}},
-        {"type": "1 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 600, "fri_sat": 1200, "sun": 800, "week": 5700}},
-        {"type": "2 BR Deluxe", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 850, "fri_sat": 1700, "sun": 1100, "week": 8200}},
-        {"type": "2 BR Loft", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1000, "fri_sat": 2100, "sun": 1700, "week": 9800}}
+        {"type": "1 BR Suite", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 525, "fri_sat": 1050, "sun": 600, "week": 4800}},
+        {"type": "1 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 600, "fri_sat": 1200, "sun": 900, "week": 5700}},
+        {"type": "2 BR Deluxe", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 850, "fri_sat": 1700, "sun": 1400, "week": 8200}},
+        {"type": "2 BR Loft", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1000, "fri_sat": 2100, "sun": 1600, "week": 9800}}
       ]
     },
     {
@@ -41,8 +41,8 @@
       "rooms": [
         {"type": "1 BR Suite", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 350, "fri_sat": 700, "sun": 400, "week": 3200}},
         {"type": "1 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 550, "fri_sat": 1100, "sun": 600, "week": 5000}},
-        {"type": "2 BR Deluxe", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 700, "fri_sat": 1400, "sun": 900, "week": 6600}},
-        {"type": "2 BR Loft", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1000, "fri_sat": 1700, "sun": 1300, "week": 8200}}
+        {"type": "2 BR Deluxe", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 700, "fri_sat": 1400, "sun": 1000, "week": 6600}},
+        {"type": "2 BR Loft", "features": {"kitchen": "full"}, "credits": {"mon_thur": 850, "fri_sat": 1700, "sun": 1400, "week": 8200}}
       ]
     }
   ]

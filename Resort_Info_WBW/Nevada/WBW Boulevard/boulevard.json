@@ -13,7 +13,7 @@
         {"type": "2 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1375, "fri_sat": 1950, "sun": 1600, "week": 11000}},
         {"type": "2 BR Penthouse", "features": {"kitchen": "full", "multi_phase": true}, "credits": {"mon_thur": 2000, "fri_sat": 2750, "sun": 2500, "week": 16000}},
         {"type": "3 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1625, "fri_sat": 2275, "sun": 1950, "week": 13000}},
-        {"type": "3 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2250, "fri_sat": 3125, "sun": 2500, "week": 18000}}
+        {"type": "3 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2250, "fri_sat": 3125, "sun": 2750, "week": 18000}}
       ]
     }
   ]

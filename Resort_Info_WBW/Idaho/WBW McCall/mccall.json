@@ -36,7 +36,7 @@
       },
       "rooms": [
         {"type": "2 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 550, "fri_sat": 1100, "sun": 600, "week": 5000}},
-        {"type": "3 BR Presidential", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 2400, "fri_sat": 4800, "sun": 3000, "week": 22000}}
+        {"type": "3 BR Presidential", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 2400, "fri_sat": 4800, "sun": 2800, "week": 22000}}
       ]
     }
   ]

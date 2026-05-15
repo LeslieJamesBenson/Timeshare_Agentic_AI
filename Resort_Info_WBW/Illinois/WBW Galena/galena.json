@@ -39,7 +39,7 @@
       "rooms": [
         {"type": "Studio", "features": {"kitchen": "mini", "accessible": true}, "credits": {"mon_thur": 325, "fri_sat": 650, "sun": 400, "week": 3000}},
         {"type": "1 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 425, "fri_sat": 900, "sun": 500, "week": 4000}},
-        {"type": "2 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 600, "fri_sat": 1300, "sun": 700, "week": 6000}}
+        {"type": "2 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 675, "fri_sat": 1300, "sun": 700, "week": 6000}}
       ]
     }
   ]

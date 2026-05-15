@@ -26,7 +26,7 @@
       "rooms": [
         {"type": "Studio Deluxe", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 700, "fri_sat": 1400, "sun": 1000, "week": 6600}},
         {"type": "1 BR Deluxe", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 750, "fri_sat": 1600, "sun": 1100, "week": 7300}},
-        {"type": "2 BR Deluxe", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1150, "fri_sat": 2300, "sun": 1900, "week": 10900}}
+        {"type": "2 BR Deluxe", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1150, "fri_sat": 2300, "sun": 1700, "week": 10900}}
       ]
     },
     {

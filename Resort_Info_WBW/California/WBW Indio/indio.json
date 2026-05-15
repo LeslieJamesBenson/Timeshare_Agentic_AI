@@ -13,7 +13,7 @@
       "rooms": [
         {"type": "Studio", "features": {"kitchen": "mini", "accessible": true}, "credits": {"mon_thur": 775, "fri_sat": 1550, "sun": 800, "week": 7000}},
         {"type": "1 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1000, "fri_sat": 1950, "sun": 1100, "week": 9000}},
-        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1325, "fri_sat": 2450, "sun": 1300, "week": 11000}},
+        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1200, "fri_sat": 2450, "sun": 1300, "week": 11000}},
         {"type": "3 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1425, "fri_sat": 2875, "sun": 1550, "week": 13000}},
         {"type": "3 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2000, "fri_sat": 3900, "sun": 2200, "week": 18000}},
         {"type": "3 BR Presidential", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2600, "fri_sat": 5200, "sun": 3200, "week": 24000}},
