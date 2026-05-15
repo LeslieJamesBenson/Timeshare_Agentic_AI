@@ -1,6 +1,6 @@
 {
-  "resort": "Grand Palms",
-  "state": "South Carolina",
+  "resort": "Elysian Beach Resort",
+  "state": "St. Thomas VI",
   "source": "CreditChart.png",
   "seasons": [
     {
@@ -24,8 +24,8 @@
       "rooms": [
         {"type": "Studio Double", "features": {"kitchen": "partial"}, "credits": {"mon_thur": 750, "fri_sat": 1500, "sun": 1000, "week": 7000}},
         {"type": "Studio King", "features": {"kitchen": "partial"}, "credits": {"mon_thur": 750, "fri_sat": 1500, "sun": 1000, "week": 7000}},
-        {"type": "Studio Parlor", "features": {"kitchen": "full"}, "credits": {"mon_thur": 950, "fri_sat": 1900, "sun": 1300, "week": 7500}},
-        {"type": "Studio Parlor Loft", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1100, "fri_sat": 2200, "sun": 1500, "week": 9500}}
+        {"type": "Studio Parlor", "features": {"kitchen": "full"}, "credits": {"mon_thur": 800, "fri_sat": 1600, "sun": 1100, "week": 7500}},
+        {"type": "Studio Parlor Loft", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1000, "fri_sat": 2000, "sun": 1500, "week": 9500}}
       ]
     },
     {
@@ -36,7 +36,7 @@
         {"type": "Studio Double", "features": {"kitchen": "partial"}, "credits": {"mon_thur": 700, "fri_sat": 1400, "sun": 900, "week": 6500}},
         {"type": "Studio King", "features": {"kitchen": "partial"}, "credits": {"mon_thur": 700, "fri_sat": 1400, "sun": 900, "week": 6500}},
         {"type": "Studio Parlor", "features": {"kitchen": "full"}, "credits": {"mon_thur": 750, "fri_sat": 1500, "sun": 1000, "week": 7000}},
-        {"type": "Studio Parlor Loft", "features": {"kitchen": "full"}, "credits": {"mon_thur": 800, "fri_sat": 1600, "sun": 1200, "week": 7500}}
+        {"type": "Studio Parlor Loft", "features": {"kitchen": "full"}, "credits": {"mon_thur": 800, "fri_sat": 1600, "sun": 1100, "week": 7500}}
       ]
     }
   ]

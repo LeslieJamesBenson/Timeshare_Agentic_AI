@@ -13,9 +13,9 @@
       "rooms": [
         {"type": "Studio", "features": {"kitchen": "mini", "accessible": true}, "credits": {"mon_thur": 850, "fri_sat": 1250, "sun": 1100, "week": 7000}},
         {"type": "1 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1000, "fri_sat": 1450, "sun": 1100, "week": 8000}},
-        {"type": "1 BR Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1150, "fri_sat": 1600, "sun": 1400, "week": 9000}},
+        {"type": "1 BR Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1100, "fri_sat": 1600, "sun": 1400, "week": 9000}},
         {"type": "2 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1250, "fri_sat": 1800, "sun": 1400, "week": 10000}},
-        {"type": "2 BR Deluxe", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1300, "fri_sat": 1800, "sun": 1800, "week": 11000}},
+        {"type": "2 BR Deluxe", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1300, "fri_sat": 2000, "sun": 1800, "week": 11000}},
         {"type": "3 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1500, "fri_sat": 2100, "sun": 1800, "week": 12000}},
         {"type": "3 BR Deluxe", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1600, "fri_sat": 2300, "sun": 2000, "week": 13000}},
         {"type": "3 BR Penthouse", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 2250, "fri_sat": 3125, "sun": 2750, "week": 18000}}
@@ -31,12 +31,12 @@
       "rooms": [
         {"type": "Studio", "features": {"kitchen": "mini", "accessible": true}, "credits": {"mon_thur": 600, "fri_sat": 925, "sun": 750, "week": 5000}},
         {"type": "1 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 700, "fri_sat": 1125, "sun": 950, "week": 6000}},
-        {"type": "1 BR Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 750, "fri_sat": 1400, "sun": 1100, "week": 7000}},
-        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 850, "fri_sat": 1400, "sun": 1100, "week": 8000}},
-        {"type": "2 BR Deluxe", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1000, "fri_sat": 1450, "sun": 1400, "week": 9000}},
-        {"type": "3 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1100, "fri_sat": 1450, "sun": 1400, "week": 10000}},
-        {"type": "3 BR Deluxe", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1100, "fri_sat": 1700, "sun": 1400, "week": 11000}},
-        {"type": "3 BR Penthouse", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1750, "fri_sat": 2750, "sun": 2500, "week": 16000}}
+        {"type": "1 BR Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 800, "fri_sat": 1400, "sun": 1000, "week": 7000}},
+        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1000, "fri_sat": 1450, "sun": 1100, "week": 8000}},
+        {"type": "2 BR Deluxe", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1100, "fri_sat": 1600, "sun": 1400, "week": 9000}},
+        {"type": "3 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1250, "fri_sat": 1800, "sun": 1400, "week": 10000}},
+        {"type": "3 BR Deluxe", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1300, "fri_sat": 2000, "sun": 1800, "week": 11000}},
+        {"type": "3 BR Penthouse", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 2000, "fri_sat": 2750, "sun": 2500, "week": 16000}}
       ]
     },
     {
@@ -50,11 +50,11 @@
         {"type": "Studio", "features": {"kitchen": "mini", "accessible": true}, "credits": {"mon_thur": 300, "fri_sat": 700, "sun": 400, "week": 3000}},
         {"type": "1 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 450, "fri_sat": 825, "sun": 550, "week": 4000}},
         {"type": "1 BR Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 600, "fri_sat": 925, "sun": 750, "week": 5000}},
-        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 700, "fri_sat": 1125, "sun": 750, "week": 6000}},
-        {"type": "2 BR Deluxe", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 750, "fri_sat": 1225, "sun": 950, "week": 7000}},
-        {"type": "3 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 850, "fri_sat": 1450, "sun": 950, "week": 8000}},
+        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 700, "fri_sat": 1125, "sun": 950, "week": 6000}},
+        {"type": "2 BR Deluxe", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 850, "fri_sat": 1250, "sun": 1100, "week": 7000}},
+        {"type": "3 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1000, "fri_sat": 1450, "sun": 1100, "week": 8000}},
         {"type": "3 BR Deluxe", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1100, "fri_sat": 1700, "sun": 1200, "week": 9000}},
-        {"type": "3 BR Penthouse", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1750, "fri_sat": 2450, "sun": 1400, "week": 14000}}
+        {"type": "3 BR Penthouse", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1750, "fri_sat": 2450, "sun": 2100, "week": 14000}}
       ]
     }
   ]

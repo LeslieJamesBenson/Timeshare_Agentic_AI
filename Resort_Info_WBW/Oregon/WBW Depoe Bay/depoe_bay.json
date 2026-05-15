@@ -24,7 +24,7 @@
       },
       "rooms": [
         {"type": "2 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 850, "fri_sat": 1250, "sun": 1100, "week": 7000}},
-        {"type": "3 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1050, "fri_sat": 1450, "sun": 1100, "week": 8000}}
+        {"type": "3 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1000, "fri_sat": 1450, "sun": 1100, "week": 8000}}
       ]
     },
     {
@@ -36,7 +36,7 @@
       },
       "rooms": [
         {"type": "2 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 600, "fri_sat": 925, "sun": 750, "week": 5000}},
-        {"type": "3 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 700, "fri_sat": 1125, "sun": 750, "week": 6000}}
+        {"type": "3 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 700, "fri_sat": 1125, "sun": 950, "week": 6000}}
       ]
     }
   ]
