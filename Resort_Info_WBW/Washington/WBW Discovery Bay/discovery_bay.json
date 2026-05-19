@@ -25,7 +25,7 @@
       },
       "rooms": [
         {"type": "2 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 850, "fri_sat": 1250, "sun": 1100, "week": 7000}},
-        {"type": "2 BR Loft", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1000, "fri_sat": 1450, "sun": 1100, "week": 7000}},
+        {"type": "2 BR Loft", "features": {"kitchen": "full"}, "credits": {"mon_thur": 850, "fri_sat": 1250, "sun": 1100, "week": 7000}},
         {"type": "2 BR Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1250, "fri_sat": 1800, "sun": 1400, "week": 10000}}
       ]
     },
@@ -35,7 +35,7 @@
       "date_ranges": {"2026": ["Oct 23 - Nov 19"], "2027": ["Oct 22 - Nov 18"]},
       "rooms": [
         {"type": "2 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 600, "fri_sat": 925, "sun": 750, "week": 5000}},
-        {"type": "2 BR Loft", "features": {"kitchen": "full"}, "credits": {"mon_thur": 600, "fri_sat": 1100, "sun": 750, "week": 5000}},
+        {"type": "2 BR Loft", "features": {"kitchen": "full"}, "credits": {"mon_thur": 600, "fri_sat": 925, "sun": 750, "week": 5000}},
         {"type": "2 BR Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1000, "fri_sat": 1450, "sun": 1100, "week": 8000}}
       ]
     }

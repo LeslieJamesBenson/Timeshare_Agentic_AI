@@ -14,7 +14,7 @@
         {"type": "Studio", "features": {"kitchen": "partial"}, "credits": {"mon_thur": 1150, "fri_sat": 2325, "sun": 1250, "week": 10500}},
         {"type": "Studio Deluxe", "features": {"kitchen": "partial"}, "credits": {"mon_thur": 1250, "fri_sat": 2475, "sun": 1550, "week": 11500}},
         {"type": "1 BR", "features": {"kitchen": "partial", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1375, "fri_sat": 2750, "sun": 1500, "week": 12500}},
-        {"type": "2 BR", "features": {"kitchen": "partial", "accessible": true}, "credits": {"mon_thur": 1550, "fri_sat": 3070, "sun": 2150, "week": 14500}}
+        {"type": "2 BR", "features": {"kitchen": "partial", "accessible": true}, "credits": {"mon_thur": 1550, "fri_sat": 3075, "sun": 2150, "week": 14500}}
       ]
     },
     {

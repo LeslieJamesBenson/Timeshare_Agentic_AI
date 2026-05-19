@@ -14,7 +14,7 @@
         {"type": "Studio Presidential", "features": {"kitchen": "mini"}, "credits": {"mon_thur": 1650, "fri_sat": 3300, "sun": 2800, "week": 16000}},
         {"type": "1 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1150, "fri_sat": 2300, "sun": 1800, "week": 11000}},
         {"type": "1 BR Presidential", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 2250, "fri_sat": 4500, "sun": 4000, "week": 22000}},
-        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1350, "fri_sat": 2700, "sun": 2100, "week": 13000}},
+        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1350, "fri_sat": 2700, "sun": 2200, "week": 13000}},
         {"type": "2 BR Presidential", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 2650, "fri_sat": 5300, "sun": 4800, "week": 26000}},
         {"type": "2 BR Presidential Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2850, "fri_sat": 5700, "sun": 5200, "week": 28000}},
         {"type": "3 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1500, "fri_sat": 3000, "sun": 2500, "week": 14500}},

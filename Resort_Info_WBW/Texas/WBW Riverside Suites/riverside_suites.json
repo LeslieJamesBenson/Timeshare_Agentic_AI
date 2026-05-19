@@ -42,7 +42,7 @@
       },
       "rooms": [
         {"type": "Studio", "features": {"kitchen": "partial"}, "credits": {"mon_thur": 300, "fri_sat": 700, "sun": 400, "week": 3000}},
-        {"type": "1 BR", "features": {"kitchen": "partial"}, "credits": {"mon_thur": 450, "fri_sat": 825, "sun": 500, "week": 4000}},
+        {"type": "1 BR", "features": {"kitchen": "partial"}, "credits": {"mon_thur": 450, "fri_sat": 825, "sun": 550, "week": 4000}},
         {"type": "1 BR Deluxe", "features": {"kitchen": "partial"}, "credits": {"mon_thur": 550, "fri_sat": 1100, "sun": 600, "week": 5000}},
         {"type": "2 BR", "features": {"kitchen": "partial"}, "credits": {"mon_thur": 650, "fri_sat": 1300, "sun": 800, "week": 6000}},
         {"type": "2 BR Deluxe", "features": {"kitchen": "partial"}, "credits": {"mon_thur": 750, "fri_sat": 1500, "sun": 1000, "week": 7000}}

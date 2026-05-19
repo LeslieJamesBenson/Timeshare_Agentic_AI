@@ -11,7 +11,7 @@
         "2027": ["Mar 12 - Sep 30", "Nov 12 - Dec 2", "Dec 17 - Dec 31"]
       },
       "rooms": [
-        {"type": "Studio Deluxe Cottage", "features": {"kitchen": "mini"}, "credits": {"mon_thur": 1650, "fri_sat": 3300, "sun": 2800, "week": 15000}},
+        {"type": "Studio Deluxe Cottage", "features": {"kitchen": "mini"}, "credits": {"mon_thur": 1650, "fri_sat": 3300, "sun": 2800, "week": 16000}},
         {"type": "1 BR Cottage", "features": {"kitchen": "mini"}, "credits": {"mon_thur": 1150, "fri_sat": 2300, "sun": 1800, "week": 11000}},
         {"type": "1 BR Suite", "features": {"kitchen": "mini", "accessible": true}, "credits": {"mon_thur": 1450, "fri_sat": 2900, "sun": 2400, "week": 14000}},
         {"type": "1 BR", "features": {"kitchen": "mini"}, "credits": {"mon_thur": 1550, "fri_sat": 3100, "sun": 2600, "week": 15000}},
@@ -29,7 +29,7 @@
       "rooms": [
         {"type": "Studio Deluxe Cottage", "features": {"kitchen": "mini"}, "credits": {"mon_thur": 1450, "fri_sat": 2900, "sun": 2400, "week": 14000}},
         {"type": "1 BR Cottage", "features": {"kitchen": "mini"}, "credits": {"mon_thur": 950, "fri_sat": 1900, "sun": 1400, "week": 9000}},
-        {"type": "1 BR Suite", "features": {"kitchen": "mini", "accessible": true}, "credits": {"mon_thur": 1250, "fri_sat": 2500, "sun": 2100, "week": 12000}},
+        {"type": "1 BR Suite", "features": {"kitchen": "mini", "accessible": true}, "credits": {"mon_thur": 1250, "fri_sat": 2500, "sun": 2000, "week": 12000}},
         {"type": "1 BR", "features": {"kitchen": "mini"}, "credits": {"mon_thur": 1350, "fri_sat": 2700, "sun": 2200, "week": 13000}},
         {"type": "2 BR Presidential", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2450, "fri_sat": 4900, "sun": 4400, "week": 24000}},
         {"type": "3 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2050, "fri_sat": 4100, "sun": 3600, "week": 20000}}

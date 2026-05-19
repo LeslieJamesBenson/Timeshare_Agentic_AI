@@ -24,7 +24,7 @@
       },
       "rooms": [
         {"type": "2 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 875, "fri_sat": 1750, "sun": 1000, "week": 8000}},
-        {"type": "2 BR Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1000, "fri_sat": 1900, "sun": 1100, "week": 9000}}
+        {"type": "2 BR Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1000, "fri_sat": 1950, "sun": 1100, "week": 9000}}
       ]
     },
     {

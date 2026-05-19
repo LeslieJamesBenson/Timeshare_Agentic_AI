@@ -25,7 +25,7 @@
       },
       "rooms": [
         {"type": "1 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 750, "fri_sat": 1500, "sun": 1000, "week": 7000}},
-        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 850, "fri_sat": 1700, "sun": 1100, "week": 8000}},
+        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 850, "fri_sat": 1700, "sun": 1200, "week": 8000}},
         {"type": "3 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 950, "fri_sat": 1900, "sun": 1400, "week": 9000}}
       ]
     },
@@ -34,7 +34,7 @@
       "meaning": "Off-peak - not the best time to visit",
       "date_ranges": {"2026": ["Oct 30 - Nov 12"], "2027": ["Oct 29 - Nov 11"]},
       "rooms": [
-        {"type": "1 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 450, "fri_sat": 900, "sun": 500, "week": 4000}},
+        {"type": "1 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 450, "fri_sat": 900, "sun": 400, "week": 4000}},
         {"type": "2 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 650, "fri_sat": 1300, "sun": 800, "week": 6000}},
         {"type": "3 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 750, "fri_sat": 1500, "sun": 1000, "week": 7000}}
       ]

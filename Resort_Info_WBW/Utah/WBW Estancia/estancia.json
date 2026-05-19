@@ -11,7 +11,7 @@
         "2027": ["Mar 12 - Aug 26", "Nov 19 - Dec 31"]
       },
       "rooms": [
-        {"type": "3 BR Penthouse", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 2050, "fri_sat": 3900, "sun": 2200, "week": 18000}},
+        {"type": "3 BR Penthouse", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 2000, "fri_sat": 3900, "sun": 2200, "week": 18000}},
         {"type": "3 BR Presidential", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 3050, "fri_sat": 6100, "sun": 5600, "week": 30000}},
         {"type": "4 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2050, "fri_sat": 4100, "sun": 3600, "week": 20000}},
         {"type": "4 BR Presidential", "features": {"kitchen": "full"}, "credits": {"mon_thur": 3550, "fri_sat": 7100, "sun": 6600, "week": 35000}}
@@ -27,7 +27,7 @@
       "rooms": [
         {"type": "3 BR Penthouse", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1750, "fri_sat": 3450, "sun": 2100, "week": 16000}},
         {"type": "3 BR Presidential", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 2850, "fri_sat": 5700, "sun": 5200, "week": 28000}},
-        {"type": "4 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1850, "fri_sat": 3700, "sun": 3600, "week": 18000}},
+        {"type": "4 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1850, "fri_sat": 3700, "sun": 3200, "week": 18000}},
         {"type": "4 BR Presidential", "features": {"kitchen": "full"}, "credits": {"mon_thur": 3350, "fri_sat": 6700, "sun": 6200, "week": 33000}}
       ]
     },
@@ -38,8 +38,8 @@
       "rooms": [
         {"type": "3 BR Penthouse", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1550, "fri_sat": 3050, "sun": 1700, "week": 14000}},
         {"type": "3 BR Presidential", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 2650, "fri_sat": 5300, "sun": 4800, "week": 26000}},
-        {"type": "4 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1550, "fri_sat": 3300, "sun": 2800, "week": 16000}},
-        {"type": "4 BR Presidential", "features": {"kitchen": "full"}, "credits": {"mon_thur": 3050, "fri_sat": 6300, "sun": 5800, "week": 30000}}
+        {"type": "4 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1650, "fri_sat": 3300, "sun": 2800, "week": 16000}},
+        {"type": "4 BR Presidential", "features": {"kitchen": "full"}, "credits": {"mon_thur": 3150, "fri_sat": 6300, "sun": 5800, "week": 31000}}
       ]
     }
   ]

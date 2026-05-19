@@ -25,7 +25,7 @@
       },
       "rooms": [
         {"type": "2 BR Deluxe", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1200, "fri_sat": 2400, "sun": 1900, "week": 11500}},
-        {"type": "3 BR Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1350, "fri_sat": 2700, "sun": 2100, "week": 13000}},
+        {"type": "3 BR Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1350, "fri_sat": 2700, "sun": 2200, "week": 13000}},
         {"type": "3 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1850, "fri_sat": 3700, "sun": 3200, "week": 18000}}
       ]
     },
@@ -38,7 +38,7 @@
       },
       "rooms": [
         {"type": "2 BR Deluxe", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1000, "fri_sat": 2000, "sun": 1500, "week": 9500}},
-        {"type": "3 BR Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1100, "fri_sat": 2300, "sun": 1800, "week": 11000}},
+        {"type": "3 BR Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1150, "fri_sat": 2300, "sun": 1800, "week": 11000}},
         {"type": "3 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1650, "fri_sat": 3300, "sun": 2800, "week": 16000}}
       ]
     }

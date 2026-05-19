@@ -25,7 +25,7 @@
       },
       "rooms": [
         {"type": "1 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 700, "fri_sat": 1125, "sun": 950, "week": 6000}},
-        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1000, "fri_sat": 1450, "sun": 1100, "week": 7000}},
+        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1000, "fri_sat": 1450, "sun": 1100, "week": 8000}},
         {"type": "3 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1250, "fri_sat": 1800, "sun": 1400, "week": 10000}}
       ]
     },

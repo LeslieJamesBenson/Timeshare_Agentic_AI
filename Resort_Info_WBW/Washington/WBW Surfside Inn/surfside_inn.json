@@ -36,7 +36,7 @@
       },
       "rooms": [
         {"type": "1 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 300, "fri_sat": 700, "sun": 400, "week": 3000}},
-        {"type": "2 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 700, "fri_sat": 925, "sun": 750, "week": 5000}}
+        {"type": "2 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 600, "fri_sat": 925, "sun": 750, "week": 5000}}
       ]
     }
   ]

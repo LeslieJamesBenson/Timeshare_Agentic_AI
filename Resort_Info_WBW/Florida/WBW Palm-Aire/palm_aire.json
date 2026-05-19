@@ -47,8 +47,8 @@
         {"type": "Studio Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 600, "fri_sat": 1000, "sun": 600, "week": 5000}},
         {"type": "1 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 550, "fri_sat": 1000, "sun": 600, "week": 4800}},
         {"type": "1 BR Deluxe", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 550, "fri_sat": 1050, "sun": 700, "week": 5000}},
-        {"type": "2 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 900, "fri_sat": 1500, "sun": 900, "week": 7500}},
-        {"type": "2 BR Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 900, "fri_sat": 1800, "sun": 1200, "week": 8200}}
+        {"type": "2 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 900, "fri_sat": 1500, "sun": 1200, "week": 7800}},
+        {"type": "2 BR Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 900, "fri_sat": 1800, "sun": 1600, "week": 8800}}
       ]
     }
   ]
