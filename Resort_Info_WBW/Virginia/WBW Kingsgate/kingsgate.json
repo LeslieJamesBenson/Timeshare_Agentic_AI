@@ -1,0 +1,43 @@
+{
+  "resort": "Kingsgate",
+  "state": "Virginia",
+  "source": "CreditChart.png",
+  "seasons": [
+    {
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "date_ranges": {
+        "2026": ["Jan 1", "Jun 5 - Sep 3", "Dec 18 - Dec 31"],
+        "2027": ["Jun 4 - Sep 2", "Dec 17 - Dec 31"]
+      },
+      "rooms": [
+        {"type": "1 BR Suite", "features": {"kitchen": "full"}, "credits": {"mon_thur": 850, "fri_sat": 1700, "sun": 1200, "week": 8000}},
+        {"type": "2 BR Suite", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1150, "fri_sat": 2300, "sun": 1800, "week": 11000}}
+      ]
+    },
+    {
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "date_ranges": {
+        "2026": ["Apr 10 - Jun 4", "Sep 4 - Nov 26"],
+        "2027": ["Apr 9 - Jun 3", "Sep 3 - Nov 25"]
+      },
+      "rooms": [
+        {"type": "1 BR Suite", "features": {"kitchen": "full"}, "credits": {"mon_thur": 650, "fri_sat": 1300, "sun": 800, "week": 6000}},
+        {"type": "2 BR Suite", "features": {"kitchen": "full"}, "credits": {"mon_thur": 950, "fri_sat": 1900, "sun": 1400, "week": 9000}}
+      ]
+    },
+    {
+      "name": "slow",
+      "meaning": "Off-peak - not the best time to visit",
+      "date_ranges": {
+        "2026": ["Jan 2 - Apr 9", "Nov 27 - Dec 17"],
+        "2027": ["Jan 1 - Apr 8", "Nov 26 - Dec 16"]
+      },
+      "rooms": [
+        {"type": "1 BR Suite", "features": {"kitchen": "full"}, "credits": {"mon_thur": 450, "fri_sat": 825, "sun": 550, "week": 4000}},
+        {"type": "2 BR Suite", "features": {"kitchen": "full"}, "credits": {"mon_thur": 750, "fri_sat": 1500, "sun": 1000, "week": 7000}}
+      ]
+    }
+  ]
+}

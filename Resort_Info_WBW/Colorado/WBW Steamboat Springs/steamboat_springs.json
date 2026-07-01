@@ -1,0 +1,67 @@
+{
+  "resort": "Steamboat Springs",
+  "state": "Colorado",
+  "source": "CreditChart.png",
+  "seasons": [
+    {
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "date_ranges": {
+        "2026": ["Jan 1 - Mar 19", "May 1 - Sep 3", "Oct 30 - Dec 31"],
+        "2027": ["Jan 1 - Mar 18", "Apr 30 - Sep 2", "Oct 29 - Dec 31"]
+      },
+      "rooms": [
+        {"type": "1 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 875, "fri_sat": 1750, "sun": 1000, "week": 8000}},
+        {"type": "1 BR Deluxe", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1150, "fri_sat": 2300, "sun": 1800, "week": 11000}},
+        {"type": "2 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1100, "fri_sat": 2200, "sun": 1200, "week": 10000}},
+        {"type": "2 BR Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1450, "fri_sat": 2900, "sun": 2400, "week": 14000}},
+        {"type": "2 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2050, "fri_sat": 4100, "sun": 3600, "week": 20000}},
+        {"type": "2 BR Presidential", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2650, "fri_sat": 5300, "sun": 4800, "week": 26000}},
+        {"type": "3 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1300, "fri_sat": 2600, "sun": 1600, "week": 12000}},
+        {"type": "3 BR Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1650, "fri_sat": 3300, "sun": 2800, "week": 16000}},
+        {"type": "3 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2250, "fri_sat": 4500, "sun": 4000, "week": 22000}},
+        {"type": "3 BR Presidential", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 3050, "fri_sat": 6100, "sun": 5600, "week": 30000}}
+      ]
+    },
+    {
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "date_ranges": {
+        "2026": ["Mar 20 - Apr 30", "Sep 4 - Oct 1"],
+        "2027": ["Mar 19 - Apr 29", "Sep 3 - Sep 30"]
+      },
+      "rooms": [
+        {"type": "1 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 675, "fri_sat": 1300, "sun": 700, "week": 6000}},
+        {"type": "1 BR Deluxe", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 950, "fri_sat": 1900, "sun": 1400, "week": 9000}},
+        {"type": "2 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 775, "fri_sat": 1550, "sun": 800, "week": 7000}},
+        {"type": "2 BR Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1250, "fri_sat": 2500, "sun": 2000, "week": 12000}},
+        {"type": "2 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1850, "fri_sat": 3700, "sun": 3200, "week": 18000}},
+        {"type": "2 BR Presidential", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2450, "fri_sat": 4900, "sun": 4400, "week": 24000}},
+        {"type": "3 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 875, "fri_sat": 1750, "sun": 1000, "week": 8000}},
+        {"type": "3 BR Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1450, "fri_sat": 2900, "sun": 2400, "week": 14000}},
+        {"type": "3 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2050, "fri_sat": 4100, "sun": 3600, "week": 20000}},
+        {"type": "3 BR Presidential", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 2850, "fri_sat": 5700, "sun": 5200, "week": 28000}}
+      ]
+    },
+    {
+      "name": "slow",
+      "meaning": "Off-peak - not the best time to visit",
+      "date_ranges": {
+        "2026": ["Oct 2 - Oct 29"],
+        "2027": ["Oct 1 - Oct 28"]
+      },
+      "rooms": [
+        {"type": "1 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 425, "fri_sat": 900, "sun": 500, "week": 4000}},
+        {"type": "1 BR Deluxe", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 750, "fri_sat": 1500, "sun": 1000, "week": 7000}},
+        {"type": "2 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 550, "fri_sat": 1100, "sun": 600, "week": 5000}},
+        {"type": "2 BR Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1050, "fri_sat": 2100, "sun": 1600, "week": 10000}},
+        {"type": "2 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1650, "fri_sat": 3300, "sun": 2800, "week": 16000}},
+        {"type": "2 BR Presidential", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2250, "fri_sat": 4500, "sun": 4000, "week": 22000}},
+        {"type": "3 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 675, "fri_sat": 1300, "sun": 700, "week": 6000}},
+        {"type": "3 BR Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1250, "fri_sat": 2500, "sun": 2000, "week": 12000}},
+        {"type": "3 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1850, "fri_sat": 3700, "sun": 3200, "week": 18000}},
+        {"type": "3 BR Presidential", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 2650, "fri_sat": 5300, "sun": 4800, "week": 26000}}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "resort": "Long Beach",
+  "state": "Washington",
+  "source": "CreditChart.png",
+  "seasons": [
+    {
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "date_ranges": {
+        "2026": ["Jan 1", "Feb 27 - Sep 17", "Nov 20 - Dec 3", "Dec 18 - Dec 31"],
+        "2027": ["Feb 26 - Sep 16", "Nov 19 - Dec 2", "Dec 17 - Dec 31"]
+      },
+      "rooms": [
+        {"type": "Studio", "features": {"kitchen": "mini", "accessible": true}, "credits": {"mon_thur": 1100, "fri_sat": 2200, "sun": 1700, "week": 10500}},
+        {"type": "1 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1200, "fri_sat": 2400, "sun": 1900, "week": 11500}},
+        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1350, "fri_sat": 2700, "sun": 2200, "week": 13000}},
+        {"type": "3 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1550, "fri_sat": 3100, "sun": 2600, "week": 15000}},
+        {"type": "3 BR Presidential", "features": {"kitchen": "full"}, "credits": {"mon_thur": 3000, "fri_sat": 6000, "sun": 5500, "week": 29500}}
+      ]
+    },
+    {
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "date_ranges": {
+        "2026": ["Jan 2 - Feb 26", "Sep 18 - Nov 19"],
+        "2027": ["Jan 1 - Feb 25", "Sep 17 - Nov 11"]
+      },
+      "rooms": [
+        {"type": "Studio", "features": {"kitchen": "mini", "accessible": true}, "credits": {"mon_thur": 900, "fri_sat": 1800, "sun": 1300, "week": 8500}},
+        {"type": "1 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1000, "fri_sat": 2000, "sun": 1500, "week": 9500}},
+        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1200, "fri_sat": 2400, "sun": 1900, "week": 11500}},
+        {"type": "3 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1400, "fri_sat": 2800, "sun": 2300, "week": 13500}},
+        {"type": "3 BR Presidential", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2800, "fri_sat": 5600, "sun": 5100, "week": 27500}}
+      ]
+    },
+    {
+      "name": "slow",
+      "meaning": "Off-peak - not the best time to visit",
+      "date_ranges": {"2026": ["Dec 4 - Dec 17"], "2027": ["Dec 3 - Dec 16"]},
+      "rooms": [
+        {"type": "Studio", "features": {"kitchen": "mini", "accessible": true}, "credits": {"mon_thur": 650, "fri_sat": 1300, "sun": 800, "week": 6000}},
+        {"type": "1 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 750, "fri_sat": 1500, "sun": 1000, "week": 7000}},
+        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 850, "fri_sat": 1700, "sun": 1200, "week": 8000}},
+        {"type": "3 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 950, "fri_sat": 1900, "sun": 1400, "week": 9000}},
+        {"type": "3 BR Presidential", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2350, "fri_sat": 4700, "sun": 4200, "week": 23000}}
+      ]
+    }
+  ]
+}

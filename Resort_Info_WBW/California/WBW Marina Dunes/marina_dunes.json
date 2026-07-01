@@ -1,0 +1,22 @@
+{
+  "resort": "Marina Dunes",
+  "state": "California",
+  "source": "CreditChart.png",
+  "seasons": [
+    {
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "date_ranges": {
+        "2026": ["Jan 1 - Dec 31"],
+        "2027": ["Jan 1 - Dec 31"]
+      },
+      "rooms": [
+        {
+          "type": "2 BR",
+          "features": {"kitchen": "full", "accessible": true},
+          "credits": {"mon_thur": 1100, "fri_sat": 2200, "sun": 1200, "week": 10000}
+        }
+      ]
+    }
+  ]
+}

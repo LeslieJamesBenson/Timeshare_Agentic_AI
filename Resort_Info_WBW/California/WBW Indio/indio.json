@@ -1,0 +1,58 @@
+{
+  "resort": "Indio",
+  "state": "California",
+  "source": "CreditChart.png",
+  "seasons": [
+    {
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "date_ranges": {
+        "2026": ["Jan 1 - Jun 4", "Aug 28 - Dec 31"],
+        "2027": ["Jan 1 - Jun 3", "Aug 27 - Dec 31"]
+      },
+      "rooms": [
+        {"type": "Studio", "features": {"kitchen": "mini", "accessible": true}, "credits": {"mon_thur": 775, "fri_sat": 1550, "sun": 800, "week": 7000}},
+        {"type": "1 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1000, "fri_sat": 1950, "sun": 1100, "week": 9000}},
+        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1200, "fri_sat": 2450, "sun": 1300, "week": 11000}},
+        {"type": "3 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1425, "fri_sat": 2875, "sun": 1550, "week": 13000}},
+        {"type": "3 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2000, "fri_sat": 3900, "sun": 2200, "week": 18000}},
+        {"type": "3 BR Presidential", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2600, "fri_sat": 5200, "sun": 3200, "week": 24000}},
+        {"type": "4 BR Presidential", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 3300, "fri_sat": 6600, "sun": 3600, "week": 30000}}
+      ]
+    },
+    {
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "date_ranges": {
+        "2026": ["Jun 5 - Jul 2", "Jul 17 - Aug 27"],
+        "2027": ["Jun 4 - Jul 1", "Jul 16 - Aug 26"]
+      },
+      "rooms": [
+        {"type": "Studio", "features": {"kitchen": "mini", "accessible": true}, "credits": {"mon_thur": 550, "fri_sat": 1100, "sun": 600, "week": 5000}},
+        {"type": "1 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 775, "fri_sat": 1550, "sun": 800, "week": 7000}},
+        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1000, "fri_sat": 1950, "sun": 1100, "week": 9000}},
+        {"type": "3 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1200, "fri_sat": 2450, "sun": 1300, "week": 11000}},
+        {"type": "3 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1750, "fri_sat": 3450, "sun": 2100, "week": 16000}},
+        {"type": "3 BR Presidential", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2400, "fri_sat": 4800, "sun": 2800, "week": 22000}},
+        {"type": "4 BR Presidential", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 3100, "fri_sat": 6100, "sun": 3400, "week": 28000}}
+      ]
+    },
+    {
+      "name": "slow",
+      "meaning": "Off-peak - not the best time to visit",
+      "date_ranges": {
+        "2026": ["Jul 3 - Jul 16"],
+        "2027": ["Jul 2 - Jul 15"]
+      },
+      "rooms": [
+        {"type": "Studio", "features": {"kitchen": "mini", "accessible": true}, "credits": {"mon_thur": 425, "fri_sat": 900, "sun": 500, "week": 4000}},
+        {"type": "1 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 550, "fri_sat": 1100, "sun": 600, "week": 5000}},
+        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 775, "fri_sat": 1550, "sun": 800, "week": 7000}},
+        {"type": "3 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1000, "fri_sat": 1950, "sun": 1100, "week": 9000}},
+        {"type": "3 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1550, "fri_sat": 3050, "sun": 1700, "week": 14000}},
+        {"type": "3 BR Presidential", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2200, "fri_sat": 4400, "sun": 2400, "week": 20000}},
+        {"type": "4 BR Presidential", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 2600, "fri_sat": 5200, "sun": 3200, "week": 24000}}
+      ]
+    }
+  ]
+}

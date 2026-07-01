@@ -1,0 +1,49 @@
+{
+  "resort": "Bear Lake",
+  "state": "Utah",
+  "source": "CreditChart.png",
+  "seasons": [
+    {
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "date_ranges": {
+        "2026": ["Jan 1", "Feb 6 - Feb 19", "May 15 - Sep 10", "Nov 13 - Dec 31"],
+        "2027": ["Feb 5 - Feb 18", "May 14 - Sep 9", "Nov 12 - Dec 31"]
+      },
+      "rooms": [
+        {"type": "1 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 875, "fri_sat": 1750, "sun": 1000, "week": 8000}},
+        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 1100, "fri_sat": 2200, "sun": 1200, "week": 10000}},
+        {"type": "3 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1300, "fri_sat": 2600, "sun": 1600, "week": 12000}},
+        {"type": "3 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2000, "fri_sat": 3900, "sun": 2200, "week": 18000}}
+      ]
+    },
+    {
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "date_ranges": {
+        "2026": ["Jan 16 - Feb 5", "Feb 20 - May 14", "Sep 11 - Oct 1"],
+        "2027": ["Jan 15 - Feb 4", "Feb 19 - May 13", "Sep 10 - Sep 30"]
+      },
+      "rooms": [
+        {"type": "1 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 675, "fri_sat": 1300, "sun": 700, "week": 6000}},
+        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 775, "fri_sat": 1550, "sun": 800, "week": 7000}},
+        {"type": "3 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 875, "fri_sat": 1750, "sun": 1000, "week": 8000}},
+        {"type": "3 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1750, "fri_sat": 3450, "sun": 2100, "week": 16000}}
+      ]
+    },
+    {
+      "name": "slow",
+      "meaning": "Off-peak - not the best time to visit",
+      "date_ranges": {
+        "2026": ["Jan 2 - Jan 15", "Oct 2 - Nov 12"],
+        "2027": ["Jan 1 - Jan 14", "Oct 1 - Nov 11"]
+      },
+      "rooms": [
+        {"type": "1 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 425, "fri_sat": 900, "sun": 500, "week": 4000}},
+        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true, "multi_phase": true}, "credits": {"mon_thur": 550, "fri_sat": 1100, "sun": 600, "week": 5000}},
+        {"type": "3 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 675, "fri_sat": 1300, "sun": 700, "week": 6000}},
+        {"type": "3 BR Penthouse", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1550, "fri_sat": 3050, "sun": 1700, "week": 14000}}
+      ]
+    }
+  ]
+}

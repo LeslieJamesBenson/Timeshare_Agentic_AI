@@ -1,0 +1,17 @@
+{
+  "resort": "Tropicana Avenue",
+  "state": "Nevada",
+  "source": "CreditChart.png",
+  "seasons": [
+    {
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "date_ranges": {"2026": ["Jan 1 - Dec 31"], "2027": ["Jan 1 - Dec 31"]},
+      "rooms": [
+        {"type": "1 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1300, "fri_sat": 1900, "sun": 1500, "week": 10500}},
+        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1575, "fri_sat": 2150, "sun": 1900, "week": 12500}},
+        {"type": "2 BR Deluxe", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1850, "fri_sat": 2475, "sun": 2150, "week": 14500}}
+      ]
+    }
+  ]
+}

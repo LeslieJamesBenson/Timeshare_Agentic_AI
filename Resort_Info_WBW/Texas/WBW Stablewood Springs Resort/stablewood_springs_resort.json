@@ -1,0 +1,61 @@
+{
+  "resort": "Stablewood Springs Resort",
+  "state": "Texas",
+  "source": "CreditChart.png",
+  "seasons": [
+    {
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "date_ranges": {
+        "2026": ["Jan 1", "Mar 13 - Aug 27", "Sep 25 - Oct 8", "Nov 20 - Dec 3", "Dec 17 - Dec 31"],
+        "2027": ["Mar 12 - Aug 26", "Sep 24 - Oct 7", "Nov 19 - Dec 2", "Dec 17 - Dec 31"]
+      },
+      "rooms": [
+        {"type": "Studio Presidential", "features": {"kitchen": "mini"}, "credits": {"mon_thur": 1650, "fri_sat": 3300, "sun": 2800, "week": 16000}},
+        {"type": "1 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1150, "fri_sat": 2300, "sun": 1800, "week": 11000}},
+        {"type": "1 BR Presidential", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 2250, "fri_sat": 4500, "sun": 4000, "week": 22000}},
+        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1350, "fri_sat": 2700, "sun": 2200, "week": 13000}},
+        {"type": "2 BR Presidential", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 2650, "fri_sat": 5300, "sun": 4800, "week": 26000}},
+        {"type": "2 BR Presidential Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2850, "fri_sat": 5700, "sun": 5200, "week": 28000}},
+        {"type": "3 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1500, "fri_sat": 3000, "sun": 2500, "week": 14500}},
+        {"type": "3 BR Presidential", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 3050, "fri_sat": 6100, "sun": 5600, "week": 30000}}
+      ]
+    },
+    {
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "date_ranges": {
+        "2026": ["Feb 6 - Mar 12", "Aug 28 - Sep 24", "Oct 9 - Nov 19"],
+        "2027": ["Feb 5 - Mar 11", "Aug 27 - Sep 23", "Oct 8 - Nov 18"]
+      },
+      "rooms": [
+        {"type": "Studio Presidential", "features": {"kitchen": "mini"}, "credits": {"mon_thur": 1450, "fri_sat": 2900, "sun": 2400, "week": 14000}},
+        {"type": "1 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 950, "fri_sat": 1900, "sun": 1400, "week": 9000}},
+        {"type": "1 BR Presidential", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 2050, "fri_sat": 4100, "sun": 3600, "week": 20000}},
+        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1150, "fri_sat": 2300, "sun": 1800, "week": 11000}},
+        {"type": "2 BR Presidential", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 2450, "fri_sat": 4900, "sun": 4400, "week": 24000}},
+        {"type": "2 BR Presidential Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2650, "fri_sat": 5300, "sun": 4800, "week": 26000}},
+        {"type": "3 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1300, "fri_sat": 2600, "sun": 2100, "week": 12500}},
+        {"type": "3 BR Presidential", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 2850, "fri_sat": 5700, "sun": 5200, "week": 28000}}
+      ]
+    },
+    {
+      "name": "slow",
+      "meaning": "Off-peak - not the best time to visit",
+      "date_ranges": {
+        "2026": ["Jan 2 - Feb 5", "Dec 4 - Dec 17"],
+        "2027": ["Jan 1 - Feb 4", "Dec 3 - Dec 16"]
+      },
+      "rooms": [
+        {"type": "Studio Presidential", "features": {"kitchen": "mini"}, "credits": {"mon_thur": 1250, "fri_sat": 2500, "sun": 2000, "week": 12000}},
+        {"type": "1 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 750, "fri_sat": 1500, "sun": 1000, "week": 7000}},
+        {"type": "1 BR Presidential", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1850, "fri_sat": 3700, "sun": 3200, "week": 18000}},
+        {"type": "2 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 950, "fri_sat": 1900, "sun": 1400, "week": 9000}},
+        {"type": "2 BR Presidential", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 2250, "fri_sat": 4500, "sun": 4000, "week": 22000}},
+        {"type": "2 BR Presidential Deluxe", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2450, "fri_sat": 4900, "sun": 4400, "week": 24000}},
+        {"type": "3 BR", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 1100, "fri_sat": 2200, "sun": 1700, "week": 10500}},
+        {"type": "3 BR Presidential", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 2650, "fri_sat": 5300, "sun": 4800, "week": 26000}}
+      ]
+    }
+  ]
+}

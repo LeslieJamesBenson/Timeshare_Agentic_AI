@@ -1,0 +1,43 @@
+{
+  "resort": "Mariner Village",
+  "state": "Washington",
+  "source": "CreditChart.png",
+  "seasons": [
+    {
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "date_ranges": {
+        "2026": ["Jan 1", "Feb 13 - Feb 19", "Mar 20 - Sep 16", "Nov 20 - Dec 3", "Dec 18 - Dec 31"],
+        "2027": ["Feb 12 - Feb 18", "Mar 19 - Sep 15", "Nov 19 - Dec 2", "Dec 17 - Dec 31"]
+      },
+      "rooms": [
+        {"type": "1 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1000, "fri_sat": 1450, "sun": 1100, "week": 8000}},
+        {"type": "2 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 1250, "fri_sat": 1800, "sun": 1400, "week": 10000}}
+      ]
+    },
+    {
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "date_ranges": {
+        "2026": ["Jan 2 - Feb 12", "Feb 20 - Mar 19", "Sep 18 - Nov 5"],
+        "2027": ["Jan 1 - Feb 11", "Feb 19 - Mar 18", "Sep 17 - Nov 4"]
+      },
+      "rooms": [
+        {"type": "1 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 700, "fri_sat": 1125, "sun": 950, "week": 6000}},
+        {"type": "2 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 850, "fri_sat": 1250, "sun": 1100, "week": 7000}}
+      ]
+    },
+    {
+      "name": "slow",
+      "meaning": "Off-peak - not the best time to visit",
+      "date_ranges": {
+        "2026": ["Nov 6 - Nov 19", "Dec 4 - Dec 17"],
+        "2027": ["Nov 5 - Nov 18", "Dec 3 - Dec 16"]
+      },
+      "rooms": [
+        {"type": "1 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 300, "fri_sat": 700, "sun": 400, "week": 3000}},
+        {"type": "2 BR", "features": {"kitchen": "full"}, "credits": {"mon_thur": 600, "fri_sat": 925, "sun": 750, "week": 5000}}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "resort": "Portland Waterfront Park",
+  "state": "Oregon",
+  "source": "CreditChart.png",
+  "seasons": [
+    {
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "date_ranges": {
+        "2026": ["Jan 1", "Feb 6 - Oct 15", "Nov 20 - Dec 3", "Dec 18 - Dec 31"],
+        "2027": ["Feb 5 - Oct 14", "Nov 19 - Dec 2", "Dec 17 - Dec 31"]
+      },
+      "rooms": [
+        {"type": "Studio", "features": {"kitchen": "mini"}, "credits": {"mon_thur": 1050, "fri_sat": 2100, "sun": 1600, "week": 10000}},
+        {"type": "Studio Deluxe", "features": {"kitchen": "mini", "accessible": true}, "credits": {"mon_thur": 1250, "fri_sat": 2500, "sun": 2000, "week": 12000}},
+        {"type": "1 BR", "features": {"kitchen": "mini"}, "credits": {"mon_thur": 1350, "fri_sat": 2700, "sun": 2200, "week": 13000}},
+        {"type": "1 BR Penthouse", "features": {"kitchen": "mini", "accessible": true}, "credits": {"mon_thur": 1550, "fri_sat": 3100, "sun": 2600, "week": 15000}},
+        {"type": "1 BR Presidential", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2450, "fri_sat": 4900, "sun": 4400, "week": 24000}},
+        {"type": "2 BR Presidential", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 2850, "fri_sat": 5700, "sun": 5200, "week": 28000}}
+      ]
+    },
+    {
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "date_ranges": {
+        "2026": ["Jan 2 - Feb 5", "Oct 16 - Nov 19", "Dec 4 - Dec 17"],
+        "2027": ["Jan 1 - Feb 4", "Oct 15 - Nov 18", "Dec 3 - Dec 16"]
+      },
+      "rooms": [
+        {"type": "Studio", "features": {"kitchen": "mini"}, "credits": {"mon_thur": 850, "fri_sat": 1700, "sun": 1200, "week": 8000}},
+        {"type": "Studio Deluxe", "features": {"kitchen": "mini", "accessible": true}, "credits": {"mon_thur": 1050, "fri_sat": 2100, "sun": 1600, "week": 10000}},
+        {"type": "1 BR", "features": {"kitchen": "mini"}, "credits": {"mon_thur": 1150, "fri_sat": 2300, "sun": 1800, "week": 11000}},
+        {"type": "1 BR Penthouse", "features": {"kitchen": "mini", "accessible": true}, "credits": {"mon_thur": 1350, "fri_sat": 2700, "sun": 2200, "week": 13000}},
+        {"type": "1 BR Presidential", "features": {"kitchen": "full"}, "credits": {"mon_thur": 2250, "fri_sat": 4500, "sun": 4000, "week": 22000}},
+        {"type": "2 BR Presidential", "features": {"kitchen": "full", "accessible": true}, "credits": {"mon_thur": 2650, "fri_sat": 5300, "sun": 4800, "week": 26000}}
+      ]
+    }
+  ]
+}
