@@ -2,6 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
+const { loadResorts } = require('./lib/resortData');
+const { planTrip } = require('./lib/tripPlanner');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -12,6 +14,14 @@ if (!ANTHROPIC_API_KEY) {
   process.exit(1);
 }
 
+// Real WorldMark dataset (100 resorts) — loaded and normalized once at startup.
+// Powers the trip planner. See lib/resortData.js.
+const resortDataset = loadResorts();
+if (resortDataset.errors.length) {
+  console.warn(`Resort data loaded with ${resortDataset.errors.length} warning(s):`);
+  resortDataset.errors.slice(0, 5).forEach(e => console.warn('  ' + e));
+}
+const REGIONS = [...new Set(resortDataset.resorts.map(r => r.region))].sort();
 
 // check availability of a hardcoded resort list for testing purposes
 //TODO: replace with live availability data from WBW database
@@ -22,6 +32,9 @@ const availabilityData = JSON.parse(
 app.use(express.json());
 app.use(express.static(path.join(__dirname)));
 app.use('/public', express.static(path.join(__dirname, 'public')));
+
+// Quiet the browser's automatic favicon request (avoids noisy 404s).
+app.get('/favicon.ico', (req, res) => res.status(204).end());
 
 function checkAvailability({ resort, checkIn, checkOut, unitType }) {
   const resortData = availabilityData.resorts.find(r =>
@@ -169,30 +182,104 @@ app.post('/api/chat', async (req, res) => {
   }
 });
 
+// ── TRIP PLANNER ────────────────────────────────────────────────────────────
+// Direct, deterministic endpoint used by the "Plan a Trip" form in the rep
+// tool. Runs the engine with NO AI call, so it works (and is testable) even
+// without an Anthropic key. Request body = planTrip() request object.
+app.post('/api/plan-trip', (req, res) => {
+  try {
+    const result = planTrip(req.body || {}, resortDataset);
+    // 400 only for malformed input; a valid query with no matches is 200 ok:false.
+    const status = result.ok ? 200 : (result.errorType === 'validation' ? 400 : 200);
+    res.status(status).json(result);
+  } catch (err) {
+    console.error('plan-trip error:', err);
+    res.status(500).json({ ok: false, error: 'Trip planning failed' });
+  }
+});
+
+// Region + resort catalog for populating the planner form dropdowns.
+app.get('/api/regions', (req, res) => {
+  res.json({
+    regions: REGIONS,
+    resorts: resortDataset.resorts
+      .map(r => ({ id: r.id, name: r.name, state: r.state, region: r.region }))
+      .sort((a, b) => a.name.localeCompare(b.name))
+  });
+});
+
 // ── SALES AGENT ENDPOINT ────────────────────────────────────────────────────
-// Internal rep-facing tool — not owner-facing. No tool use needed here;
-// the agent is purely conversational with a compliance-guardrailed system prompt.
+// Internal rep-facing tool — not owner-facing. The agent is conversational with
+// a compliance-guardrailed system prompt AND can call the trip-planner tool so
+// reps can plan trips in natural language during a call.
+const salesTools = [
+  {
+    name: 'plan_trip',
+    description: 'Plan a WorldMark trip for an owner and get ranked options with exact credit costs and Personal Choice cash-equivalent totals. Use whenever the rep wants to build travel options: specific or flexible dates, a specific resort/state/region or an open "suggest somewhere" request, and a party size. Returns real credit costs from the WorldMark charts.',
+    input_schema: {
+      type: 'object',
+      properties: {
+        locationText: { type: 'string', description: 'Resort name, city, or state to search (e.g. "Seaside", "Hawaii", "Birch Bay"). Omit to suggest anywhere.' },
+        region: { type: 'string', description: 'Optional region filter. One of: ' + REGIONS.join(', ') },
+        secondaryLocationText: { type: 'string', description: 'Optional fallback/second location to also include as suggestions.' },
+        checkIn: { type: 'string', description: 'Check-in date, YYYY-MM-DD.' },
+        nights: { type: 'integer', description: 'Number of nights (>= 1).' },
+        flexDays: { type: 'integer', description: 'If dates are flexible, +/- days to search for a cheaper start (e.g. 5). Default 0 = exact date.' },
+        partySize: { type: 'integer', description: 'Number of travelers. Default 2.' },
+        maxResults: { type: 'integer', description: 'Max options to return. Default 5.' }
+      },
+      required: ['checkIn', 'nights']
+    }
+  },
+  {
+    name: 'list_regions',
+    description: 'List the available WorldMark regions and how many resorts are in each. Use when the rep asks "where can we go" or wants to browse by area.',
+    input_schema: { type: 'object', properties: {}, required: [] }
+  }
+];
+
+function runSalesTool(name, input) {
+  if (name === 'plan_trip') return planTrip(input || {}, resortDataset);
+  if (name === 'list_regions') {
+    const counts = {};
+    resortDataset.resorts.forEach(r => { counts[r.region] = (counts[r.region] || 0) + 1; });
+    return { regions: Object.entries(counts).map(([region, resorts]) => ({ region, resorts })) };
+  }
+  return { error: `Unknown tool: ${name}` };
+}
+
 app.post('/api/sales-chat', async (req, res) => {
   try {
     const { model, max_tokens, system, messages } = req.body;
+    let currentMessages = [...messages];
 
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': ANTHROPIC_API_KEY,
-        'anthropic-version': '2023-06-01'
-      },
-      body: JSON.stringify({ model, max_tokens, system, messages })
-    });
+    // Agentic loop: run tools until the model produces a final answer.
+    while (true) {
+      const response = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': ANTHROPIC_API_KEY,
+          'anthropic-version': '2023-06-01'
+        },
+        body: JSON.stringify({ model, max_tokens, system, messages: currentMessages, tools: salesTools })
+      });
 
-    const data = await response.json();
+      const data = await response.json();
+      if (!response.ok) return res.status(response.status).json(data);
+      if (data.stop_reason !== 'tool_use') return res.json(data);
 
-    if (!response.ok) {
-      return res.status(response.status).json(data);
+      const toolUseBlocks = data.content.filter(b => b.type === 'tool_use');
+      currentMessages.push({ role: 'assistant', content: data.content });
+      currentMessages.push({
+        role: 'user',
+        content: toolUseBlocks.map(block => ({
+          type: 'tool_result',
+          tool_use_id: block.id,
+          content: JSON.stringify(runSalesTool(block.name, block.input))
+        }))
+      });
     }
-
-    return res.json(data);
   } catch (err) {
     console.error('Sales chat proxy error:', err);
     res.status(500).json({ error: 'Proxy request failed' });

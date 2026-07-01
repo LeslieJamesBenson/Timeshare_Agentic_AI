@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "validate-data": "node scripts/validate-resort-data.js"
+    "validate-data": "node scripts/validate-resort-data.js",
+    "test": "node scripts/test-trip-planner.js"
   },
   "dependencies": {
     "dotenv": "^16.4.5",

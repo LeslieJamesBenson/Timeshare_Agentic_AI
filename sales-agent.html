@@ -230,6 +230,108 @@
       background: #2e1a0a;
       border-color: #fb923c;
     }
+    .qbtn.trip-btn {
+      color: #38bdf8;
+      border-color: #164e63;
+      background: #082530;
+    }
+    .qbtn.trip-btn:hover {
+      background: #0c3446;
+      border-color: #38bdf8;
+    }
+
+    /* ── TRIP PLANNER ── */
+    .trip-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .trip-form .full { grid-column: 1 / -1; }
+    .trip-form label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      color: #9ca3af;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .trip-form input,
+    .trip-form select {
+      width: 100%;
+      background: #13161f;
+      border: 1px solid #2d3148;
+      border-radius: 6px;
+      color: #e2e8f0;
+      font-size: 13px;
+      padding: 8px 10px;
+      font-family: inherit;
+    }
+    .trip-form input:focus,
+    .trip-form select:focus { outline: none; border-color: #38bdf8; }
+    .btn-plan {
+      grid-column: 1 / -1;
+      padding: 10px;
+      background: #38bdf8;
+      color: #04222e;
+      border: none;
+      border-radius: 7px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .btn-plan:hover { background: #0ea5e9; }
+    .btn-plan:disabled { opacity: 0.5; cursor: not-allowed; }
+    .trip-results { display: flex; flex-direction: column; gap: 10px; }
+    .trip-card {
+      background: #13161f;
+      border: 1px solid #2d3148;
+      border-radius: 9px;
+      padding: 12px 14px;
+    }
+    .trip-card.best { border-color: #38bdf8; }
+    .trip-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+    }
+    .trip-resort { font-size: 14px; font-weight: 700; color: #fff; }
+    .trip-loc { font-size: 11px; color: #6b7280; }
+    .trip-credits { font-size: 15px; font-weight: 700; color: #38bdf8; white-space: nowrap; }
+    .trip-cash { font-size: 11px; color: #9ca3af; text-align: right; }
+    .trip-detail { font-size: 12px; color: #cbd5e1; margin-top: 6px; line-height: 1.5; }
+    .trip-badge {
+      display: inline-block;
+      font-size: 10px;
+      padding: 1px 7px;
+      border-radius: 10px;
+      margin-left: 6px;
+      background: #1e2235;
+      color: #94a3b8;
+    }
+    .trip-badge.warn { background: #3d1f1f; color: #fca5a5; }
+    .trip-badge.good { background: #0d2620; color: #34d399; }
+    .trip-card-actions { margin-top: 10px; display: flex; gap: 8px; }
+    .trip-mini-btn {
+      font-size: 11px;
+      padding: 5px 11px;
+      border-radius: 6px;
+      border: 1px solid #2d3148;
+      background: #1e2235;
+      color: #c4c7ff;
+      cursor: pointer;
+    }
+    .trip-mini-btn:hover { background: #2d3148; }
+    .trip-note {
+      font-size: 11px;
+      color: #6b7280;
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid #1e2235;
+      line-height: 1.5;
+    }
 
     /* ── MESSAGES ── */
     .messages {
@@ -586,6 +688,7 @@
       <button class="qbtn" onclick="quickSend('Owner says they already have enough points. Give me a script to reframe value.')">Already enough points</button>
       <button class="qbtn" onclick="quickSend('Give me a soft close script based on what we\'ve discussed.')">Soft close</button>
       <button class="qbtn" onclick="quickSend('Give me a hard close script — owner is on the fence and needs a final push.')">Hard close</button>
+      <button class="qbtn trip-btn" onclick="openTripPlanner()">Plan a trip</button>
       <button class="qbtn email-btn" onclick="openEmailPanel()">Generate email</button>
       <button class="qbtn log-btn" onclick="generateLog()">Draft SF log</button>
     </div>
@@ -627,6 +730,53 @@
       <button class="btn-cancel" onclick="closeModal('log-modal')">Close</button>
       <button class="btn-regen" onclick="regenerateLog()">Regenerate</button>
       <button class="btn-copy" onclick="copyLog()">Copy to Clipboard</button>
+    </div>
+  </div>
+</div>
+
+<!-- TRIP PLANNER MODAL -->
+<div class="modal-overlay" id="trip-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <div>
+        <div class="modal-title" style="color:#38bdf8;">Plan a Trip</div>
+        <div class="modal-subtitle">Enter a few details — get ranked options with real credit + cash totals</div>
+      </div>
+      <button class="modal-close" onclick="closeModal('trip-modal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="trip-form">
+        <div>
+          <label>Location (resort, city, or state)</label>
+          <input type="text" id="tp-location" placeholder="e.g. Seaside, Hawaii, Palm Springs" list="tp-resort-list" />
+          <datalist id="tp-resort-list"></datalist>
+        </div>
+        <div>
+          <label>Or pick a region</label>
+          <select id="tp-region"><option value="">— Any region —</option></select>
+        </div>
+        <div>
+          <label>Check-in date</label>
+          <input type="date" id="tp-checkin" />
+        </div>
+        <div>
+          <label>Nights</label>
+          <input type="number" id="tp-nights" value="7" min="1" max="60" />
+        </div>
+        <div>
+          <label>Date flexibility (± days)</label>
+          <input type="number" id="tp-flex" value="0" min="0" max="30" />
+        </div>
+        <div>
+          <label>Party size</label>
+          <input type="number" id="tp-party" value="2" min="1" max="20" />
+        </div>
+        <button class="btn-plan" id="tp-go" onclick="runTripPlan()">Find trip options</button>
+      </div>
+      <div class="trip-results" id="tp-results"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeModal('trip-modal')">Close</button>
     </div>
   </div>
 </div>
@@ -991,6 +1141,124 @@ Do not add commentary. Output only the log entry.`;
       btn.textContent = 'Copied!';
       setTimeout(() => btn.textContent = 'Copy to Clipboard', 2000);
     });
+  }
+
+  // ── TRIP PLANNER ──────────────────────────────────────────────────────────
+  let tripCatalogLoaded = false;
+  let lastTripOptions = [];
+
+  async function openTripPlanner() {
+    openModal('trip-modal');
+    if (!tripCatalogLoaded) {
+      try {
+        const res = await fetch('/api/regions');
+        const data = await res.json();
+        const regionSel = document.getElementById('tp-region');
+        data.regions.forEach(r => {
+          const o = document.createElement('option');
+          o.value = r; o.textContent = r.replace(/-/g, ' ');
+          regionSel.appendChild(o);
+        });
+        const list = document.getElementById('tp-resort-list');
+        data.resorts.forEach(r => {
+          const o = document.createElement('option');
+          o.value = r.name; o.label = `${r.name} — ${r.state}`;
+          list.appendChild(o);
+        });
+        tripCatalogLoaded = true;
+      } catch (e) { /* form still usable via free text */ }
+    }
+  }
+
+  async function runTripPlan() {
+    const btn = document.getElementById('tp-go');
+    const results = document.getElementById('tp-results');
+    const checkIn = document.getElementById('tp-checkin').value;
+    if (!checkIn) { results.innerHTML = '<div class="trip-note">Please pick a check-in date.</div>'; return; }
+
+    const body = {
+      locationText: document.getElementById('tp-location').value.trim() || undefined,
+      region: document.getElementById('tp-region').value || undefined,
+      checkIn,
+      nights: parseInt(document.getElementById('tp-nights').value, 10) || 1,
+      flexDays: parseInt(document.getElementById('tp-flex').value, 10) || 0,
+      partySize: parseInt(document.getElementById('tp-party').value, 10) || 2,
+      maxResults: 5
+    };
+
+    btn.disabled = true; btn.textContent = 'Searching…';
+    results.innerHTML = '';
+    try {
+      const res = await fetch('/api/plan-trip', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+      const data = await res.json();
+      if (!data.ok) {
+        results.innerHTML = `<div class="trip-note">No options found: ${escHtml(data.error || 'try different dates or location')}.</div>`;
+        return;
+      }
+      lastTripOptions = data.options;
+      renderTripResults(data);
+    } catch (e) {
+      results.innerHTML = `<div class="trip-note">Error: ${escHtml(e.message)}</div>`;
+    } finally {
+      btn.disabled = false; btn.textContent = 'Find trip options';
+    }
+  }
+
+  function renderTripResults(data) {
+    const results = document.getElementById('tp-results');
+    const fmt = n => n.toLocaleString();
+    let html = '';
+    data.options.forEach((o, i) => {
+      const fitBadge = o.roomFitsParty
+        ? `<span class="trip-badge good">sleeps ${o.roomSleeps}</span>`
+        : `<span class="trip-badge warn">only sleeps ${o.roomSleeps} — party of ${o.partySize}</span>`;
+      const weekBadge = o.usedWeekRate ? `<span class="trip-badge good">week rate</span>` : '';
+      const seasons = o.seasons.join(', ');
+      html += `
+        <div class="trip-card ${i === 0 ? 'best' : ''}">
+          <div class="trip-card-top">
+            <div>
+              <div class="trip-resort">${escHtml(o.resort)}${i === 0 ? ' <span class="trip-badge good">best value</span>' : ''}</div>
+              <div class="trip-loc">${escHtml(o.state)} · ${escHtml(o.region.replace(/-/g, ' '))}</div>
+            </div>
+            <div>
+              <div class="trip-credits">${fmt(o.credits)} credits</div>
+              <div class="trip-cash">≈ $${fmt(o.cashEquivalentUSD)} value</div>
+            </div>
+          </div>
+          <div class="trip-detail">
+            ${escHtml(o.room)} ${fitBadge} ${weekBadge}<br>
+            ${o.checkIn} → ${o.checkOut} (${o.nights} nights) · ${escHtml(seasons)} season
+          </div>
+          <div class="trip-card-actions">
+            <button class="trip-mini-btn" onclick="tripToChat(${i})">Discuss with agent</button>
+            <button class="trip-mini-btn" onclick="tripCopy(${i})">Copy summary</button>
+          </div>
+        </div>`;
+    });
+    if (data.notes) data.notes.forEach(n => { html += `<div class="trip-note">${escHtml(n)}</div>`; });
+    results.innerHTML = html;
+  }
+
+  function tripSummary(o) {
+    return `${o.resort} (${o.state}) — ${o.room}, ${o.checkIn} to ${o.checkOut}, ${o.nights} nights, party of ${o.partySize}. ` +
+      `${o.credits.toLocaleString()} credits (~$${o.cashEquivalentUSD.toLocaleString()} Personal Choice value). ` +
+      `Season: ${o.seasons.join(', ')}.${o.usedWeekRate ? ' Week rate applied.' : ''}`;
+  }
+
+  function tripCopy(i) {
+    navigator.clipboard.writeText(tripSummary(lastTripOptions[i]));
+  }
+
+  function tripToChat(i) {
+    const o = lastTripOptions[i];
+    closeModal('trip-modal');
+    sendMessage(`Here's a trip option I'm considering for the owner: ${tripSummary(o)} ` +
+      `Give me a short, warm talking track to present this option on the call, tied to their interests.`);
   }
 
   // ── MODAL ─────────────────────────────────────────────────────────────────

@@ -6,16 +6,38 @@
 Internal demo of an AI-powered concierge widget for WorldMark by Wyndham timeshare owners. Not yet in production. Untested as of project creation.
 
 ## How to Run Locally
-1. Add your Anthropic API key to `.env`: `ANTHROPIC_API_KEY=sk-...`
+1. Copy `.env.example` to `.env` and add your key: `ANTHROPIC_API_KEY=sk-...`
 2. `npm install`
 3. `npm start`
-4. Open `http://localhost:3000`
+4. Owner widget: `http://localhost:3000/index.html` · Rep tool: `http://localhost:3000/sales-agent.html`
+
+## Testing
+- `npm test` — deterministic trip-planner + data-layer unit tests (no API key needed)
+- `npm run validate-data` — checks all 100 resort JSONs load and price correctly
+- `node scripts/browser-smoke.js` — headless UI test of the rep-tool trip planner
+  (start the server first; uses the preinstalled Chromium)
 
 ## Architecture
-- **Frontend:** Single HTML file (`index.html`) — vanilla JS, no framework, no build step
-- **Backend:** Express server (`server.js`) — serves static files and proxies AI requests
-- **Database:** SQLite (planned) — for persisting user profiles so owners don't re-enter info on each session
-- **AI:** Anthropic Claude API via `/api/chat` proxy endpoint (key stays server-side)
+- **Frontend:** Static HTML + vanilla JS, no framework, no build step
+  - `index.html` + `start.js` — owner concierge widget
+  - `sales-agent.html` — internal sales rep tool (self-contained)
+- **Backend:** Express server (`server.js`) — serves static files, proxies AI
+  requests, and hosts the deterministic trip-planner endpoints
+- **Engine (`lib/`):** `resortData.js` loads/normalizes the real resort dataset;
+  `tripPlanner.js` does all credit/cash math (no AI involved)
+- **Data:** `Resort_Info_WBW/` — 100 real WorldMark resorts (credit charts as JSON,
+  one folder per resort, grouped by state)
+- **AI:** Anthropic Claude API, proxied server-side so the key never reaches the browser
+  - `/api/chat` — owner widget (availability tools over the old mock dataset)
+  - `/api/sales-chat` — rep tool (compliance-guardrailed; can call the `plan_trip` tool)
+  - `/api/plan-trip` — direct, deterministic trip planner (used by the "Plan a Trip" form; no AI)
+  - `/api/regions` — region + resort catalog for the planner form
+
+## AI Model
+Use `claude-sonnet-4-6`. Never downgrade to an older model version.
+> ⚠️ The model ID lives in the two frontend files. It has NOT been verified against
+> a live key in this environment — confirm it resolves before the exec demo (see the
+> manual API checklist in `docs/DEMO-CHECKLIST.md`).
 
 ## AI Model
 Use `claude-sonnet-4-6`. Never downgrade to an older model version.
@@ -117,6 +139,22 @@ Current status: Pilot with 1–2 reps.
 7. No minimizing or hiding ongoing costs
 8. Agent must be truthful; never invent information
 9. No pressure to decide same-day if owner requested time
+
+## Trip Planner (rep tool)
+"Plan a Trip" button opens a form: location or region, check-in date, nights,
+date flexibility (± days), and party size. It calls `/api/plan-trip` (deterministic,
+no AI) and renders ranked options — each showing the matched unit, real credit total
+from the WorldMark charts, and Personal Choice cash-equivalent ($0.041/credit,
+Diamond VIP+). Reps can copy a summary or push an option into the chat for a
+talking track. The agent can also plan trips conversationally via the `plan_trip` tool.
+
+Credit math (in `lib/tripPlanner.js`): each night priced by its season
+(prime/average/slow) and day bucket (Sun / Mon–Thu / Fri–Sat); the 7-night week
+rate is applied when a full week sits in one season and beats the nightly sum.
+
+**Not yet included in cash totals** (need official numbers — see `wbw-rules` TODO):
+housekeeping fees, guest-certificate fees, bonus-time cash rates, resort taxes.
+The UI clearly discloses these are excluded.
 
 ## Salesforce Integration
 Pilot phase: rep manually pastes Salesforce data into the checklist textarea.
