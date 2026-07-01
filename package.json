@@ -4,7 +4,8 @@
   "description": "WorldMark Concierge Chatbot — local dev server",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "validate-data": "node scripts/validate-resort-data.js"
   },
   "dependencies": {
     "dotenv": "^16.4.5",

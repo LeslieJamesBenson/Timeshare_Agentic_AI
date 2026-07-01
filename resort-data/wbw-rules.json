@@ -1,0 +1,46 @@
+{
+  "_comment": "Global WorldMark by Wyndham program rules. The trip-planner cost engine reads this file. Items marked NEEDS_CONFIRMATION must be verified against official WBW documents before the exec demo.",
+
+  "bookingWindows": {
+    "homeResortMonths": 13,
+    "otherResortMonths": 10
+  },
+
+  "credits": {
+    "bankingYears": 2,
+    "borrowingFromNextYear": true
+  },
+
+  "personalChoice": {
+    "dollarsPerCredit": 0.041,
+    "minimumTier": "Diamond VIP",
+    "appliesTo": ["flights", "other travel purchases"],
+    "status": "NEEDS_CONFIRMATION — verify official rate and rounding rules; at $0.041/credit a $1,200 flight = ~29,270 credits"
+  },
+
+  "housekeepingFees": {
+    "status": "NEEDS_CONFIRMATION — add fee schedule per unit type",
+    "Studio": null,
+    "1BR": null,
+    "2BR": null,
+    "3BR": null,
+    "freeHousekeepingCreditsThreshold": null
+  },
+
+  "guestCertificate": {
+    "feeUSD": null,
+    "status": "NEEDS_CONFIRMATION"
+  },
+
+  "bonusTime": {
+    "description": "Last-minute cash-rate stays inside a short booking window",
+    "windowDays": null,
+    "cashRatePerNight": null,
+    "status": "NEEDS_CONFIRMATION"
+  },
+
+  "taxesAndResortFees": {
+    "note": "Per-resort where applicable; add overrides in each resort JSON if needed",
+    "status": "NEEDS_CONFIRMATION"
+  }
+}

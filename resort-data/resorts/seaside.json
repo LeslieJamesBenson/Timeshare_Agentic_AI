@@ -1,0 +1,53 @@
+{
+  "id": "seaside",
+  "name": "WorldMark Seaside",
+  "location": {
+    "city": "Seaside",
+    "state": "OR",
+    "country": "USA"
+  },
+  "region": ["pacific-northwest"],
+  "tags": ["beach", "family"],
+  "nearbyAttractions": [
+    "Seaside Beach",
+    "Seaside Aquarium",
+    "Cannon Beach",
+    "Haystack Rock",
+    "Fort Stevens State Park"
+  ],
+  "unitTypes": [
+    { "type": "Studio", "maxGuests": 4 },
+    { "type": "1BR", "maxGuests": 6 },
+    { "type": "2BR", "maxGuests": 8 }
+  ],
+  "seasons": [
+    {
+      "name": "High",
+      "dateRanges": [{ "start": "06-15", "end": "09-15" }]
+    },
+    {
+      "name": "Mid",
+      "dateRanges": [
+        { "start": "03-01", "end": "06-14" },
+        { "start": "09-16", "end": "10-31" }
+      ]
+    },
+    {
+      "name": "Low",
+      "dateRanges": [{ "start": "11-01", "end": "02-29" }]
+    }
+  ],
+  "creditChart": [
+    { "season": "High", "unitType": "Studio", "sunThu": 650, "friSat": 850 },
+    { "season": "High", "unitType": "1BR", "sunThu": 950, "friSat": 1200 },
+    { "season": "High", "unitType": "2BR", "sunThu": 1500, "friSat": 1850 },
+    { "season": "Mid", "unitType": "Studio", "sunThu": 550, "friSat": 700 },
+    { "season": "Mid", "unitType": "1BR", "sunThu": 800, "friSat": 1000 },
+    { "season": "Mid", "unitType": "2BR", "sunThu": 1250, "friSat": 1550 },
+    { "season": "Low", "unitType": "Studio", "sunThu": 480, "friSat": 600 },
+    { "season": "Low", "unitType": "1BR", "sunThu": 700, "friSat": 880 },
+    { "season": "Low", "unitType": "2BR", "sunThu": 1100, "friSat": 1350 }
+  ],
+  "sourceFile": "credit-charts/seaside-credits.png",
+  "notes": "EXAMPLE FILE — values adapted from the old mock availability.json, NOT verified against the real WorldMark credit chart. Replace with real chart values before the demo."
+}

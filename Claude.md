@@ -1,6 +1,6 @@
-- API Key ~ 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
-
 # Timeshare AI — WorldMark Concierge Chatbot
+
+> **Security rule:** API keys live ONLY in `.env` (gitignored). Never write a key into this file, any tracked file, or a commit.
 
 ## Project Purpose
 Internal demo of an AI-powered concierge widget for WorldMark by Wyndham timeshare owners. Not yet in production. Untested as of project creation.
