@@ -24,7 +24,7 @@ Open `http://localhost:3000/sales-agent.html` → **Plan a trip**.
 - [ ] "Copy summary" puts a clean one-line summary on the clipboard
 
 ## 3. Live AI — REQUIRES a valid key (not testable in the build environment)
-> ⚠️ The frontends request model `claude-sonnet-4-6`. **Confirm this model ID
+> ⚠️ The frontends request model `claude-sonnet-5`. **Confirm this model ID
 > resolves with your key.** If the API returns a model error, that's the cause —
 > update the ID in `sales-agent.html` and `start.js` (and note it in Claude.md).
 
