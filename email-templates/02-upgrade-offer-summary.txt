@@ -1,0 +1,35 @@
+TEMPLATE 02 — Upgrade Offer Summary
+=====================================
+USE WHEN: Owner expressed interest on the call and you want to send a written recap of the offer discussed.
+
+SUBJECT: Your Exclusive Upgrade Offer — Summary Inside
+
+Hi [Owner First Name],
+
+Thank you for taking the time to speak with me today. As promised, here's a quick recap of the exclusive upgrade opportunity we discussed.
+
+YOUR CURRENT OWNERSHIP:
+- Credits/Points: [current level]
+- Home Resort: [current home resort]
+- Membership Tier: [current tier]
+
+YOUR UPGRADE OFFER:
+- Credits/Points: [upgraded level]
+- Additional Benefits: [e.g., Gold status, expanded resort access, priority booking window]
+- One-Time Investment: [price discussed]
+- Monthly/Annual Payment: [payment structure if applicable]
+
+WHY THIS MAKES SENSE FOR YOU:
+Based on our conversation, you mentioned [personalize: e.g., "you love traveling to the coast in summer" / "you'd like more flexibility on dates"]. At [upgraded level] credits, you'd have [specific capability that addresses their interest].
+
+NEXT STEPS:
+This offer is available through [offer expiration or urgency note if applicable]. If you'd like to move forward, just reply to this email or call me directly at [rep phone number] and I can walk you through the process — it only takes about [X] minutes.
+
+I'm happy to answer any questions you have along the way.
+
+Looking forward to hearing from you,
+[Rep Full Name]
+[Rep Title]
+[Rep Phone Number]
+[Rep Email]
+Travel + Leisure | WorldMark by Wyndham

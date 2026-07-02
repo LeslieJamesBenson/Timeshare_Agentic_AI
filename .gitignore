@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+
+# Secrets — API keys live here, never commit
+.env
+.env.*
+
+# Auto-generated caches
+resort-cache.json
+
+# OS / editor noise
+.DS_Store
+Thumbs.db

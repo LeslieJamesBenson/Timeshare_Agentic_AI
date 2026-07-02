@@ -1,0 +1,20 @@
+TEMPLATE 03 — Reschedule / Missed Call
+========================================
+USE WHEN: You called and couldn't reach the owner, or the owner asked to reschedule mid-call.
+
+SUBJECT: Sorry We Missed Each Other — Let's Find a Better Time
+
+Hi [Owner First Name],
+
+I tried reaching you today but wasn't able to connect — completely understand, life gets busy!
+
+I'd love to find a time that works better for you. I have some availability [suggest 2–3 time windows, e.g., "Tuesday morning or Thursday afternoon this week"], but I'm flexible and happy to work around your schedule.
+
+You can reply to this email, or feel free to call me directly at [rep phone number] to pick a time that's convenient.
+
+Looking forward to speaking with you soon,
+[Rep Full Name]
+[Rep Title]
+[Rep Phone Number]
+[Rep Email]
+Travel + Leisure | WorldMark by Wyndham

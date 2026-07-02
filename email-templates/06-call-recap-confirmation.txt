@@ -1,0 +1,29 @@
+TEMPLATE 06 — Call Recap / Confirmation of Next Steps
+======================================================
+USE WHEN: Call ended with a clear next step agreed upon (callback, spouse review, document review). Use this to confirm what was discussed.
+
+SUBJECT: Quick Recap of Our Call Today
+
+Hi [Owner First Name],
+
+Just a quick note to recap what we covered today and confirm our next steps.
+
+WHAT WE DISCUSSED:
+- Your current ownership: [current credits/tier]
+- The opportunity we reviewed: [upgrade or offer summary]
+- Key benefits relevant to your travel style: [personalize]
+
+WHAT HAPPENS NEXT:
+[Customize based on agreed next step, e.g.:]
+- "You're going to review the details with [spouse/partner] and we'll reconnect on [date/time]."
+- "I'll send over the written offer details for your review."
+- "We're scheduled to speak again on [date] at [time]."
+
+I'll be in touch as planned. In the meantime, if anything comes up or you have questions, I'm always just a call or email away.
+
+[Rep Phone Number] | [Rep Email]
+
+Looking forward to speaking again,
+[Rep Full Name]
+[Rep Title]
+Travel + Leisure | WorldMark by Wyndham

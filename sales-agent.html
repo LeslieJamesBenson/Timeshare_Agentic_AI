@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sales AI Agent — Rep Tool</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0f1117;
+      color: #e2e8f0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* ── TOP BAR ── */
+    .topbar {
+      background: #1a1d27;
+      border-bottom: 1px solid #2d3148;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+    .topbar-brand {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.3px;
+    }
+    .topbar-brand span { color: #7c82ff; }
+    .topbar-meta {
+      font-size: 12px;
+      color: #6b7280;
+    }
+    .status-indicator {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: #10b981;
+    }
+    .status-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #10b981;
+    }
+
+    /* ── MAIN LAYOUT ── */
+    .main {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    /* ── LEFT PANEL: PRE-CALL CHECKLIST ── */
+    .sidebar {
+      width: 320px;
+      flex-shrink: 0;
+      background: #13161f;
+      border-right: 1px solid #2d3148;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+    .sidebar-header {
+      padding: 16px 18px 10px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #7c82ff;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      border-bottom: 1px solid #1e2235;
+      flex-shrink: 0;
+    }
+    .checklist-form {
+      padding: 14px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      color: #9ca3af;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: #1e2235;
+      border: 1px solid #2d3148;
+      border-radius: 6px;
+      color: #e2e8f0;
+      font-size: 13px;
+      padding: 7px 10px;
+      font-family: inherit;
+      transition: border-color 0.15s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #7c82ff;
+    }
+    .form-group select option { background: #1e2235; }
+    .form-group textarea { resize: vertical; min-height: 64px; }
+
+    .objection-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .obj-tag {
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: #1e2235;
+      border: 1px solid #2d3148;
+      font-size: 11px;
+      cursor: pointer;
+      color: #9ca3af;
+      user-select: none;
+      transition: all 0.15s;
+    }
+    .obj-tag.active {
+      background: #312f7a;
+      border-color: #7c82ff;
+      color: #c4c7ff;
+    }
+
+    .btn-load-context {
+      margin: 0 18px 16px;
+      padding: 9px;
+      background: #7c82ff;
+      color: #fff;
+      border: none;
+      border-radius: 7px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+      flex-shrink: 0;
+    }
+    .btn-load-context:hover { background: #6366e8; }
+
+    .sf-paste-section {
+      border-top: 1px solid #1e2235;
+      padding: 14px 18px;
+    }
+    .sf-paste-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+    .sf-paste-sub {
+      font-size: 11px;
+      color: #4b5563;
+      margin-bottom: 8px;
+    }
+
+    /* ── RIGHT PANEL: CHAT ── */
+    .chat-panel {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* ── QUICK ACTIONS BAR ── */
+    .quick-bar {
+      background: #13161f;
+      border-bottom: 1px solid #2d3148;
+      padding: 10px 16px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+    }
+    .quick-label {
+      font-size: 11px;
+      color: #4b5563;
+      align-self: center;
+      margin-right: 4px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .qbtn {
+      padding: 5px 12px;
+      border-radius: 20px;
+      border: 1px solid #2d3148;
+      background: #1e2235;
+      color: #c4c7ff;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.15s;
+      white-space: nowrap;
+    }
+    .qbtn:hover {
+      background: #312f7a;
+      border-color: #7c82ff;
+    }
+    .qbtn.email-btn {
+      color: #34d399;
+      border-color: #1a3d32;
+      background: #0d2620;
+    }
+    .qbtn.email-btn:hover {
+      background: #153d30;
+      border-color: #34d399;
+    }
+    .qbtn.log-btn {
+      color: #fb923c;
+      border-color: #3d2410;
+      background: #1f1208;
+    }
+    .qbtn.log-btn:hover {
+      background: #2e1a0a;
+      border-color: #fb923c;
+    }
+    .qbtn.trip-btn {
+      color: #38bdf8;
+      border-color: #164e63;
+      background: #082530;
+    }
+    .qbtn.trip-btn:hover {
+      background: #0c3446;
+      border-color: #38bdf8;
+    }
+
+    /* ── TRIP PLANNER ── */
+    .trip-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .trip-form .full { grid-column: 1 / -1; }
+    .trip-form label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      color: #9ca3af;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .trip-form input,
+    .trip-form select {
+      width: 100%;
+      background: #13161f;
+      border: 1px solid #2d3148;
+      border-radius: 6px;
+      color: #e2e8f0;
+      font-size: 13px;
+      padding: 8px 10px;
+      font-family: inherit;
+    }
+    .trip-form input:focus,
+    .trip-form select:focus { outline: none; border-color: #38bdf8; }
+    .btn-plan {
+      grid-column: 1 / -1;
+      padding: 10px;
+      background: #38bdf8;
+      color: #04222e;
+      border: none;
+      border-radius: 7px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .btn-plan:hover { background: #0ea5e9; }
+    .btn-plan:disabled { opacity: 0.5; cursor: not-allowed; }
+    .trip-results { display: flex; flex-direction: column; gap: 10px; }
+    .trip-card {
+      background: #13161f;
+      border: 1px solid #2d3148;
+      border-radius: 9px;
+      padding: 12px 14px;
+    }
+    .trip-card.best { border-color: #38bdf8; }
+    .trip-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+    }
+    .trip-resort { font-size: 14px; font-weight: 700; color: #fff; }
+    .trip-loc { font-size: 11px; color: #6b7280; }
+    .trip-credits { font-size: 15px; font-weight: 700; color: #38bdf8; white-space: nowrap; }
+    .trip-cash { font-size: 11px; color: #9ca3af; text-align: right; }
+    .trip-detail { font-size: 12px; color: #cbd5e1; margin-top: 6px; line-height: 1.5; }
+    .trip-badge {
+      display: inline-block;
+      font-size: 10px;
+      padding: 1px 7px;
+      border-radius: 10px;
+      margin-left: 6px;
+      background: #1e2235;
+      color: #94a3b8;
+    }
+    .trip-badge.warn { background: #3d1f1f; color: #fca5a5; }
+    .trip-badge.good { background: #0d2620; color: #34d399; }
+    .trip-card-actions { margin-top: 10px; display: flex; gap: 8px; }
+    .trip-mini-btn {
+      font-size: 11px;
+      padding: 5px 11px;
+      border-radius: 6px;
+      border: 1px solid #2d3148;
+      background: #1e2235;
+      color: #c4c7ff;
+      cursor: pointer;
+    }
+    .trip-mini-btn:hover { background: #2d3148; }
+    .trip-note {
+      font-size: 11px;
+      color: #6b7280;
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid #1e2235;
+      line-height: 1.5;
+    }
+
+    /* ── MESSAGES ── */
+    .messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .msg {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      max-width: 88%;
+    }
+    .msg.user { align-self: flex-end; align-items: flex-end; }
+    .msg.agent { align-self: flex-start; align-items: flex-start; }
+
+    .msg-label {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: #4b5563;
+    }
+    .msg.user .msg-label { color: #6366e8; }
+    .msg.agent .msg-label { color: #7c82ff; }
+
+    .msg-bubble {
+      padding: 11px 15px;
+      border-radius: 10px;
+      font-size: 14px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+    .msg.user .msg-bubble {
+      background: #1e2235;
+      border: 1px solid #2d3148;
+      color: #e2e8f0;
+    }
+    .msg.agent .msg-bubble {
+      background: #1a1d2e;
+      border: 1px solid #312f7a;
+      color: #e2e8f0;
+    }
+
+    .system-msg {
+      align-self: center;
+      font-size: 11px;
+      color: #4b5563;
+      padding: 6px 14px;
+      background: #13161f;
+      border: 1px solid #1e2235;
+      border-radius: 20px;
+    }
+
+    .typing-indicator {
+      display: none;
+      align-self: flex-start;
+      align-items: flex-start;
+      gap: 4px;
+      flex-direction: column;
+    }
+    .typing-dots {
+      display: flex;
+      gap: 4px;
+      padding: 10px 14px;
+      background: #1a1d2e;
+      border: 1px solid #312f7a;
+      border-radius: 10px;
+    }
+    .typing-dots span {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #7c82ff;
+      animation: bounce 1.2s infinite;
+    }
+    .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+    .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes bounce {
+      0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+      40% { transform: translateY(-5px); opacity: 1; }
+    }
+
+    /* ── POST-CALL LOG MODAL ── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: #1a1d27;
+      border: 1px solid #2d3148;
+      border-radius: 12px;
+      width: 640px;
+      max-width: 95vw;
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .modal-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid #2d3148;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .modal-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fb923c;
+    }
+    .modal-subtitle {
+      font-size: 11px;
+      color: #4b5563;
+      margin-top: 2px;
+    }
+    .modal-close {
+      background: none;
+      border: none;
+      color: #6b7280;
+      font-size: 18px;
+      cursor: pointer;
+      padding: 2px 6px;
+    }
+    .modal-close:hover { color: #e2e8f0; }
+    .modal-body {
+      padding: 18px 20px;
+      overflow-y: auto;
+      flex: 1;
+    }
+    .modal-body textarea {
+      width: 100%;
+      background: #13161f;
+      border: 1px solid #2d3148;
+      border-radius: 8px;
+      color: #e2e8f0;
+      font-size: 13px;
+      font-family: inherit;
+      padding: 12px;
+      line-height: 1.6;
+      resize: vertical;
+      min-height: 280px;
+    }
+    .modal-body textarea:focus { outline: none; border-color: #fb923c; }
+    .modal-footer {
+      padding: 14px 20px;
+      border-top: 1px solid #2d3148;
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+    .btn-copy {
+      padding: 8px 18px;
+      background: #fb923c;
+      color: #fff;
+      border: none;
+      border-radius: 7px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .btn-copy:hover { background: #ea7a20; }
+    .btn-regen {
+      padding: 8px 18px;
+      background: #1e2235;
+      color: #e2e8f0;
+      border: 1px solid #2d3148;
+      border-radius: 7px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .btn-regen:hover { background: #2d3148; }
+    .btn-cancel {
+      padding: 8px 18px;
+      background: transparent;
+      color: #6b7280;
+      border: 1px solid #2d3148;
+      border-radius: 7px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .btn-cancel:hover { color: #e2e8f0; }
+
+    /* ── INPUT BAR ── */
+    .input-bar {
+      padding: 14px 20px;
+      background: #13161f;
+      border-top: 1px solid #2d3148;
+      display: flex;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .input-bar textarea {
+      flex: 1;
+      background: #1e2235;
+      border: 1px solid #2d3148;
+      border-radius: 8px;
+      color: #e2e8f0;
+      font-size: 14px;
+      font-family: inherit;
+      padding: 10px 14px;
+      resize: none;
+      height: 44px;
+      max-height: 120px;
+      overflow-y: auto;
+      line-height: 1.5;
+      transition: border-color 0.15s;
+    }
+    .input-bar textarea:focus { outline: none; border-color: #7c82ff; }
+    .input-bar textarea::placeholder { color: #4b5563; }
+    .btn-send {
+      padding: 0 18px;
+      background: #7c82ff;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+      flex-shrink: 0;
+    }
+    .btn-send:hover { background: #6366e8; }
+    .btn-send:disabled { background: #312f7a; cursor: not-allowed; opacity: 0.6; }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #2d3148; border-radius: 4px; }
+
+    /* ── CONTEXT LOADED STATE ── */
+    .context-badge {
+      display: none;
+      margin: 0 18px 10px;
+      padding: 8px 12px;
+      background: #0d2620;
+      border: 1px solid #1a3d32;
+      border-radius: 7px;
+      font-size: 11px;
+      color: #34d399;
+    }
+    .context-badge.visible { display: block; }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-brand">Sales AI <span>Agent</span></div>
+  <div class="status-indicator">
+    <div class="status-dot"></div>
+    Ready
+  </div>
+  <div class="topbar-meta">Travel + Leisure · WorldMark by Wyndham · Internal Rep Tool</div>
+</div>
+
+<div class="main">
+
+  <!-- LEFT SIDEBAR: PRE-CALL CHECKLIST -->
+  <div class="sidebar">
+    <div class="sidebar-header">Pre-Call Context</div>
+    <div class="checklist-form">
+
+      <div class="form-group">
+        <label>Owner Name</label>
+        <input type="text" id="ctx-owner-name" placeholder="e.g. Sarah Mitchell" />
+      </div>
+
+      <div class="form-group">
+        <label>Call Type</label>
+        <select id="ctx-call-type">
+          <option value="">— Select —</option>
+          <option value="outbound-upgrade">Outbound — Upgrade offer</option>
+          <option value="outbound-followup">Outbound — Follow-up</option>
+          <option value="outbound-winback">Outbound — Re-engagement</option>
+          <option value="inbound-inquiry">Inbound — Owner inquiry</option>
+          <option value="inbound-complaint">Inbound — Complaint / concern</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Deal Stage</label>
+        <select id="ctx-stage">
+          <option value="">— Select —</option>
+          <option value="cold">Cold — No prior conversation</option>
+          <option value="warm">Warm — Expressed interest</option>
+          <option value="hot">Hot — Needs final push to close</option>
+          <option value="stalled">Stalled — Went quiet after interest</option>
+          <option value="objecting">Objecting — Specific concern raised</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Objections Heard (select all)</label>
+        <div class="objection-tags" id="obj-tags">
+          <div class="obj-tag" data-val="price">Price / cost</div>
+          <div class="obj-tag" data-val="maintenance-fees">Maintenance fees</div>
+          <div class="obj-tag" data-val="need-to-think">Need to think</div>
+          <div class="obj-tag" data-val="spouse">Spouse not present</div>
+          <div class="obj-tag" data-val="already-enough">Already enough points</div>
+          <div class="obj-tag" data-val="bad-timing">Bad timing</div>
+          <div class="obj-tag" data-val="not-using">Not using ownership</div>
+          <div class="obj-tag" data-val="economy">Economy / job concern</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Ownership Level (Current)</label>
+        <input type="text" id="ctx-ownership" placeholder="e.g. 10,000 credits / Gold" />
+      </div>
+
+      <div class="form-group">
+        <label>Travel Preferences / Notes</label>
+        <textarea id="ctx-travel" placeholder="e.g. Loves beach travel, goes 2x/year, prefers summer dates"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Rep Name</label>
+        <input type="text" id="ctx-rep-name" placeholder="Your name" />
+      </div>
+
+    </div>
+
+    <div class="sf-paste-section">
+      <div class="sf-paste-label">Salesforce Data (Paste)</div>
+      <div class="sf-paste-sub">Paste owner profile or call history from Salesforce</div>
+      <div class="form-group">
+        <textarea id="ctx-sf-data" placeholder="Paste owner info, billing status, call history, etc." style="min-height:90px;"></textarea>
+      </div>
+    </div>
+
+    <button class="btn-load-context" onclick="loadContext()">Load Context into Agent</button>
+    <div class="context-badge" id="context-badge">Context loaded — agent is ready for this call.</div>
+  </div>
+
+  <!-- RIGHT PANEL: CHAT -->
+  <div class="chat-panel">
+
+    <!-- QUICK ACTIONS -->
+    <div class="quick-bar">
+      <span class="quick-label">Quick:</span>
+      <button class="qbtn" onclick="quickSend('Handle the price objection — give me a full script.')">Price objection</button>
+      <button class="qbtn" onclick="quickSend('Handle the maintenance fee objection — full script.')">Maintenance fees</button>
+      <button class="qbtn" onclick="quickSend('Owner says they need to think about it. Give me a script to keep the conversation going.')">Need to think</button>
+      <button class="qbtn" onclick="quickSend('Spouse is not on the call. Give me a script to handle this and keep momentum.')">Spouse not present</button>
+      <button class="qbtn" onclick="quickSend('Owner says they already have enough points. Give me a script to reframe value.')">Already enough points</button>
+      <button class="qbtn" onclick="quickSend('Give me a soft close script based on what we\'ve discussed.')">Soft close</button>
+      <button class="qbtn" onclick="quickSend('Give me a hard close script — owner is on the fence and needs a final push.')">Hard close</button>
+      <button class="qbtn trip-btn" onclick="openTripPlanner()">Plan a trip</button>
+      <button class="qbtn email-btn" onclick="openEmailPanel()">Generate email</button>
+      <button class="qbtn log-btn" onclick="generateLog()">Draft SF log</button>
+    </div>
+
+    <!-- MESSAGES -->
+    <div class="messages" id="messages">
+      <div class="system-msg">Load the pre-call context on the left, then ask anything or use a Quick Action above.</div>
+    </div>
+
+    <div class="typing-indicator" id="typing">
+      <span class="msg-label">Agent</span>
+      <div class="typing-dots">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <!-- INPUT BAR -->
+    <div class="input-bar">
+      <textarea id="user-input" placeholder="Ask the agent anything, or describe what's happening on the call…" onkeydown="handleKey(event)"></textarea>
+      <button class="btn-send" id="send-btn" onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+</div>
+
+<!-- POST-CALL LOG MODAL -->
+<div class="modal-overlay" id="log-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <div>
+        <div class="modal-title">Salesforce Call Log Draft</div>
+        <div class="modal-subtitle">Review and edit before copying into Salesforce</div>
+      </div>
+      <button class="modal-close" onclick="closeModal('log-modal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <textarea id="log-content" placeholder="Generating log…"></textarea>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeModal('log-modal')">Close</button>
+      <button class="btn-regen" onclick="regenerateLog()">Regenerate</button>
+      <button class="btn-copy" onclick="copyLog()">Copy to Clipboard</button>
+    </div>
+  </div>
+</div>
+
+<!-- TRIP PLANNER MODAL -->
+<div class="modal-overlay" id="trip-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <div>
+        <div class="modal-title" style="color:#38bdf8;">Plan a Trip</div>
+        <div class="modal-subtitle">Enter a few details — get ranked options with real credit + cash totals</div>
+      </div>
+      <button class="modal-close" onclick="closeModal('trip-modal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="trip-form">
+        <div>
+          <label>Location (resort, city, or state)</label>
+          <input type="text" id="tp-location" placeholder="e.g. Seaside, Hawaii, Palm Springs" list="tp-resort-list" />
+          <datalist id="tp-resort-list"></datalist>
+        </div>
+        <div>
+          <label>Or pick a region</label>
+          <select id="tp-region"><option value="">— Any region —</option></select>
+        </div>
+        <div>
+          <label>Check-in date</label>
+          <input type="date" id="tp-checkin" />
+        </div>
+        <div>
+          <label>Nights</label>
+          <input type="number" id="tp-nights" value="7" min="1" max="60" />
+        </div>
+        <div>
+          <label>Date flexibility (± days)</label>
+          <input type="number" id="tp-flex" value="0" min="0" max="30" />
+        </div>
+        <div>
+          <label>Party size</label>
+          <input type="number" id="tp-party" value="2" min="1" max="20" />
+        </div>
+        <button class="btn-plan" id="tp-go" onclick="runTripPlan()">Find trip options</button>
+      </div>
+      <div class="trip-results" id="tp-results"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeModal('trip-modal')">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- EMAIL TEMPLATE MODAL -->
+<div class="modal-overlay" id="email-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <div>
+        <div class="modal-title" style="color:#34d399;">Email Template Generator</div>
+        <div class="modal-subtitle">Select a template type — the agent will personalize it for this owner</div>
+      </div>
+      <button class="modal-close" onclick="closeModal('email-modal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;" id="template-btns">
+        <button class="qbtn email-btn" onclick="selectTemplate('01 — Post-call follow-up (no decision)')">No decision</button>
+        <button class="qbtn email-btn" onclick="selectTemplate('02 — Upgrade offer summary')">Offer summary</button>
+        <button class="qbtn email-btn" onclick="selectTemplate('03 — Reschedule / missed call')">Reschedule</button>
+        <button class="qbtn email-btn" onclick="selectTemplate('04 — Price/budget objection follow-up')">Price objection</button>
+        <button class="qbtn email-btn" onclick="selectTemplate('05 — Loyal owner exclusive offer')">Loyalty offer</button>
+        <button class="qbtn email-btn" onclick="selectTemplate('06 — Call recap and next steps')">Call recap</button>
+        <button class="qbtn email-btn" onclick="selectTemplate('07 — Re-engagement / win-back')">Win-back</button>
+        <button class="qbtn email-btn" onclick="selectTemplate('08 — Post-close welcome')">Post-close</button>
+        <button class="qbtn email-btn" onclick="selectTemplate('09 — Referral request')">Referral ask</button>
+        <button class="qbtn email-btn" onclick="selectTemplate('10 — Maintenance fee objection follow-up')">Maintenance fees</button>
+      </div>
+      <textarea id="email-content" placeholder="Select a template above to generate a personalized email…" style="min-height:300px;"></textarea>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeModal('email-modal')">Close</button>
+      <button class="btn-copy" style="background:#10b981;" onclick="copyEmail()">Copy to Clipboard</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const messagesEl = document.getElementById('messages');
+  const typingEl = document.getElementById('typing');
+  const inputEl = document.getElementById('user-input');
+  const sendBtn = document.getElementById('send-btn');
+
+  // conversation history sent to API
+  let history = [];
+  let callContext = null;
+
+  // ── CONTEXT ──────────────────────────────────────────────────────────────
+  function getSelectedObjections() {
+    return [...document.querySelectorAll('.obj-tag.active')]
+      .map(t => t.dataset.val).join(', ') || 'None';
+  }
+
+  document.querySelectorAll('.obj-tag').forEach(tag => {
+    tag.addEventListener('click', () => tag.classList.toggle('active'));
+  });
+
+  function loadContext() {
+    const ownerName  = document.getElementById('ctx-owner-name').value.trim();
+    const callType   = document.getElementById('ctx-call-type').value;
+    const stage      = document.getElementById('ctx-stage').value;
+    const objections = getSelectedObjections();
+    const ownership  = document.getElementById('ctx-ownership').value.trim();
+    const travel     = document.getElementById('ctx-travel').value.trim();
+    const repName    = document.getElementById('ctx-rep-name').value.trim();
+    const sfData     = document.getElementById('ctx-sf-data').value.trim();
+
+    callContext = { ownerName, callType, stage, objections, ownership, travel, repName, sfData };
+
+    // Reset conversation with context loaded as first system turn
+    history = [];
+
+    const contextMsg = buildContextSummary(callContext);
+    appendSystem(`Context loaded for ${ownerName || 'this owner'}. Agent is ready.`);
+
+    // Inject context as a silent user→assistant exchange so the agent "knows" it
+    history.push({
+      role: 'user',
+      content: `[CALL CONTEXT LOADED]\n${contextMsg}`
+    });
+    history.push({
+      role: 'assistant',
+      content: `Understood. I have the full context for this call. I'm ready to help you with objection scripts, talking points, email drafts, or anything else you need. What would you like to tackle first?`
+    });
+
+    appendAgentMsg(`Understood. I have the full context for this call. I'm ready to help you with objection scripts, talking points, email drafts, or anything else you need. What would you like to tackle first?`);
+
+    document.getElementById('context-badge').classList.add('visible');
+  }
+
+  function buildContextSummary(ctx) {
+    return [
+      `Owner Name: ${ctx.ownerName || 'Unknown'}`,
+      `Call Type: ${ctx.callType || 'Not specified'}`,
+      `Deal Stage: ${ctx.stage || 'Not specified'}`,
+      `Objections Heard: ${ctx.objections}`,
+      `Current Ownership: ${ctx.ownership || 'Not specified'}`,
+      `Travel Preferences/Notes: ${ctx.travel || 'None provided'}`,
+      `Rep Name: ${ctx.repName || 'Not specified'}`,
+      ctx.sfData ? `Salesforce Data:\n${ctx.sfData}` : 'Salesforce Data: Not provided'
+    ].join('\n');
+  }
+
+  // ── CHAT ─────────────────────────────────────────────────────────────────
+  function buildSystemPrompt() {
+    const ctx = callContext ? buildContextSummary(callContext) : 'No context loaded yet.';
+    return `You are an AI sales assistant for Travel + Leisure / WorldMark by Wyndham, built exclusively for internal use by licensed sales representatives. You are NOT a customer-facing tool.
+
+Your role is to help reps on live phone calls with existing timeshare owners. You provide:
+- Full word-for-word scripts (not bullet points) for objection handling and closing
+- Email template personalization
+- Post-call Salesforce log drafts
+- Real-time guidance during calls
+
+CALL CONTEXT (loaded by rep):
+${ctx}
+
+OUTPUT FORMAT:
+- Always write full, word-for-word scripts the rep can read aloud or adapt
+- Label scripts clearly: "SCRIPT:" followed by the full text in quotation marks
+- After the script, add a brief "WHY THIS WORKS:" note (1–2 sentences)
+- Keep scripts natural, conversational, and warm — not robotic or high-pressure
+- Personalize every script using the owner's name and context when available
+
+COMPLIANCE — ABSOLUTE GUARDRAILS (never violate these):
+1. NEVER imply or state that timeshare ownership is an investment or will appreciate in value
+2. NEVER guarantee or suggest rental income from ownership
+3. NEVER misrepresent the rescission period — always remind the rep that official rescission rights must be disclosed in writing per applicable state law
+4. NEVER use language that could constitute illegal high-pressure sales tactics (e.g., "this offer expires the moment you hang up," "you'll never get this price again," or manufactured urgency with false scarcity)
+5. NEVER misrepresent what is or is not included in the ownership, exchange programs, or resort access
+6. NEVER make statements about competitors that are false or disparaging in a misleading way
+7. NEVER suggest the rep hide, minimize, or fail to disclose ongoing costs (maintenance fees, HOA dues, special assessments)
+8. ALWAYS be truthful — if you don't know a specific answer, say so rather than inventing information
+9. Do not draft language that pressures the owner to make a same-day decision if they have clearly requested time to think
+
+TONE:
+- Warm, professional, consultative — never pushy or aggressive
+- The rep is a trusted advisor helping the owner maximize the value of their existing ownership
+- Treat the owner's concerns as valid; acknowledge before redirecting
+
+You are operating in a pilot with 1–2 reps. Be precise, practical, and ready to iterate on any script on request.`;
+  }
+
+  async function sendMessage(overrideText) {
+    const text = overrideText ?? inputEl.value.trim();
+    if (!text) return;
+
+    appendUserMsg(text);
+    if (!overrideText) inputEl.value = '';
+    inputEl.style.height = '44px';
+
+    history.push({ role: 'user', content: text });
+
+    setLoading(true);
+
+    try {
+      const res = await fetch('/api/sales-chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-6',
+          max_tokens: 2048,
+          system: buildSystemPrompt(),
+          messages: history
+        })
+      });
+
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error?.message || 'API error');
+
+      const reply = data.content?.[0]?.text ?? '(no response)';
+      history.push({ role: 'assistant', content: reply });
+      appendAgentMsg(reply);
+    } catch (err) {
+      appendSystem(`Error: ${err.message}`);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  function quickSend(prompt) {
+    sendMessage(prompt);
+  }
+
+  function handleKey(e) {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage();
+    }
+    // auto-expand textarea
+    inputEl.style.height = 'auto';
+    inputEl.style.height = Math.min(inputEl.scrollHeight, 120) + 'px';
+  }
+
+  // ── DOM HELPERS ───────────────────────────────────────────────────────────
+  function appendUserMsg(text) {
+    const div = document.createElement('div');
+    div.className = 'msg user';
+    div.innerHTML = `<span class="msg-label">Rep</span><div class="msg-bubble">${escHtml(text)}</div>`;
+    messagesEl.appendChild(div);
+    scrollBottom();
+  }
+
+  function appendAgentMsg(text) {
+    const div = document.createElement('div');
+    div.className = 'msg agent';
+    div.innerHTML = `<span class="msg-label">Agent</span><div class="msg-bubble">${escHtml(text)}</div>`;
+    messagesEl.appendChild(div);
+    scrollBottom();
+  }
+
+  function appendSystem(text) {
+    const div = document.createElement('div');
+    div.className = 'system-msg';
+    div.textContent = text;
+    messagesEl.appendChild(div);
+    scrollBottom();
+  }
+
+  function setLoading(on) {
+    sendBtn.disabled = on;
+    typingEl.style.display = on ? 'flex' : 'none';
+    if (on) scrollBottom();
+  }
+
+  function scrollBottom() {
+    requestAnimationFrame(() => {
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+    });
+  }
+
+  function escHtml(str) {
+    return str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/\n/g, '<br>');
+  }
+
+  // ── EMAIL TEMPLATES ───────────────────────────────────────────────────────
+  function openEmailPanel() {
+    document.getElementById('email-content').value = '';
+    openModal('email-modal');
+  }
+
+  async function selectTemplate(templateName) {
+    const ctx = callContext ? buildContextSummary(callContext) : 'No context available.';
+    document.getElementById('email-content').value = 'Generating…';
+
+    try {
+      const prompt = `Generate a personalized email using template: "${templateName}".
+
+Call context:
+${ctx}
+
+Write the complete email — subject line, greeting, full body, and signature block. Fill in all [bracketed placeholders] using the call context provided. If specific information (like exact credit level or price) was not provided, leave a clearly marked placeholder like [UPGRADE CREDIT LEVEL]. Keep the tone warm and professional. Do not add commentary — output only the email itself.`;
+
+      const res = await fetch('/api/sales-chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-6',
+          max_tokens: 1024,
+          system: buildSystemPrompt(),
+          messages: [{ role: 'user', content: prompt }]
+        })
+      });
+
+      const data = await res.json();
+      const reply = data.content?.[0]?.text ?? '(no response)';
+      document.getElementById('email-content').value = reply;
+    } catch (err) {
+      document.getElementById('email-content').value = `Error: ${err.message}`;
+    }
+  }
+
+  function copyEmail() {
+    const txt = document.getElementById('email-content').value;
+    navigator.clipboard.writeText(txt).then(() => {
+      const btn = document.querySelector('#email-modal .btn-copy');
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy to Clipboard', 2000);
+    });
+  }
+
+  // ── SF LOG ────────────────────────────────────────────────────────────────
+  async function generateLog() {
+    document.getElementById('log-content').value = 'Generating Salesforce log draft…';
+    openModal('log-modal');
+
+    const ctx = callContext ? buildContextSummary(callContext) : 'No context available.';
+    const chatSummary = history
+      .filter(m => m.role !== 'system')
+      .slice(-20)
+      .map(m => `${m.role === 'user' ? 'Rep' : 'Agent'}: ${m.content.slice(0, 300)}`)
+      .join('\n');
+
+    try {
+      const prompt = `Generate a Salesforce call log entry for this sales call.
+
+Call context:
+${ctx}
+
+Conversation summary (last exchanges):
+${chatSummary || 'No conversation yet.'}
+
+Format the log as follows:
+CALL LOG — [Date: today's date]
+Owner: [name]
+Rep: [rep name]
+Call Type: [type]
+Duration: [leave blank for rep to fill]
+
+SUMMARY:
+2–3 sentence summary of what was discussed.
+
+OUTCOME:
+One of: No Decision | Interested — Follow-up Needed | Objection Raised | Verbal Commitment | Not Interested
+
+KEY POINTS DISCUSSED:
+- Bullet 1
+- Bullet 2
+- (etc.)
+
+OBJECTIONS RAISED:
+List any objections and how they were addressed, or "None."
+
+NEXT STEPS:
+- Concrete next action with owner
+- Internal follow-up task for rep
+
+FOLLOW-UP DATE: [leave blank for rep to fill]
+
+Do not add commentary. Output only the log entry.`;
+
+      const res = await fetch('/api/sales-chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-6',
+          max_tokens: 800,
+          system: buildSystemPrompt(),
+          messages: [{ role: 'user', content: prompt }]
+        })
+      });
+
+      const data = await res.json();
+      const reply = data.content?.[0]?.text ?? '(no response)';
+      document.getElementById('log-content').value = reply;
+    } catch (err) {
+      document.getElementById('log-content').value = `Error: ${err.message}`;
+    }
+  }
+
+  async function regenerateLog() {
+    await generateLog();
+  }
+
+  function copyLog() {
+    const txt = document.getElementById('log-content').value;
+    navigator.clipboard.writeText(txt).then(() => {
+      const btn = document.querySelector('#log-modal .btn-copy');
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy to Clipboard', 2000);
+    });
+  }
+
+  // ── TRIP PLANNER ──────────────────────────────────────────────────────────
+  let tripCatalogLoaded = false;
+  let lastTripOptions = [];
+
+  async function openTripPlanner() {
+    openModal('trip-modal');
+    if (!tripCatalogLoaded) {
+      try {
+        const res = await fetch('/api/regions');
+        const data = await res.json();
+        const regionSel = document.getElementById('tp-region');
+        data.regions.forEach(r => {
+          const o = document.createElement('option');
+          o.value = r; o.textContent = r.replace(/-/g, ' ');
+          regionSel.appendChild(o);
+        });
+        const list = document.getElementById('tp-resort-list');
+        data.resorts.forEach(r => {
+          const o = document.createElement('option');
+          o.value = r.name; o.label = `${r.name} — ${r.state}`;
+          list.appendChild(o);
+        });
+        tripCatalogLoaded = true;
+      } catch (e) { /* form still usable via free text */ }
+    }
+  }
+
+  async function runTripPlan() {
+    const btn = document.getElementById('tp-go');
+    const results = document.getElementById('tp-results');
+    const checkIn = document.getElementById('tp-checkin').value;
+    if (!checkIn) { results.innerHTML = '<div class="trip-note">Please pick a check-in date.</div>'; return; }
+
+    const body = {
+      locationText: document.getElementById('tp-location').value.trim() || undefined,
+      region: document.getElementById('tp-region').value || undefined,
+      checkIn,
+      nights: parseInt(document.getElementById('tp-nights').value, 10) || 1,
+      flexDays: parseInt(document.getElementById('tp-flex').value, 10) || 0,
+      partySize: parseInt(document.getElementById('tp-party').value, 10) || 2,
+      maxResults: 5
+    };
+
+    btn.disabled = true; btn.textContent = 'Searching…';
+    results.innerHTML = '';
+    try {
+      const res = await fetch('/api/plan-trip', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+      const data = await res.json();
+      if (!data.ok) {
+        results.innerHTML = `<div class="trip-note">No options found: ${escHtml(data.error || 'try different dates or location')}.</div>`;
+        return;
+      }
+      lastTripOptions = data.options;
+      renderTripResults(data);
+    } catch (e) {
+      results.innerHTML = `<div class="trip-note">Error: ${escHtml(e.message)}</div>`;
+    } finally {
+      btn.disabled = false; btn.textContent = 'Find trip options';
+    }
+  }
+
+  function renderTripResults(data) {
+    const results = document.getElementById('tp-results');
+    const fmt = n => n.toLocaleString();
+    let html = '';
+    data.options.forEach((o, i) => {
+      const fitBadge = o.roomFitsParty
+        ? `<span class="trip-badge good">sleeps ${o.roomSleeps}</span>`
+        : `<span class="trip-badge warn">only sleeps ${o.roomSleeps} — party of ${o.partySize}</span>`;
+      const weekBadge = o.usedWeekRate ? `<span class="trip-badge good">week rate</span>` : '';
+      const seasons = o.seasons.join(', ');
+      html += `
+        <div class="trip-card ${i === 0 ? 'best' : ''}">
+          <div class="trip-card-top">
+            <div>
+              <div class="trip-resort">${escHtml(o.resort)}${i === 0 ? ' <span class="trip-badge good">best value</span>' : ''}</div>
+              <div class="trip-loc">${escHtml(o.state)} · ${escHtml(o.region.replace(/-/g, ' '))}</div>
+            </div>
+            <div>
+              <div class="trip-credits">${fmt(o.credits)} credits</div>
+              <div class="trip-cash">≈ $${fmt(o.cashEquivalentUSD)} value</div>
+            </div>
+          </div>
+          <div class="trip-detail">
+            ${escHtml(o.room)} ${fitBadge} ${weekBadge}<br>
+            ${o.checkIn} → ${o.checkOut} (${o.nights} nights) · ${escHtml(seasons)} season
+          </div>
+          <div class="trip-card-actions">
+            <button class="trip-mini-btn" onclick="tripToChat(${i})">Discuss with agent</button>
+            <button class="trip-mini-btn" onclick="tripCopy(${i})">Copy summary</button>
+          </div>
+        </div>`;
+    });
+    if (data.notes) data.notes.forEach(n => { html += `<div class="trip-note">${escHtml(n)}</div>`; });
+    results.innerHTML = html;
+  }
+
+  function tripSummary(o) {
+    return `${o.resort} (${o.state}) — ${o.room}, ${o.checkIn} to ${o.checkOut}, ${o.nights} nights, party of ${o.partySize}. ` +
+      `${o.credits.toLocaleString()} credits (~$${o.cashEquivalentUSD.toLocaleString()} Personal Choice value). ` +
+      `Season: ${o.seasons.join(', ')}.${o.usedWeekRate ? ' Week rate applied.' : ''}`;
+  }
+
+  function tripCopy(i) {
+    navigator.clipboard.writeText(tripSummary(lastTripOptions[i]));
+  }
+
+  function tripToChat(i) {
+    const o = lastTripOptions[i];
+    closeModal('trip-modal');
+    sendMessage(`Here's a trip option I'm considering for the owner: ${tripSummary(o)} ` +
+      `Give me a short, warm talking track to present this option on the call, tied to their interests.`);
+  }
+
+  // ── MODAL ─────────────────────────────────────────────────────────────────
+  function openModal(id) {
+    document.getElementById(id).classList.add('open');
+  }
+  function closeModal(id) {
+    document.getElementById(id).classList.remove('open');
+  }
+</script>
+</body>
+</html>
