@@ -565,6 +565,32 @@
     .btn-send:hover { background: #6366e8; }
     .btn-send:disabled { background: #312f7a; cursor: not-allowed; opacity: 0.6; }
 
+    /* ── VOICE CONTROLS ── */
+    .btn-voice {
+      flex-shrink: 0;
+      width: 44px;
+      border: 1px solid #2d3148;
+      border-radius: 8px;
+      background: #1e2235;
+      color: #c4c7ff;
+      font-size: 17px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .btn-voice:hover { background: #2d3148; }
+    .btn-voice.listening {
+      background: #7f1d1d;
+      border-color: #ef4444;
+      color: #fff;
+      animation: mic-pulse 1.2s infinite;
+    }
+    .btn-voice.active { background: #312f7a; border-color: #7c82ff; color: #fff; }
+    .btn-voice.unsupported { opacity: 0.4; cursor: not-allowed; }
+    @keyframes mic-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(239,68,68,0.5); }
+      50% { box-shadow: 0 0 0 5px rgba(239,68,68,0); }
+    }
+
     /* ── SCROLLBAR ── */
     ::-webkit-scrollbar { width: 5px; }
     ::-webkit-scrollbar-track { background: transparent; }
@@ -707,6 +733,8 @@
 
     <!-- INPUT BAR -->
     <div class="input-bar">
+      <button class="btn-voice" id="mic-btn" title="Push to talk">🎙️</button>
+      <button class="btn-voice" id="speak-btn" title="Read replies aloud">🔊</button>
       <textarea id="user-input" placeholder="Ask the agent anything, or describe what's happening on the call…" onkeydown="handleKey(event)"></textarea>
       <button class="btn-send" id="send-btn" onclick="sendMessage()">Send</button>
     </div>
@@ -813,6 +841,7 @@
   </div>
 </div>
 
+<script src="voice.js"></script>
 <script>
   const messagesEl = document.getElementById('messages');
   const typingEl = document.getElementById('typing');
@@ -949,6 +978,7 @@ You are operating in a pilot with 1–2 reps. Be precise, practical, and ready t
       const reply = data.content?.[0]?.text ?? '(no response)';
       history.push({ role: 'assistant', content: reply });
       appendAgentMsg(reply);
+      if (voiceOutputOn && window.VoiceKit) VoiceKit.speak(VoiceKit.cleanForSpeech(reply));
     } catch (err) {
       appendSystem(`Error: ${err.message}`);
     } finally {
@@ -1268,6 +1298,28 @@ Do not add commentary. Output only the log entry.`;
   function closeModal(id) {
     document.getElementById(id).classList.remove('open');
   }
+
+  // ── VOICE ─────────────────────────────────────────────────────────────────
+  let voiceOutputOn = false;
+
+  (function initVoice() {
+    const micBtn = document.getElementById('mic-btn');
+    const speakBtn = document.getElementById('speak-btn');
+
+    // Push-to-talk: transcript flows into the input; on stop, auto-send.
+    VoiceKit.attachPushToTalk(micBtn, {
+      onResult: (text) => { document.getElementById('user-input').value = text; },
+      onEnd: (finalText) => { if (finalText) sendMessage(); },
+      onError: (e) => appendSystem(`Mic error: ${e}`)
+    });
+
+    // Toggle: read agent replies aloud (premium voice if configured).
+    speakBtn.addEventListener('click', () => {
+      voiceOutputOn = !voiceOutputOn;
+      speakBtn.classList.toggle('active', voiceOutputOn);
+      if (!voiceOutputOn && window.VoiceKit) VoiceKit.stopSpeaking();
+    });
+  })();
 </script>
 </body>
 </html>

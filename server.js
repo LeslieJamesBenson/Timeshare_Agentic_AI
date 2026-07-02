@@ -14,6 +14,13 @@ if (!ANTHROPIC_API_KEY) {
   process.exit(1);
 }
 
+// ElevenLabs is OPTIONAL — the voice module falls back to the browser's built-in
+// voice when this key is absent, so the app still runs without it.
+const ELEVENLABS_API_KEY = process.env.ELEVENLABS_API_KEY;
+// Default voice ("Rachel" — warm, professional). Override per request or via env.
+const ELEVENLABS_VOICE_ID = process.env.ELEVENLABS_VOICE_ID || '21m00Tcm4TlvDq8ikWAM';
+const ELEVENLABS_MODEL = process.env.ELEVENLABS_MODEL || 'eleven_turbo_v2_5';
+
 // Real WorldMark dataset (100 resorts) — loaded and normalized once at startup.
 // Powers the trip planner. See lib/resortData.js.
 const resortDataset = loadResorts();
@@ -35,6 +42,52 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 
 // Quiet the browser's automatic favicon request (avoids noisy 404s).
 app.get('/favicon.ico', (req, res) => res.status(204).end());
+
+// ── VOICE ───────────────────────────────────────────────────────────────────
+// Lets the frontend know whether premium (ElevenLabs) TTS is available so it can
+// choose premium audio vs. the browser's built-in speech synthesis.
+app.get('/api/voice-status', (req, res) => {
+  res.json({ premiumTTS: Boolean(ELEVENLABS_API_KEY), provider: ELEVENLABS_API_KEY ? 'elevenlabs' : 'browser' });
+});
+
+// Text-to-speech proxy. Keeps the ElevenLabs key server-side; streams MP3 back.
+// Returns 503 (not 500) when no key is configured so the client can fall back
+// gracefully to browser TTS instead of treating it as a hard error.
+app.post('/api/tts', async (req, res) => {
+  if (!ELEVENLABS_API_KEY) {
+    return res.status(503).json({ error: 'Premium TTS not configured', fallback: 'browser' });
+  }
+  const text = (req.body && req.body.text || '').toString().slice(0, 5000).trim();
+  if (!text) return res.status(400).json({ error: 'text is required' });
+  const voiceId = (req.body && req.body.voiceId) || ELEVENLABS_VOICE_ID;
+
+  try {
+    const r = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}`, {
+      method: 'POST',
+      headers: {
+        'xi-api-key': ELEVENLABS_API_KEY,
+        'Content-Type': 'application/json',
+        'Accept': 'audio/mpeg'
+      },
+      body: JSON.stringify({
+        text,
+        model_id: ELEVENLABS_MODEL,
+        voice_settings: { stability: 0.5, similarity_boost: 0.75 }
+      })
+    });
+    if (!r.ok) {
+      const detail = await r.text();
+      console.error('ElevenLabs TTS error:', r.status, detail.slice(0, 300));
+      return res.status(502).json({ error: 'TTS provider error', status: r.status });
+    }
+    res.setHeader('Content-Type', 'audio/mpeg');
+    const buf = Buffer.from(await r.arrayBuffer());
+    res.send(buf);
+  } catch (err) {
+    console.error('TTS proxy error:', err);
+    res.status(500).json({ error: 'TTS request failed' });
+  }
+});
 
 function checkAvailability({ resort, checkIn, checkOut, unitType }) {
   const resortData = availabilityData.resorts.find(r =>
@@ -290,4 +343,5 @@ app.listen(PORT, () => {
   console.log(`Timeshare AI running at http://localhost:${PORT}`);
   console.log(`Owner concierge: http://localhost:${PORT}/index.html`);
   console.log(`Sales rep agent: http://localhost:${PORT}/sales-agent.html`);
+  console.log(`Voice (TTS): ${ELEVENLABS_API_KEY ? 'ElevenLabs premium' : 'browser fallback (set ELEVENLABS_API_KEY for premium)'}`);
 });

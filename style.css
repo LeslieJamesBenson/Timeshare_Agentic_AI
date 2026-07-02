@@ -378,6 +378,31 @@ body { background: transparent; font-family: 'DM Sans', sans-serif; }
 .send-btn:hover { background: #243461; transform: scale(1.05); }
 .send-btn:disabled { opacity: 0.4; cursor: default; transform: none; }
 
+/* ── VOICE CONTROLS ── */
+.voice-btn {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: #eef1f7;
+  border: 1px solid #d3d9e6;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-size: 15px;
+  line-height: 1;
+  transition: all 0.15s;
+}
+.voice-btn:hover { background: #e2e7f1; }
+.voice-btn.active { background: var(--wm-navy); border-color: var(--wm-navy); }
+.voice-btn.listening {
+  background: #fde8e8;
+  border-color: #ef4444;
+  animation: mic-pulse 1.2s infinite;
+}
+.voice-btn.unsupported { opacity: 0.4; cursor: not-allowed; }
+@keyframes mic-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(239,68,68,0.4); }
+  50% { box-shadow: 0 0 0 5px rgba(239,68,68,0); }
+}
+
 .typing-indicator {
   display: flex; gap: 4px; align-items: center;
   padding: 10px 13px;

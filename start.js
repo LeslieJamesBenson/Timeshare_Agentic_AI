@@ -6,7 +6,8 @@ const state = {
     profile: null,
     personality: 'friendly',
     messages: [],
-    thinking: false
+    thinking: false,
+    voiceOn: false
   };
 
   const personalities = {
@@ -78,6 +79,7 @@ Keep responses helpful, concise, and always tied back to the owner's specific pr
       state.messages.push({ role: 'assistant', content: reply });
       setThinking(false);
       addMsg('agent', reply);
+      if (state.voiceOn && window.VoiceKit) VoiceKit.speak(VoiceKit.cleanForSpeech(reply));
     } catch (e) {
       setThinking(false);
       addMsg('agent', 'I\'m having a moment — please try again shortly.');
@@ -229,4 +231,23 @@ Keep responses helpful, concise, and always tied back to the owner's specific pr
     inp.value = '';
     addMsg('user', val);
     sendToAI(val);
+  }
+
+  // ── VOICE ───────────────────────────────────────────────────────────────────
+  if (window.VoiceKit) {
+    const micBtn = document.getElementById('mic-btn');
+    const speakBtn = document.getElementById('speak-btn');
+
+    // Push-to-talk: transcript fills the input; auto-send when the owner stops.
+    VoiceKit.attachPushToTalk(micBtn, {
+      onResult: (text) => { document.getElementById('chat-input').value = text; },
+      onEnd: (finalText) => { if (finalText && !state.thinking) send(); }
+    });
+
+    // Toggle spoken replies on/off.
+    speakBtn.addEventListener('click', () => {
+      state.voiceOn = !state.voiceOn;
+      speakBtn.classList.toggle('active', state.voiceOn);
+      if (!state.voiceOn) VoiceKit.stopSpeaking();
+    });
   }

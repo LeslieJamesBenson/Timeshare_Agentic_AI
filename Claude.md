@@ -32,6 +32,23 @@ Internal demo of an AI-powered concierge widget for WorldMark by Wyndham timesha
   - `/api/sales-chat` — rep tool (compliance-guardrailed; can call the `plan_trip` tool)
   - `/api/plan-trip` — direct, deterministic trip planner (used by the "Plan a Trip" form; no AI)
   - `/api/regions` — region + resort catalog for the planner form
+  - `/api/tts` — text-to-speech proxy (ElevenLabs; key stays server-side)
+  - `/api/voice-status` — reports whether premium TTS is configured
+
+## Voice Module
+Both surfaces have push-to-talk voice, wired through the shared `voice.js`
+(`window.VoiceKit`). A 🎙️ mic button (speech-to-text via the browser's built-in
+SpeechRecognition — free, no key) fills the input and auto-sends; a 🔊 toggle reads
+the agent's replies aloud.
+- **Speaking (TTS):** premium ElevenLabs via `/api/tts` when `ELEVENLABS_API_KEY`
+  is set in `.env`; otherwise falls back automatically to the browser's built-in
+  speech synthesis. The app runs fine without the key.
+- **Config (all optional):** `ELEVENLABS_API_KEY`, `ELEVENLABS_VOICE_ID`
+  (default "Rachel"), `ELEVENLABS_MODEL` (default `eleven_turbo_v2_5`).
+- **Browser support:** speech-to-text needs Chrome/Edge; the mic button disables
+  itself gracefully elsewhere. Voice output works everywhere.
+- Per-personality voices (Aria/Jordan/Alex) are an easy future add — `speak()`
+  already accepts a `voiceId`.
 
 ## AI Model
 Use `claude-sonnet-5`. Never downgrade to an older model version.

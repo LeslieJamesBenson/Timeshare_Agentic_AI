@@ -45,6 +45,20 @@ Owner widget (`/index.html`):
 - [ ] "Browse resorts" quick reply → agent answers (uses the older mock dataset;
       this widget was intentionally left on mock data for this branch)
 
+## 3b. Voice module
+Deterministic (no keys needed):
+- [ ] `node scripts/browser-voice-smoke.js` (server running) → `VOICE SMOKE: PASS`
+- [ ] In Chrome/Edge, both pages show 🎙️ and 🔊 in the input bar
+
+Browser fallback voice (no ElevenLabs key):
+- [ ] Toggle 🔊, send a message → reply read aloud in the browser's built-in voice
+- [ ] Click 🎙️, speak → text appears in the input and sends (Chrome/Edge only)
+
+Premium voice — REQUIRES `ELEVENLABS_API_KEY` in `.env`:
+- [ ] `curl http://localhost:3000/api/voice-status` → `{"premiumTTS":true,...}`
+- [ ] Toggle 🔊, send a message → reply spoken in the ElevenLabs voice (not robotic)
+- [ ] Change `ELEVENLABS_VOICE_ID`, restart → voice changes
+
 ## 4. Known limitations to mention up front
 - Cash totals exclude housekeeping / guest-cert / bonus-time fees until those
   numbers are supplied (`Resort_Info_WBW` season dates cover 2026–2027 only).
