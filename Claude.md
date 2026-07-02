@@ -34,13 +34,13 @@ Internal demo of an AI-powered concierge widget for WorldMark by Wyndham timesha
   - `/api/regions` — region + resort catalog for the planner form
 
 ## AI Model
-Use `claude-sonnet-4-6`. Never downgrade to an older model version.
+Use `claude-sonnet-5`. Never downgrade to an older model version.
 > ⚠️ The model ID lives in the two frontend files. It has NOT been verified against
 > a live key in this environment — confirm it resolves before the exec demo (see the
 > manual API checklist in `docs/DEMO-CHECKLIST.md`).
 
 ## AI Model
-Use `claude-sonnet-4-6`. Never downgrade to an older model version.
+Use `claude-sonnet-5`. Never downgrade to an older model version.
 
 ## Concierge Personalities
 Three modes, each with a named agent. Do not change these without explicit instruction.
