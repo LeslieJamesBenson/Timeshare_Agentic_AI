@@ -936,7 +936,7 @@ You are operating in a pilot with 1–2 reps. Be precise, practical, and ready t
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          model: 'claude-sonnet-4-6',
+          model: 'claude-sonnet-5',
           max_tokens: 2048,
           system: buildSystemPrompt(),
           messages: history
@@ -1037,7 +1037,7 @@ Write the complete email — subject line, greeting, full body, and signature bl
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          model: 'claude-sonnet-4-6',
+          model: 'claude-sonnet-5',
           max_tokens: 1024,
           system: buildSystemPrompt(),
           messages: [{ role: 'user', content: prompt }]
@@ -1115,7 +1115,7 @@ Do not add commentary. Output only the log entry.`;
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          model: 'claude-sonnet-4-6',
+          model: 'claude-sonnet-5',
           max_tokens: 800,
           system: buildSystemPrompt(),
           messages: [{ role: 'user', content: prompt }]
