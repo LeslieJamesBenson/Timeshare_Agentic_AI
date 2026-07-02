@@ -103,7 +103,7 @@ Express Server (server.js)
     │
     │  POST https://api.anthropic.com/v1/messages
     ▼
-Anthropic Claude API (claude-sonnet-4-6)
+Anthropic Claude API (claude-sonnet-5)
 ```
 
 ---
@@ -120,6 +120,6 @@ Anthropic Claude API (claude-sonnet-4-6)
 ## Tech Stack
 
 - **Backend:** Node.js, Express
-- **AI:** Anthropic Claude (`claude-sonnet-4-6`) via Claude tool use
+- **AI:** Anthropic Claude (`claude-sonnet-5`) via Claude tool use
 - **Frontend:** Vanilla JS, no framework or build tools
 - **Data:** Static JSON dataset in `public/`
