@@ -66,7 +66,7 @@ Keep responses helpful, concise, and always tied back to the owner's specific pr
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          model: 'claude-sonnet-4-6',
+          model: 'claude-sonnet-5',
           max_tokens: 1000,
           system: getSystemPrompt(),
           messages: state.messages.map(m => ({ role: m.role, content: m.content }))
