@@ -38,6 +38,17 @@
       font-size: 12px;
       color: #6b7280;
     }
+    .topbar-logout {
+      margin-left: 14px;
+      background: transparent;
+      border: 1px solid #3a3f57;
+      color: #9aa2b5;
+      font-size: 12px;
+      padding: 5px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .topbar-logout:hover { border-color: #5b6280; color: #cdd3e2; }
     .status-indicator {
       display: flex;
       align-items: center;
@@ -594,6 +605,7 @@
     Ready
   </div>
   <div class="topbar-meta">Travel + Leisure · WorldMark by Wyndham · Internal Rep Tool</div>
+  <button class="topbar-logout" onclick="repLogout()" title="End session">Log out</button>
 </div>
 
 <div class="main">
@@ -864,7 +876,46 @@
     appendAgentMsg(`Understood. I have the full context for this call. I'm ready to help you with objection scripts, talking points, email drafts, or anything else you need. What would you like to tackle first?`);
 
     document.getElementById('context-badge').classList.add('visible');
+
+    // Persist so the context survives a refresh / dropped call (Phase 5).
+    if (ownerName) {
+      fetch('/api/rep-context', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ownerKey: ownerName, context: callContext })
+      }).catch(() => {});
+    }
   }
+
+  // Restore a previously saved context when the rep re-enters an owner name.
+  async function restoreContext() {
+    const ownerName = document.getElementById('ctx-owner-name').value.trim();
+    if (!ownerName) return;
+    try {
+      const res = await fetch('/api/rep-context/' + encodeURIComponent(ownerName));
+      if (!res.ok) return;
+      const { context: c } = await res.json();
+      if (!c) return;
+      const set = (id, val) => { const el = document.getElementById(id); if (el && !el.value) el.value = val || ''; };
+      set('ctx-call-type', c.callType);
+      set('ctx-stage', c.stage);
+      set('ctx-ownership', c.ownership);
+      set('ctx-travel', c.travel);
+      set('ctx-rep-name', c.repName);
+      set('ctx-sf-data', c.sfData);
+      appendSystem(`Restored saved context for ${ownerName}. Review, then click "Load Context".`);
+    } catch { /* ignore — fresh call */ }
+  }
+
+  async function repLogout() {
+    try { await fetch('/api/logout', { method: 'POST' }); } catch {}
+    location.href = '/login.html';
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const nameEl = document.getElementById('ctx-owner-name');
+    if (nameEl) nameEl.addEventListener('blur', restoreContext);
+  });
 
   function buildContextSummary(ctx) {
     return [
@@ -1125,6 +1176,16 @@ Do not add commentary. Output only the log entry.`;
       const data = await res.json();
       const reply = data.content?.[0]?.text ?? '(no response)';
       document.getElementById('log-content').value = reply;
+
+      // Persist the drafted log for later review/audit (Phase 5).
+      const ownerKey = callContext && callContext.ownerName;
+      if (ownerKey && reply && reply !== '(no response)') {
+        fetch('/api/sf-log', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ownerKey, log: reply })
+        }).catch(() => {});
+      }
     } catch (err) {
       document.getElementById('log-content').value = `Error: ${err.message}`;
     }

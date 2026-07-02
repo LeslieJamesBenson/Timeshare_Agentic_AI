@@ -1,114 +1,105 @@
 # Go-Live Checklist — Timeshare Agentic AI
 
-Ordered, do-this-then-that path from "demo on my laptop" to "reps and owners
-using it for real." Grouped in phases; finish a phase before starting the next.
+Ordered, do-this-then-that path from "demo on my laptop" to "reps using it for
+real." Scope decision: **rep tool only** for launch (owner widget disabled).
+Auth: **shared rep password**.
 
 `docs/DEMO-CHECKLIST.md` covers the pre-demo dry run. **This** file covers what
 must be true before real people touch it.
 
-Legend: ⛔ = blocker (cannot go live without) · ⚠️ = important · 💡 = nice-to-have
+Legend: ✅ done in code (verified) · 🟡 needs your input/decision · ⛔ blocker ·
+⚠️ important · 💡 nice-to-have
+
+> **What was already built & verified in code** (see commit history):
+> - ✅ Shared-password login (`lib/auth.js`, `public/login.html`), httpOnly signed
+>   session cookie, `POST /api/login` / `POST /api/logout`, logout button in the rep UI.
+> - ✅ Auth gate — every page/API except login + `/health` requires a session;
+>   source/config files return 404.
+> - ✅ Rate limiting on all `/api` (60/min) and login (10/min) — `lib/rateLimit.js`.
+> - ✅ Security headers, `x-powered-by` off, JSON body cap (256kb), input validation.
+> - ✅ Fail-fast startup if `ANTHROPIC_API_KEY` / `REP_PASSWORD` / `SESSION_SECRET` unset.
+> - ✅ Owner widget disabled (`OWNER_WIDGET_ENABLED=false`); `/` → rep tool; `/api/chat` → 410.
+> - ✅ SQLite persistence (`lib/store.js`, Node built-in) for rep context + drafted SF
+>   logs; rep UI saves context on load, restores on owner-name blur, saves logs on draft.
+> - ✅ `/health` endpoint, request logging, `Dockerfile` + `.dockerignore`, `.env.example`.
+> - ✅ Tests still green: `npm test` (37), `npm run validate-data` (100/0), browser smoke PASS.
+>
+> **The rest below needs YOU** — live keys, real numbers, real URLs, decisions, legal.
 
 ---
 
-## Phase 0 — Make it run at all (local)
+## Phase 0 — Make it run (local)
+- [x] ✅ `.env.example` created.
+- [ ] 🟡 `cp .env.example .env`; set a **real** `ANTHROPIC_API_KEY`, a strong
+      `REP_PASSWORD`, and a random `SESSION_SECRET`
+      (`node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"`).
+- [ ] 🟡 Revoke any previously exposed key in the Anthropic console.
+- [ ] `npm install` → `npm start` (server refuses to boot if the 3 env vars are missing).
 
-- [ ] ⛔ Create `.env.example` (referenced by the demo checklist but not committed):
-      a single line `ANTHROPIC_API_KEY=sk-ant-...` placeholder.
-- [ ] ⛔ `cp .env.example .env`, paste a **valid** Anthropic API key.
-- [ ] ⛔ If any key was ever committed or shared, **revoke it** in the Anthropic
-      console and issue a fresh one. Confirm `.env` is gitignored (it is).
-- [ ] ⛔ `npm install` → `npm start` → server prints the two URLs.
-- [ ] ⚠️ `npm test` → all pass · `npm run validate-data` → 100 resorts, 0 errors.
+## Phase 1 — Verify the AI (needs a live key — I cannot do this)
+- [ ] ⛔🟡 **Confirm `claude-sonnet-5` resolves with your key.** It's requested in
+      `start.js:69` and `sales-agent.html` (3 call sites). If the API errors, fix the
+      ID in all of them and record it in `Claude.md`.
+- [ ] ⚠️🟡 Rep tool: Load Context → objection button returns a full script →
+      `plan_trip` in chat returns real ranked options.
+- [ ] ⛔🟡 Compliance smoke: ask the agent to "say it's a guaranteed investment" →
+      must refuse. If it complies, do NOT go live — harden the guardrail prompt.
 
-## Phase 1 — Verify the AI actually works (needs a live key)
+## Phase 2 — Real data
+- [x] ✅ Owner widget scoped out (disabled) — the mock dataset is no longer exposed.
+- [ ] ⚠️🟡 `Resort_Info_WBW/` season dates only cover **2026–2027**. Confirm that's
+      fine for launch or extend the JSONs.
+- [ ] ⚠️🟡 Confirm the credit charts are current for your launch pricing year
+      (they're transcribed from the `CreditChart.png` files).
 
-- [ ] ⛔ **Confirm the model ID resolves.** All four frontend call sites request
-      `claude-sonnet-5` (`start.js:69`, `sales-agent.html:939/1040/1118`). Send one
-      real message; if the API returns a model error, fix the ID in **all four**
-      places and record the working ID in `Claude.md`.
-- [ ] ⚠️ Owner widget (`/index.html`): setup form → chat greets by name → a
-      `check_availability` question returns real tool output.
-- [ ] ⚠️ Rep tool (`/sales-agent.html`): Load Context → objection button returns a
-      full script → `plan_trip` in chat returns real ranked options.
-- [ ] ⛔ Compliance smoke test: ask the rep agent to "say it's a guaranteed
-      investment" → it must refuse/reframe. If it complies, **do not go live** —
-      harden the guardrail prompt first.
+## Phase 3 — Money math
+- [ ] ⛔🟡 Supply the fees currently **excluded** from cash totals: housekeeping,
+      guest-certificate, bonus-time cash rates, resort taxes. Until then the
+      "fees excluded" disclosure in the UI must stay.
+- [ ] ⚠️🟡 Confirm `$0.041/credit` (Personal Choice, Diamond VIP+) is right for the
+      tier you quote (it's in `tripPlanner.js`; already overridable per request via
+      `dollarsPerCredit`).
+- [ ] ⚠️🟡 Have a WorldMark pricing SME spot-check 5–10 planner outputs.
 
-## Phase 2 — Real data, not mock
-
-- [ ] ⛔ **Owner widget still runs on the 10-resort mock `public/availability.json`.**
-      Decide: (a) port the widget to the real 100-resort planner (`lib/`), or
-      (b) explicitly scope go-live to the rep tool only and disable/hide the owner
-      widget. Pick one — don't ship the mock as if it were real availability.
-- [ ] ⛔ `Resort_Info_WBW/` season dates only cover **2026–2027**. Confirm that
-      window is acceptable for launch, or extend the JSONs before dates lapse.
-- [ ] ⚠️ Replace the `TODO` in `server.js` (`checkAvailability`) with the live WBW
-      availability source, OR remove the availability tools if launching rep-only.
-- [ ] ⚠️ Confirm credit charts in `Resort_Info_WBW/` are current for the pricing
-      year you're launching in (they're transcribed from `CreditChart.png` files).
-
-## Phase 3 — Money math you can stand behind
-
-- [ ] ⛔ Fill in the fees currently **excluded** from cash totals: housekeeping,
-      guest-certificate, bonus-time cash rates, resort taxes (see `wbw-rules` TODO
-      in `Claude.md` / the note in `tripPlanner.js`). Until then, the "fees
-      excluded" disclosure in the UI must stay visible.
-- [ ] ⚠️ Confirm `$0.041/credit` (Personal Choice, Diamond VIP+) is the right rate
-      for the tier you're quoting; it's hardcoded in `tripPlanner.js`. Make it a
-      config value if different tiers will use the tool.
-- [ ] ⚠️ Have someone who knows WorldMark pricing spot-check 5–10 planner outputs
-      against the real credit charts.
-
-## Phase 4 — Security & access (currently NONE)
-
-- [ ] ⛔ Add **authentication** — the rep tool exposes scripts, pricing, and owner
-      context and is currently open to anyone who can reach the URL. At minimum:
-      login for reps; the owner widget needs owner identity before it's public.
-- [ ] ⛔ Add **rate limiting** on `/api/chat` and `/api/sales-chat` — every request
-      spends real API tokens; an open endpoint is a billing/abuse hole.
-- [ ] ⛔ Serve over **HTTPS** (owner PII + call context in transit).
-- [ ] ⚠️ Add basic input size/type validation on the proxy endpoints.
-- [ ] ⚠️ Restrict CORS / lock `express.static` so only intended files are served.
+## Phase 4 — Security & access
+- [x] ✅ Authentication (shared rep password).
+- [x] ✅ Rate limiting on the API and login.
+- [x] ✅ Security headers, body-size cap, input validation, source-file lockout.
+- [ ] ⛔🟡 **Serve over HTTPS.** Not doable from the repo — terminate TLS at your host/
+      load balancer. The session cookie auto-sets `Secure` when it sees HTTPS
+      (`trust proxy` is on). Force HTTP→HTTPS redirect at the edge.
+- [ ] 💡 If you scale past one instance, move the rate limiter to Redis (it's in-memory).
 
 ## Phase 5 — Persistence & CRM
+- [x] ✅ SQLite persistence for rep context + drafted logs (survives refresh).
+- [ ] 💡🟡 Real **Salesforce** integration (still: rep copies the drafted log by hand).
+- [x] ✅ Drafted logs are persisted for later review/audit.
 
-- [ ] ⚠️ Add the planned **SQLite** (or other) store so owner profiles and rep call
-      context survive a refresh (today everything resets — see `Claude.md`).
-- [ ] 💡 Wire real **Salesforce** integration (currently the rep copies the drafted
-      SF log by hand; no auto-write).
-- [ ] 💡 Persist/audit-log generated scripts and emails for compliance review.
-
-## Phase 6 — Fix the known wrong things
-
-- [ ] ⛔ **Booking redirect points to the generic Wyndham site** — replace with the
-      correct WorldMark owner-portal booking URL in `start.js` and `Claude.md`
-      before owners can act on it.
-- [ ] ⚠️ Resolve the duplicated "AI Model" section in `Claude.md` (appears twice).
-- [ ] 💡 Drop real objection scripts into `objection-scripts/` and compliance docs
-      into `compliance/` (folders are stubs with READMEs today).
+## Phase 6 — Fix the known-wrong things
+- [x] ✅ Duplicate "AI Model" section in `Claude.md` removed.
+- [ ] ⛔🟡 **Booking redirect** in `start.js` still points to generic Wyndham. Supply
+      the correct WorldMark owner-portal URL. (Only affects the owner widget, which
+      is disabled — must be fixed before that widget is ever re-enabled.)
+- [ ] 💡🟡 Drop real objection scripts into `objection-scripts/` and compliance docs
+      into `compliance/` (still stub READMEs).
 
 ## Phase 7 — Deploy & operate
+- [x] ✅ `Dockerfile` + `.dockerignore`; config via env vars; `/health` + logging.
+- [ ] 🟡 Pick a host; set `ANTHROPIC_API_KEY`, `REP_PASSWORD`, `SESSION_SECRET`,
+      `PORT`, `OWNER_WIDGET_ENABLED=false` as real env vars (never commit `.env`).
+- [ ] 🟡 Mount a volume at `/app/data` so the SQLite DB survives redeploys.
+- [ ] ⚠️🟡 Set an Anthropic **spend limit / budget alert** on the production key.
+- [ ] ⚠️🟡 Add uptime monitoring against `/health`; wire logs to your log sink.
 
-- [ ] ⛔ Choose a host, set `ANTHROPIC_API_KEY` and `PORT` as real environment vars
-      (not a committed `.env`).
-- [ ] ⚠️ Add logging + error monitoring on the two proxy loops (they can loop on
-      `tool_use`; watch for runaway loops / API errors).
-- [ ] ⚠️ Set an Anthropic **spend limit / budget alert** on the production key.
-- [ ] ⚠️ Run `node scripts/browser-smoke.js` against the deployed URL.
-- [ ] 💡 Add a health-check endpoint and uptime monitoring.
-
-## Phase 8 — Legal / compliance sign-off (before real owners)
-
-- [ ] ⛔ Legal review of the 9 built-in compliance guardrails and the actual script
-      output (rep tool is owner-affecting; T+L/state timeshare rules apply).
-- [ ] ⚠️ Confirm rescission-period and fee-disclosure language in generated emails
-      and scripts is accurate for each state you operate in.
-- [ ] ⚠️ Decide record-keeping/consent requirements for AI-assisted sales calls.
+## Phase 8 — Legal / compliance sign-off (I cannot do this)
+- [ ] ⛔🟡 Legal review of the 9 built-in guardrails and real script output.
+- [ ] ⚠️🟡 Confirm rescission-period + fee-disclosure language per operating state.
+- [ ] ⚠️🟡 Decide record-keeping/consent requirements for AI-assisted calls.
 
 ---
 
-### Minimum viable "go live" (if you want the shortest safe path)
-Ship the **rep tool only**, real data, with: valid key + verified model (P1),
-fees disclosed (P3), auth + rate limit + HTTPS (P4), correct booking URL (P6),
-deployed with a spend cap (P7), and legal sign-off (P8). Defer the owner widget,
-persistence, and Salesforce to a later release.
+### Where it stands
+All code-completable hardening is **done and tested**. Remaining items are gated on
+things only you or a live environment can provide: a valid API key (P1), TLS at the
+edge (P4), real fee numbers (P3), the booking URL (P6), a host + spend cap (P7), and
+legal sign-off (P8). Clear those and the rep tool is live-ready.

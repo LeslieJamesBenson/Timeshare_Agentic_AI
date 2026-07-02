@@ -56,25 +56,33 @@ Timeshare_AI/
 npm install
 ```
 
-### 2. Add your Anthropic API key
+### 2. Configure environment
 
-Create a `.env` file in the project root:
+Copy `.env.example` to `.env` and fill in:
 
 ```
-ANTHROPIC_API_KEY=your_key_here
+ANTHROPIC_API_KEY=your_key_here          # required — get one at console.anthropic.com
+REP_PASSWORD=a-strong-shared-password     # required — reps type this to log in
+SESSION_SECRET=a-long-random-string       # required — signs the session cookie
+OWNER_WIDGET_ENABLED=false                # rep-only launch; owner widget off
 ```
 
-Get a key at [console.anthropic.com](https://console.anthropic.com).
+Generate a session secret with:
+`node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"`
+
+The server **refuses to start** if any of the three required vars are missing.
 
 ### 3. Start the server
 
 ```bash
-node server.js
+npm start
 ```
 
-### 4. Open the widget
+### 4. Open the rep tool
 
-Visit [http://localhost:3000](http://localhost:3000) in your browser.
+Visit [http://localhost:3000/sales-agent.html](http://localhost:3000/sales-agent.html),
+enter the shared password, and you're in. (`/` redirects here; the owner concierge
+widget is disabled by default for a rep-only deployment.)
 
 ---
 

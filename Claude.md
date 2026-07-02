@@ -6,10 +6,28 @@
 Internal demo of an AI-powered concierge widget for WorldMark by Wyndham timeshare owners. Not yet in production. Untested as of project creation.
 
 ## How to Run Locally
-1. Copy `.env.example` to `.env` and add your key: `ANTHROPIC_API_KEY=sk-...`
+1. Copy `.env.example` to `.env` and set `ANTHROPIC_API_KEY`, `REP_PASSWORD`,
+   and `SESSION_SECRET` (server fails fast if any are missing).
 2. `npm install`
 3. `npm start`
-4. Owner widget: `http://localhost:3000/index.html` · Rep tool: `http://localhost:3000/sales-agent.html`
+4. Rep tool: `http://localhost:3000/sales-agent.html` (log in with `REP_PASSWORD`).
+   Owner widget is disabled unless `OWNER_WIDGET_ENABLED=true`.
+
+## Production Hardening (rep-only launch — implemented)
+The rep tool is gated for real use. See `docs/GO-LIVE-CHECKLIST.md` for the full
+status; remaining items need live keys / TLS / real numbers / legal sign-off.
+- **Auth:** shared-password login (`lib/auth.js`, `public/login.html`), httpOnly
+  signed session cookie. Everything except `/login.html`, `/api/login`, `/health`
+  requires a session. `REP_PASSWORD` + `SESSION_SECRET` in `.env`.
+- **Rate limiting:** `lib/rateLimit.js` — 60/min on `/api`, 10/min on login.
+- **Persistence:** `lib/store.js` — Node built-in SQLite (`node:sqlite`), stores
+  rep call context + drafted SF logs under `data/` (gitignored). Falls back to
+  in-memory if unavailable.
+- **Owner widget disabled:** `OWNER_WIDGET_ENABLED=false` (default). `/api/chat`
+  returns 410; `/` redirects to the rep tool.
+- **Deploy:** `Dockerfile` (needs Node 22+ for `node:sqlite`); config via env vars;
+  `/health` endpoint; request logging. Terminate TLS at the host (cookie auto-sets
+  `Secure` behind an HTTPS proxy; `trust proxy` is on).
 
 ## Testing
 - `npm test` — deterministic trip-planner + data-layer unit tests (no API key needed)
@@ -35,12 +53,10 @@ Internal demo of an AI-powered concierge widget for WorldMark by Wyndham timesha
 
 ## AI Model
 Use `claude-sonnet-5`. Never downgrade to an older model version.
-> ⚠️ The model ID lives in the two frontend files. It has NOT been verified against
-> a live key in this environment — confirm it resolves before the exec demo (see the
-> manual API checklist in `docs/DEMO-CHECKLIST.md`).
-
-## AI Model
-Use `claude-sonnet-5`. Never downgrade to an older model version.
+> ⚠️ The model ID lives in the frontend files (`start.js`, `sales-agent.html`).
+> It has NOT been verified against a live key in this environment — confirm it
+> resolves before the exec demo (see the manual API checklist in
+> `docs/DEMO-CHECKLIST.md`).
 
 ## Concierge Personalities
 Three modes, each with a named agent. Do not change these without explicit instruction.
@@ -77,8 +93,9 @@ When a user asks about making an actual booking, direct them to WorldMark's book
 **TODO:** Specific WorldMark booking URL not yet confirmed — add it here once known and update the system prompt accordingly. Current placeholder redirects to Wyndham (wrong — must be fixed).
 
 ## Scope Constraints
-- Internal demos only — not a customer-facing production tool yet
-- Do not add authentication, rate limiting, or production hardening unless asked
+- Internal tool — the rep tool is being hardened for a live rep-only pilot
+  (auth, rate limiting, persistence now implemented; see Production Hardening above)
+- The owner concierge widget is NOT production-ready and stays disabled by default
 - Do not add features beyond what is described here unless explicitly requested
 
 ---

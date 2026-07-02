@@ -4,6 +4,10 @@ node_modules/
 # Secrets — API keys live here, never commit
 .env
 .env.*
+!.env.example
+
+# Persistence (SQLite) — generated at runtime, never commit
+data/
 
 # Auto-generated caches
 resort-cache.json

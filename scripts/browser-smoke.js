@@ -5,16 +5,24 @@ const { chromium } = require('playwright-core');
 
 const EXE = '/opt/pw-browsers/chromium-1194/chrome-linux/chrome';
 const BASE = process.env.BASE || 'http://localhost:3000';
+// The rep tool is now behind a shared-password login (Phase 4). Use the same
+// password the server was started with.
+const REP_PASSWORD = process.env.REP_PASSWORD || 'hunter2-shared';
 
 (async () => {
   const browser = await chromium.launch({ executablePath: EXE, args: ['--no-sandbox'] });
-  const page = await browser.newPage();
+  const context = await browser.newContext();
+  const page = await context.newPage();
   const errors = [];
   page.on('pageerror', e => errors.push('pageerror: ' + e.message));
   page.on('console', m => { if (m.type() === 'error') errors.push('console.error: ' + m.text()); });
 
   let fail = 0;
   const check = (name, cond) => { if (!cond) { fail++; console.log('  FAIL: ' + name); } };
+
+  // Authenticate first so the session cookie is set on the context.
+  const login = await context.request.post(BASE + '/api/login', { data: { password: REP_PASSWORD } });
+  check('login succeeds', login.ok());
 
   await page.goto(BASE + '/sales-agent.html', { waitUntil: 'networkidle' });
   check('page title loaded', (await page.title()).length >= 0);
