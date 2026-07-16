@@ -1,0 +1,229 @@
+{
+  "resortId": "florida-ocean-walk",
+  "resortName": "Ocean Walk",
+  "destination": "Florida",
+  "region": "southeast",
+  "country": "USA",
+  "state": "Florida",
+  "timezone": "UTC",
+  "unitTypes": [
+    {
+      "id": "one-bedroom",
+      "name": "1 BR",
+      "bedrooms": 1,
+      "maxOccupancy": 4,
+      "roomType": "standard"
+    },
+    {
+      "id": "two-bedroom",
+      "name": "2 BR",
+      "bedrooms": 2,
+      "maxOccupancy": 6,
+      "roomType": "standard",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "two-bedroom-deluxe",
+      "name": "2 BR Deluxe",
+      "bedrooms": 2,
+      "maxOccupancy": 6,
+      "roomType": "deluxe"
+    },
+    {
+      "id": "two-bedroom-penthouse",
+      "name": "2 BR Penthouse",
+      "bedrooms": 2,
+      "maxOccupancy": 6,
+      "roomType": "penthouse"
+    },
+    {
+      "id": "three-bedroom",
+      "name": "3 BR",
+      "bedrooms": 3,
+      "maxOccupancy": 8,
+      "roomType": "standard"
+    }
+  ],
+  "seasons": [
+    {
+      "id": "prime",
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "dateRanges": [
+        {
+          "start": "2026-01-01",
+          "end": "2026-09-03"
+        },
+        {
+          "start": "2026-10-02",
+          "end": "2026-10-15"
+        },
+        {
+          "start": "2026-11-13",
+          "end": "2026-12-31"
+        },
+        {
+          "start": "2027-01-01",
+          "end": "2027-09-02"
+        },
+        {
+          "start": "2027-10-01",
+          "end": "2027-10-14"
+        },
+        {
+          "start": "2027-11-12",
+          "end": "2027-12-31"
+        }
+      ]
+    },
+    {
+      "id": "average",
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "dateRanges": [
+        {
+          "start": "2026-09-04",
+          "end": "2026-10-01"
+        },
+        {
+          "start": "2026-10-16",
+          "end": "2026-11-12"
+        },
+        {
+          "start": "2027-09-03",
+          "end": "2027-09-30"
+        },
+        {
+          "start": "2027-10-15",
+          "end": "2027-11-11"
+        }
+      ]
+    }
+  ],
+  "creditRates": [
+    {
+      "seasonId": "prime",
+      "unitTypeId": "one-bedroom",
+      "weekdayCredits": 1000,
+      "weekendCredits": 1950,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1100
+      },
+      "weeklyCredits": 9000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "two-bedroom",
+      "weekdayCredits": 1200,
+      "weekendCredits": 2450,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1300
+      },
+      "weeklyCredits": 11000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "two-bedroom-deluxe",
+      "weekdayCredits": 1300,
+      "weekendCredits": 2600,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1600
+      },
+      "weeklyCredits": 12000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "two-bedroom-penthouse",
+      "weekdayCredits": 1750,
+      "weekendCredits": 3450,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2100
+      },
+      "weeklyCredits": 16000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "three-bedroom",
+      "weekdayCredits": 1550,
+      "weekendCredits": 3050,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1700
+      },
+      "weeklyCredits": 14000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "one-bedroom",
+      "weekdayCredits": 775,
+      "weekendCredits": 1550,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 800
+      },
+      "weeklyCredits": 7000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "two-bedroom",
+      "weekdayCredits": 1000,
+      "weekendCredits": 1950,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1100
+      },
+      "weeklyCredits": 9000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "two-bedroom-deluxe",
+      "weekdayCredits": 1100,
+      "weekendCredits": 2200,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1200
+      },
+      "weeklyCredits": 10000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "two-bedroom-penthouse",
+      "weekdayCredits": 1550,
+      "weekendCredits": 3050,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1700
+      },
+      "weeklyCredits": 14000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "three-bedroom",
+      "weekdayCredits": 1300,
+      "weekendCredits": 2600,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1600
+      },
+      "weeklyCredits": 12000
+    }
+  ],
+  "dateOverrides": [],
+  "rules": {
+    "weekendNights": [
+      "FRIDAY",
+      "SATURDAY"
+    ],
+    "daySpecificNights": [
+      "SUNDAY"
+    ],
+    "weeklyPricingStrategy": "lowest-valid-rate",
+    "weeklyRequiresSingleSeason": true,
+    "useCheckInSeasonForEntireStay": false,
+    "allowSplitSeasonCalculation": true,
+    "minimumStay": 1
+  },
+  "source": {
+    "sourceFile": "Resort_Info_WBW/Florida/WBW Ocean Walk/ocean_walk.json",
+    "sourcePointer": "CreditChart.png",
+    "effectiveYear": 2026,
+    "effectiveStart": "2026-01-01",
+    "effectiveEnd": "2027-12-31",
+    "importedAt": "2026-07-16T19:07:02.844Z"
+  },
+  "status": "active"
+}

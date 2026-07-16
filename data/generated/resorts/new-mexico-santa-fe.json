@@ -1,0 +1,278 @@
+{
+  "resortId": "new-mexico-santa-fe",
+  "resortName": "Santa Fe",
+  "destination": "New Mexico",
+  "region": "desert-southwest",
+  "country": "USA",
+  "state": "New Mexico",
+  "timezone": "UTC",
+  "unitTypes": [
+    {
+      "id": "hotel",
+      "name": "Hotel",
+      "bedrooms": 0,
+      "maxOccupancy": 4,
+      "roomType": "standard"
+    },
+    {
+      "id": "studio",
+      "name": "Studio",
+      "bedrooms": 0,
+      "maxOccupancy": 4,
+      "roomType": "standard",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "one-bedroom-compact",
+      "name": "1 BR Compact",
+      "bedrooms": 1,
+      "maxOccupancy": 4,
+      "roomType": "compact"
+    },
+    {
+      "id": "one-bedroom",
+      "name": "1 BR",
+      "bedrooms": 1,
+      "maxOccupancy": 4,
+      "roomType": "standard",
+      "accessibilityType": "accessible"
+    }
+  ],
+  "seasons": [
+    {
+      "id": "prime",
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "dateRanges": [
+        {
+          "start": "2026-01-01",
+          "end": "2026-01-01"
+        },
+        {
+          "start": "2026-02-05",
+          "end": "2026-03-05"
+        },
+        {
+          "start": "2026-04-10",
+          "end": "2026-09-30"
+        },
+        {
+          "start": "2026-11-12",
+          "end": "2026-12-31"
+        },
+        {
+          "start": "2027-02-04",
+          "end": "2027-03-04"
+        },
+        {
+          "start": "2027-04-09",
+          "end": "2027-09-29"
+        },
+        {
+          "start": "2027-11-11",
+          "end": "2027-12-31"
+        }
+      ]
+    },
+    {
+      "id": "average",
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "dateRanges": [
+        {
+          "start": "2026-01-02",
+          "end": "2026-02-04"
+        },
+        {
+          "start": "2026-03-06",
+          "end": "2026-03-19"
+        },
+        {
+          "start": "2026-10-02",
+          "end": "2026-10-22"
+        },
+        {
+          "start": "2027-01-01",
+          "end": "2027-02-03"
+        },
+        {
+          "start": "2027-03-05",
+          "end": "2027-03-18"
+        },
+        {
+          "start": "2027-10-01",
+          "end": "2027-10-21"
+        }
+      ]
+    },
+    {
+      "id": "slow",
+      "name": "slow",
+      "meaning": "Off-peak - not the best time to visit",
+      "dateRanges": [
+        {
+          "start": "2026-03-20",
+          "end": "2026-04-09"
+        },
+        {
+          "start": "2026-10-23",
+          "end": "2026-11-12"
+        },
+        {
+          "start": "2027-03-19",
+          "end": "2027-04-08"
+        },
+        {
+          "start": "2027-10-22",
+          "end": "2027-11-11"
+        }
+      ]
+    }
+  ],
+  "creditRates": [
+    {
+      "seasonId": "prime",
+      "unitTypeId": "hotel",
+      "weekdayCredits": 900,
+      "weekendCredits": 1800,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1300
+      },
+      "weeklyCredits": 8500
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "studio",
+      "weekdayCredits": 1100,
+      "weekendCredits": 2200,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1700
+      },
+      "weeklyCredits": 10500
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "one-bedroom-compact",
+      "weekdayCredits": 1250,
+      "weekendCredits": 2500,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2000
+      },
+      "weeklyCredits": 12000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "one-bedroom",
+      "weekdayCredits": 1300,
+      "weekendCredits": 2600,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2100
+      },
+      "weeklyCredits": 12500
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "hotel",
+      "weekdayCredits": 750,
+      "weekendCredits": 1500,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1000
+      },
+      "weeklyCredits": 7000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "studio",
+      "weekdayCredits": 1050,
+      "weekendCredits": 2100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1600
+      },
+      "weeklyCredits": 10000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "one-bedroom-compact",
+      "weekdayCredits": 1150,
+      "weekendCredits": 2300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1800
+      },
+      "weeklyCredits": 11000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "one-bedroom",
+      "weekdayCredits": 1250,
+      "weekendCredits": 2500,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2000
+      },
+      "weeklyCredits": 12000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "hotel",
+      "weekdayCredits": 550,
+      "weekendCredits": 1100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 600
+      },
+      "weeklyCredits": 5000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "studio",
+      "weekdayCredits": 850,
+      "weekendCredits": 1700,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1200
+      },
+      "weeklyCredits": 8000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "one-bedroom-compact",
+      "weekdayCredits": 950,
+      "weekendCredits": 1900,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1400
+      },
+      "weeklyCredits": 9000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "one-bedroom",
+      "weekdayCredits": 1050,
+      "weekendCredits": 2100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1600
+      },
+      "weeklyCredits": 10000
+    }
+  ],
+  "dateOverrides": [],
+  "rules": {
+    "weekendNights": [
+      "FRIDAY",
+      "SATURDAY"
+    ],
+    "daySpecificNights": [
+      "SUNDAY"
+    ],
+    "weeklyPricingStrategy": "lowest-valid-rate",
+    "weeklyRequiresSingleSeason": true,
+    "useCheckInSeasonForEntireStay": false,
+    "allowSplitSeasonCalculation": true,
+    "minimumStay": 1
+  },
+  "source": {
+    "sourceFile": "Resort_Info_WBW/New Mexico/WBW Santa Fe/santa_fe.json",
+    "sourcePointer": "CreditChart.png",
+    "effectiveYear": 2026,
+    "effectiveStart": "2026-01-01",
+    "effectiveEnd": "2027-12-31",
+    "importedAt": "2026-07-16T19:07:02.848Z"
+  },
+  "status": "warning"
+}

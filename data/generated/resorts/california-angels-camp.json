@@ -1,0 +1,291 @@
+{
+  "resortId": "california-angels-camp",
+  "resortName": "Angels Camp",
+  "destination": "California",
+  "region": "california",
+  "country": "USA",
+  "state": "California",
+  "timezone": "UTC",
+  "unitTypes": [
+    {
+      "id": "one-bedroom",
+      "name": "1 BR",
+      "bedrooms": 1,
+      "maxOccupancy": 4,
+      "roomType": "standard",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "two-bedroom",
+      "name": "2 BR",
+      "bedrooms": 2,
+      "maxOccupancy": 6,
+      "roomType": "standard",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "two-bedroom-penthouse",
+      "name": "2 BR Penthouse",
+      "bedrooms": 2,
+      "maxOccupancy": 6,
+      "roomType": "penthouse"
+    },
+    {
+      "id": "three-bedroom",
+      "name": "3 BR",
+      "bedrooms": 3,
+      "maxOccupancy": 8,
+      "roomType": "standard"
+    },
+    {
+      "id": "three-bedroom-penthouse",
+      "name": "3 BR Penthouse",
+      "bedrooms": 3,
+      "maxOccupancy": 8,
+      "roomType": "penthouse"
+    }
+  ],
+  "seasons": [
+    {
+      "id": "prime",
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "dateRanges": [
+        {
+          "start": "2026-01-01",
+          "end": "2026-01-01"
+        },
+        {
+          "start": "2026-02-06",
+          "end": "2026-09-10"
+        },
+        {
+          "start": "2026-11-13",
+          "end": "2026-12-31"
+        },
+        {
+          "start": "2027-02-05",
+          "end": "2027-09-09"
+        },
+        {
+          "start": "2027-11-12",
+          "end": "2027-12-31"
+        }
+      ]
+    },
+    {
+      "id": "average",
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "dateRanges": [
+        {
+          "start": "2026-01-02",
+          "end": "2026-02-05"
+        },
+        {
+          "start": "2026-09-11",
+          "end": "2026-10-15"
+        },
+        {
+          "start": "2027-01-01",
+          "end": "2027-02-04"
+        },
+        {
+          "start": "2027-09-10",
+          "end": "2027-10-14"
+        }
+      ]
+    },
+    {
+      "id": "slow",
+      "name": "slow",
+      "meaning": "Off-peak - not the best time to visit",
+      "dateRanges": [
+        {
+          "start": "2026-10-16",
+          "end": "2026-11-12"
+        },
+        {
+          "start": "2027-10-15",
+          "end": "2027-11-11"
+        }
+      ]
+    }
+  ],
+  "creditRates": [
+    {
+      "seasonId": "prime",
+      "unitTypeId": "one-bedroom",
+      "weekdayCredits": 1000,
+      "weekendCredits": 1450,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1100
+      },
+      "weeklyCredits": 8000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "two-bedroom",
+      "weekdayCredits": 1250,
+      "weekendCredits": 1800,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1400
+      },
+      "weeklyCredits": 10000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "two-bedroom-penthouse",
+      "weekdayCredits": 2000,
+      "weekendCredits": 2750,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2500
+      },
+      "weeklyCredits": 16000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "three-bedroom",
+      "weekdayCredits": 1500,
+      "weekendCredits": 2100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1800
+      },
+      "weeklyCredits": 12000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "three-bedroom-penthouse",
+      "weekdayCredits": 2250,
+      "weekendCredits": 3125,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2750
+      },
+      "weeklyCredits": 18000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "one-bedroom",
+      "weekdayCredits": 700,
+      "weekendCredits": 1125,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 950
+      },
+      "weeklyCredits": 6000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "two-bedroom",
+      "weekdayCredits": 850,
+      "weekendCredits": 1250,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1100
+      },
+      "weeklyCredits": 7000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "two-bedroom-penthouse",
+      "weekdayCredits": 1750,
+      "weekendCredits": 2450,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2100
+      },
+      "weeklyCredits": 14000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "three-bedroom",
+      "weekdayCredits": 1000,
+      "weekendCredits": 1450,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1100
+      },
+      "weeklyCredits": 8000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "three-bedroom-penthouse",
+      "weekdayCredits": 2000,
+      "weekendCredits": 2750,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2500
+      },
+      "weeklyCredits": 16000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "one-bedroom",
+      "weekdayCredits": 450,
+      "weekendCredits": 825,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 550
+      },
+      "weeklyCredits": 4000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "two-bedroom",
+      "weekdayCredits": 600,
+      "weekendCredits": 925,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 750
+      },
+      "weeklyCredits": 5000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "two-bedroom-penthouse",
+      "weekdayCredits": 1500,
+      "weekendCredits": 2100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1800
+      },
+      "weeklyCredits": 12000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "three-bedroom",
+      "weekdayCredits": 700,
+      "weekendCredits": 1125,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 950
+      },
+      "weeklyCredits": 6000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "three-bedroom-penthouse",
+      "weekdayCredits": 1750,
+      "weekendCredits": 2450,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2100
+      },
+      "weeklyCredits": 14000
+    }
+  ],
+  "dateOverrides": [],
+  "rules": {
+    "weekendNights": [
+      "FRIDAY",
+      "SATURDAY"
+    ],
+    "daySpecificNights": [
+      "SUNDAY"
+    ],
+    "weeklyPricingStrategy": "lowest-valid-rate",
+    "weeklyRequiresSingleSeason": true,
+    "useCheckInSeasonForEntireStay": false,
+    "allowSplitSeasonCalculation": true,
+    "minimumStay": 1
+  },
+  "source": {
+    "sourceFile": "Resort_Info_WBW/California/WBW Angels Camp/angels_camp.json",
+    "sourcePointer": "CreditChart.png",
+    "effectiveYear": 2026,
+    "effectiveStart": "2026-01-01",
+    "effectiveEnd": "2027-12-31",
+    "importedAt": "2026-07-16T19:07:02.840Z"
+  },
+  "status": "active"
+}

@@ -1,0 +1,243 @@
+{
+  "resortId": "mexico-coral-baja",
+  "resortName": "Coral Baja",
+  "destination": "Mexico",
+  "region": "mexico",
+  "country": "Mexico",
+  "state": "Mexico",
+  "timezone": "UTC",
+  "unitTypes": [
+    {
+      "id": "studio",
+      "name": "Studio",
+      "bedrooms": 0,
+      "maxOccupancy": 4,
+      "roomType": "standard"
+    },
+    {
+      "id": "one-bedroom",
+      "name": "1 BR",
+      "bedrooms": 1,
+      "maxOccupancy": 4,
+      "roomType": "standard",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "one-bedroom-deluxe",
+      "name": "1 BR Deluxe",
+      "bedrooms": 1,
+      "maxOccupancy": 4,
+      "roomType": "deluxe",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "two-bedroom",
+      "name": "2 BR",
+      "bedrooms": 2,
+      "maxOccupancy": 6,
+      "roomType": "standard",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "two-bedroom-penthouse",
+      "name": "2 BR Penthouse",
+      "bedrooms": 2,
+      "maxOccupancy": 6,
+      "roomType": "penthouse"
+    },
+    {
+      "id": "three-bedroom-penthouse",
+      "name": "3 BR Penthouse",
+      "bedrooms": 3,
+      "maxOccupancy": 8,
+      "roomType": "penthouse",
+      "accessibilityType": "accessible"
+    }
+  ],
+  "seasons": [
+    {
+      "id": "prime",
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "dateRanges": [
+        {
+          "start": "2026-01-01",
+          "end": "2026-08-13"
+        },
+        {
+          "start": "2026-10-16",
+          "end": "2026-12-31"
+        },
+        {
+          "start": "2027-01-01",
+          "end": "2027-08-12"
+        },
+        {
+          "start": "2027-10-15",
+          "end": "2027-12-31"
+        }
+      ]
+    },
+    {
+      "id": "average",
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "dateRanges": [
+        {
+          "start": "2026-08-14",
+          "end": "2026-10-15"
+        },
+        {
+          "start": "2027-08-13",
+          "end": "2027-10-14"
+        }
+      ]
+    }
+  ],
+  "creditRates": [
+    {
+      "seasonId": "prime",
+      "unitTypeId": "studio",
+      "weekdayCredits": 1000,
+      "weekendCredits": 1450,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1100
+      },
+      "weeklyCredits": 8000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "one-bedroom",
+      "weekdayCredits": 1100,
+      "weekendCredits": 1600,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1400
+      },
+      "weeklyCredits": 9000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "one-bedroom-deluxe",
+      "weekdayCredits": 1250,
+      "weekendCredits": 1800,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1400
+      },
+      "weeklyCredits": 10000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "two-bedroom",
+      "weekdayCredits": 1500,
+      "weekendCredits": 2100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1800
+      },
+      "weeklyCredits": 12000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "two-bedroom-penthouse",
+      "weekdayCredits": 2000,
+      "weekendCredits": 2750,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2500
+      },
+      "weeklyCredits": 16000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "three-bedroom-penthouse",
+      "weekdayCredits": 2250,
+      "weekendCredits": 3125,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2750
+      },
+      "weeklyCredits": 18000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "studio",
+      "weekdayCredits": 700,
+      "weekendCredits": 1125,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 950
+      },
+      "weeklyCredits": 6000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "one-bedroom",
+      "weekdayCredits": 850,
+      "weekendCredits": 1250,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1100
+      },
+      "weeklyCredits": 7000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "one-bedroom-deluxe",
+      "weekdayCredits": 1000,
+      "weekendCredits": 1450,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1100
+      },
+      "weeklyCredits": 8000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "two-bedroom",
+      "weekdayCredits": 1100,
+      "weekendCredits": 1600,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1400
+      },
+      "weeklyCredits": 9000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "two-bedroom-penthouse",
+      "weekdayCredits": 1750,
+      "weekendCredits": 2450,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2100
+      },
+      "weeklyCredits": 14000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "three-bedroom-penthouse",
+      "weekdayCredits": 2000,
+      "weekendCredits": 2750,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2500
+      },
+      "weeklyCredits": 16000
+    }
+  ],
+  "dateOverrides": [],
+  "rules": {
+    "weekendNights": [
+      "FRIDAY",
+      "SATURDAY"
+    ],
+    "daySpecificNights": [
+      "SUNDAY"
+    ],
+    "weeklyPricingStrategy": "lowest-valid-rate",
+    "weeklyRequiresSingleSeason": true,
+    "useCheckInSeasonForEntireStay": false,
+    "allowSplitSeasonCalculation": true,
+    "minimumStay": 1
+  },
+  "source": {
+    "sourceFile": "Resort_Info_WBW/Mexico/WBW Coral Baja/coral_baja.json",
+    "sourcePointer": "CreditChart.png",
+    "effectiveYear": 2026,
+    "effectiveStart": "2026-01-01",
+    "effectiveEnd": "2027-12-31",
+    "importedAt": "2026-07-16T19:07:02.846Z"
+  },
+  "status": "active"
+}

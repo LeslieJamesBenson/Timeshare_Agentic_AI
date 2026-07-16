@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Resort Credit Calculator</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #ffffff; --ink: #1a1f29; --muted: #5b6472;
+    --line: #e3e7ec; --accent: #1f5fa8; --accent-ink: #ffffff;
+    --good: #17693a; --warn: #8a5a00; --bad: #a12222; --chip: #eef2f7;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  a { color: var(--accent); }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 24px 20px 64px; }
+  header.top { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+  h1 { font-size: 22px; margin: 0; letter-spacing: -0.01em; }
+  .nav a { margin-left: 16px; font-size: 14px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px; margin-bottom: 18px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
+  label { display: block; font-weight: 600; font-size: 13px; margin-bottom: 6px; }
+  input, select, button { font: inherit; }
+  input[type=text], input[type=date], input[type=number], select {
+    width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--ink); }
+  input:focus, select:focus, button:focus-visible { outline: 3px solid #9cc2ec; outline-offset: 1px; }
+  .field { position: relative; }
+  .hint { color: var(--muted); font-size: 12px; margin-top: 4px; }
+  .full { grid-column: 1 / -1; }
+  button.primary { background: var(--accent); color: var(--accent-ink); border: none; padding: 12px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; }
+  button.primary:disabled { opacity: .5; cursor: not-allowed; }
+  button.ghost { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 8px 14px; cursor: pointer; }
+  .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+  /* combobox */
+  .listbox { position: absolute; z-index: 20; left: 0; right: 0; top: calc(100% + 4px);
+    background: #fff; border: 1px solid var(--line); border-radius: 8px; max-height: 280px; overflow: auto;
+    box-shadow: 0 8px 24px rgba(0,0,0,.08); }
+  .listbox[hidden] { display: none; }
+  .opt { padding: 9px 12px; cursor: pointer; display: flex; justify-content: space-between; gap: 8px; }
+  .opt:hover, .opt[aria-selected=true] { background: var(--chip); }
+  .opt .sub { color: var(--muted); font-size: 12px; }
+  .opt .badge { font-size: 11px; color: var(--warn); }
+  /* result */
+  .total { font-size: 44px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; }
+  .total small { font-size: 15px; font-weight: 600; color: var(--muted); }
+  .summary { color: var(--muted); margin: 4px 0 0; }
+  table { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 14px; }
+  .tablewrap { overflow-x: auto; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  th { font-size: 12px; text-transform: uppercase; letter-spacing: .03em; color: var(--muted); }
+  td.num, th.num { text-align: right; }
+  tr.wk td { background: #f0f6ff; }
+  .pill { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 999px; background: var(--chip); color: var(--muted); }
+  .adj { margin-top: 14px; padding: 12px 14px; background: #f0f6ff; border: 1px solid #cfe0f5; border-radius: 8px; font-size: 14px; }
+  .adj .row { display: flex; justify-content: space-between; }
+  .cmp { margin-top: 14px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  @media (max-width: 640px) { .cmp { grid-template-columns: 1fr; } }
+  .cmp .box { border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; }
+  .cmp .box b { display: block; font-size: 20px; }
+  .cmp .short b { color: var(--bad); } .cmp .surplus b { color: var(--good); }
+  .warnbox { margin-top: 14px; border-left: 4px solid var(--warn); background: #fff8ec; padding: 10px 14px; border-radius: 6px; color: #6b4700; font-size: 14px; }
+  .errbox { border-left: 4px solid var(--bad); background: #fdeeee; padding: 12px 14px; border-radius: 6px; color: #7a1a1a; }
+  .muted { color: var(--muted); }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+  @media (prefers-reduced-motion: no-preference) { .card { transition: box-shadow .15s; } }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#12151b; --card:#1b1f27; --ink:#e8ebef; --muted:#9aa4b2; --line:#2b313b; --accent:#4f93d6; --chip:#232a34; }
+    input[type=text], input[type=date], input[type=number], select, button.ghost, .listbox { background:#232a34; color:var(--ink); }
+    tr.wk td { background:#1f2a3a; } .adj { background:#1c2634; border-color:#2f4a6b; }
+    .warnbox { background:#2a2410; color:#e8c98a; } .errbox { background:#2c1717; color:#e3a1a1; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>Resort Credit Calculator</h1>
+    <nav class="nav" aria-label="Sections">
+      <a href="/calculator">Calculator</a>
+      <a href="/planner">Planner</a>
+      <a href="/data-status">Data status</a>
+    </nav>
+  </header>
+
+  <form id="calc" class="card" autocomplete="off" novalidate>
+    <div class="grid">
+      <div class="field full">
+        <label for="resortInput">Resort</label>
+        <input type="text" id="resortInput" role="combobox" aria-expanded="false"
+               aria-controls="resortList" aria-autocomplete="list" placeholder="Search resort, destination, or region…" />
+        <div id="resortList" class="listbox" role="listbox" aria-label="Resort results" hidden></div>
+        <input type="hidden" id="resortId" />
+        <div class="hint" id="resortHint">Type at least 1 character. Blocked resorts are hidden.</div>
+      </div>
+
+      <div class="field">
+        <label for="checkIn">Check-in</label>
+        <input type="date" id="checkIn" />
+      </div>
+      <div class="field">
+        <label for="checkOut">Check-out <span class="muted">(exclusive)</span></label>
+        <input type="date" id="checkOut" />
+        <div class="hint" id="nightsHint" aria-live="polite"></div>
+      </div>
+
+      <div class="field">
+        <label for="unitType">Unit type</label>
+        <select id="unitType" disabled><option value="">Select a resort first</option></select>
+      </div>
+      <div class="field">
+        <label for="rooms">Rooms</label>
+        <input type="number" id="rooms" min="1" step="1" value="1" />
+      </div>
+
+      <div class="field full">
+        <label for="ownerCredits">Owner credits available <span class="muted">(optional)</span></label>
+        <input type="number" id="ownerCredits" min="0" step="1" placeholder="e.g. 12000" />
+      </div>
+    </div>
+    <div class="actions">
+      <button type="submit" class="primary" id="calcBtn">Calculate credits</button>
+      <button type="button" class="ghost" id="resetBtn">Reset</button>
+    </div>
+  </form>
+
+  <div id="output" aria-live="polite"></div>
+</div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const fmt = (n) => n.toLocaleString('en-US');
+const DOW_SHORT = { MONDAY:'Mon', TUESDAY:'Tue', WEDNESDAY:'Wed', THURSDAY:'Thu', FRIDAY:'Fri', SATURDAY:'Sat', SUNDAY:'Sun' };
+const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function shortDate(iso){ const [y,m,d]=iso.split('-').map(Number); return MONTHS[m-1]+' '+d; }
+function pricingLabel(s){ return ({'weekday-rate':'Weekday','weekend-rate':'Weekend','day-specific-rate':'Day rate','date-override':'Override','weekly-allocation':'Weekly'})[s]||s; }
+
+let selectedResort = null;
+
+// ---- Resort combobox -------------------------------------------------------
+const input = $('resortInput'), list = $('resortList');
+let options = [], activeIdx = -1, debounce;
+
+async function search(q){
+  const res = await fetch('/api/credit-resorts?q=' + encodeURIComponent(q) + '&limit=20');
+  const data = await res.json();
+  options = data.resorts || [];
+  renderList();
+}
+function renderList(){
+  if (!options.length){ list.hidden = true; input.setAttribute('aria-expanded','false'); return; }
+  list.innerHTML = options.map((r,i) =>
+    `<div class="opt" role="option" id="opt-${i}" aria-selected="${i===activeIdx}" data-i="${i}">
+       <span><strong>${r.resortName}</strong> <span class="sub">${r.destination||''}</span></span>
+       ${r.status==='warning' ? '<span class="badge">data warnings</span>' : ''}
+     </div>`).join('');
+  list.hidden = false; input.setAttribute('aria-expanded','true');
+}
+function choose(i){
+  const r = options[i]; if(!r) return;
+  selectedResort = r; $('resortId').value = r.resortId;
+  input.value = r.resortName + (r.destination ? ' — ' + r.destination : '');
+  list.hidden = true; input.setAttribute('aria-expanded','false');
+  loadUnits(r.resortId);
+}
+input.addEventListener('input', () => {
+  $('resortId').value=''; selectedResort=null; $('unitType').innerHTML='<option value="">Select a resort first</option>'; $('unitType').disabled=true;
+  clearTimeout(debounce); activeIdx=-1;
+  const q = input.value.trim();
+  if(!q){ list.hidden=true; return; }
+  debounce = setTimeout(()=>search(q), 120);
+});
+input.addEventListener('keydown', (e) => {
+  if(list.hidden) return;
+  if(e.key==='ArrowDown'){ e.preventDefault(); activeIdx=Math.min(activeIdx+1,options.length-1); renderList(); scrollActive(); }
+  else if(e.key==='ArrowUp'){ e.preventDefault(); activeIdx=Math.max(activeIdx-1,0); renderList(); scrollActive(); }
+  else if(e.key==='Enter'){ if(activeIdx>=0){ e.preventDefault(); choose(activeIdx); } }
+  else if(e.key==='Escape'){ list.hidden=true; }
+});
+function scrollActive(){ const el=$('opt-'+activeIdx); if(el) el.scrollIntoView({block:'nearest'}); }
+list.addEventListener('mousedown', (e) => { const o=e.target.closest('.opt'); if(o){ e.preventDefault(); choose(+o.dataset.i); } });
+document.addEventListener('click', (e)=>{ if(!e.target.closest('.field')) list.hidden=true; });
+
+async function loadUnits(id){
+  const sel = $('unitType'); sel.innerHTML='<option>Loading…</option>'; sel.disabled=true;
+  const res = await fetch('/api/credit-resorts/'+encodeURIComponent(id));
+  const data = await res.json();
+  if(!data.ok){ sel.innerHTML='<option value="">Unavailable</option>'; return; }
+  const units = data.resort.unitTypes;
+  sel.innerHTML = units.map(u=>`<option value="${u.id}">${u.name}${u.viewType?' ('+u.viewType+' view)':''}</option>`).join('');
+  sel.disabled=false;
+  $('resortHint').textContent = 'Chart period: ' + data.resort.effectiveStart + ' → ' + data.resort.effectiveEnd
+    + ' · ' + data.resort.seasons.length + ' season(s) · source: ' + data.resort.sourceFile;
+}
+
+// ---- nights hint -----------------------------------------------------------
+function updateNights(){
+  const ci=$('checkIn').value, co=$('checkOut').value; const h=$('nightsHint');
+  if(ci&&co){ const n=Math.round((Date.parse(co)-Date.parse(ci))/86400000);
+    h.textContent = n>0 ? n+' night'+(n>1?'s':'') : 'Check-out must be after check-in.'; }
+  else h.textContent='';
+}
+$('checkIn').addEventListener('change', updateNights);
+$('checkOut').addEventListener('change', updateNights);
+
+// ---- calculate -------------------------------------------------------------
+let lastResult = null;
+$('calc').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const out = $('output');
+  const body = {
+    resortId: $('resortId').value, unitTypeId: $('unitType').value,
+    checkIn: $('checkIn').value, checkOut: $('checkOut').value,
+    roomCount: Number($('rooms').value)||1,
+    ownerCredits: $('ownerCredits').value,
+  };
+  if(!body.resortId){ out.innerHTML = errCard('Please select a resort.'); return; }
+  if(!body.unitTypeId){ out.innerHTML = errCard('Please select a unit type.'); return; }
+  if(!body.checkIn || !body.checkOut){ out.innerHTML = errCard('Please choose check-in and check-out dates.'); return; }
+
+  $('calcBtn').disabled=true; $('calcBtn').textContent='Calculating…';
+  try {
+    const res = await fetch('/api/credit-calc', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body) });
+    const data = await res.json();
+    if(!data.ok){ out.innerHTML = errCard(data.error.message, data.error.code); lastResult=null; return; }
+    lastResult = data;
+    out.innerHTML = resultCard(data.result, data.comparison);
+  } catch(err){ out.innerHTML = errCard('Network error — is the server running?'); }
+  finally { $('calcBtn').disabled=false; $('calcBtn').textContent='Calculate credits'; }
+});
+
+$('resetBtn').addEventListener('click', () => {
+  $('calc').reset(); $('resortId').value=''; selectedResort=null; lastResult=null;
+  $('unitType').innerHTML='<option value="">Select a resort first</option>'; $('unitType').disabled=true;
+  $('output').innerHTML=''; $('nightsHint').textContent=''; $('resortHint').textContent='Type at least 1 character. Blocked resorts are hidden.';
+  input.focus();
+});
+
+function errCard(msg, code){
+  return `<div class="card"><div class="errbox"><strong>Cannot calculate.</strong> ${msg}${code?` <span class="muted">(${code})</span>`:''}</div></div>`;
+}
+
+function resultCard(r, cmp){
+  const rows = r.nights.map(n =>
+    `<tr class="${n.inWeeklyBlock?'wk':''}">
+       <td>${shortDate(n.date)}</td><td>${DOW_SHORT[n.dayOfWeek]}</td>
+       <td>${n.seasonName}</td><td><span class="pill">${pricingLabel(n.pricingSource)}</span></td>
+       <td class="num">${fmt(n.totalCredits)}</td>
+     </tr>`).join('');
+  let adj = '';
+  if(r.weeklyAdjustments.length){
+    adj = r.weeklyAdjustments.map(w =>
+      `<div class="adj">
+        <div class="row"><span>Nightly subtotal (${shortDate(w.startDate)}–${shortDate(w.endDate)})</span><span>${fmt(w.nightlySubtotal)}</span></div>
+        <div class="row"><span>Weekly rate applied</span><span>${fmt(w.appliedCredits)}</span></div>
+        <div class="row"><strong>Weekly savings</strong><strong>${fmt(w.savings)}</strong></div>
+       </div>`).join('');
+  }
+  let comparison = '';
+  if(cmp){
+    const cls = cmp.status==='short' ? 'short' : 'surplus';
+    const diffLabel = cmp.status==='short' ? 'Additional credits required' : 'Credits remaining';
+    comparison = `<div class="cmp">
+      <div class="box"><span class="muted">Credits available</span><b>${fmt(cmp.available)}</b></div>
+      <div class="box"><span class="muted">Credits required</span><b>${fmt(cmp.required)}</b></div>
+      <div class="box ${cls}"><span class="muted">${diffLabel}</span><b>${fmt(cmp.difference)}</b><span class="muted">${cmp.coveragePct}% of trip covered</span></div>
+    </div>`;
+  }
+  const warn = r.warnings.length ? `<div class="warnbox">${r.warnings.map(w=>'⚠ '+w).join('<br>')}</div>` : '';
+  const rc = r.roomCount>1 ? ` · ${r.roomCount} rooms` : '';
+  return `<div class="card">
+    <div class="total">${fmt(r.totalCredits)} <small>credits</small></div>
+    <p class="summary">${r.nightCount} night${r.nightCount>1?'s':''} at <strong>${r.resortName}</strong> · ${r.unitTypeName}${rc}<br>
+       ${shortDate(r.checkIn)} – ${shortDate(r.checkOut)}</p>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Date</th><th>Day</th><th>Season</th><th>Pricing</th><th class="num">Credits</th></tr></thead>
+      <tbody>${rows}</tbody>
+      <tfoot><tr><td colspan="4"><strong>Nightly subtotal</strong></td><td class="num"><strong>${fmt(r.nightlySubtotal)}</strong></td></tr></tfoot>
+    </table></div>
+    ${adj}
+    ${comparison}
+    ${warn}
+    <div class="actions">
+      <button type="button" class="ghost" onclick="copyBreakdown()">Copy breakdown</button>
+      <button type="button" class="ghost" onclick="addToPlan()">Add to plan</button>
+    </div>
+    <p class="hint" id="copyMsg" aria-live="polite"></p>
+  </div>`;
+}
+
+function breakdownText(r){
+  const lines = [ r.resortName, r.unitTypeName,
+    shortDate(r.checkIn)+' – '+shortDate(r.checkOut), r.nightCount+' nights' ];
+  if(r.roomCount>1) lines.push(r.roomCount+' rooms');
+  lines.push('');
+  r.nights.forEach(n => lines.push(shortDate(n.date)+' ('+DOW_SHORT[n.dayOfWeek]+', '+n.seasonName+'): '+fmt(n.totalCredits)+' credits'));
+  if(r.weeklyAdjustments.length){ lines.push(''); r.weeklyAdjustments.forEach(w=>lines.push('Weekly rate '+shortDate(w.startDate)+'–'+shortDate(w.endDate)+': '+fmt(w.appliedCredits)+' (saves '+fmt(w.savings)+')')); }
+  lines.push('', 'Total: '+fmt(r.totalCredits)+' credits');
+  if(r.warnings.length) lines.push('', 'Notes: '+r.warnings.join(' | '));
+  return lines.join('\n');
+}
+function copyBreakdown(){
+  if(!lastResult) return;
+  navigator.clipboard.writeText(breakdownText(lastResult.result)).then(()=>{
+    const m=$('copyMsg'); if(m){ m.textContent='Copied to clipboard.'; setTimeout(()=>m.textContent='',2500); }
+  });
+}
+function addToPlan(){
+  if(!lastResult) return; const r=lastResult.result;
+  const plan = JSON.parse(localStorage.getItem('wbw-plan')||'[]');
+  plan.push({ id: 'trip-'+Date.now(), resortId:r.resortId, resortName:r.resortName,
+    unitTypeId:r.unitTypeId, unitTypeName:r.unitTypeName, checkIn:r.checkIn, checkOut:r.checkOut,
+    roomCount:r.roomCount, creditsRequired:r.totalCredits });
+  localStorage.setItem('wbw-plan', JSON.stringify(plan));
+  const m=$('copyMsg'); if(m){ m.innerHTML='Added to your <a href="/planner">annual plan</a>.'; }
+}
+window.copyBreakdown = copyBreakdown; window.addToPlan = addToPlan;
+</script>
+</body>
+</html>

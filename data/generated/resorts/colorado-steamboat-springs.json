@@ -1,0 +1,481 @@
+{
+  "resortId": "colorado-steamboat-springs",
+  "resortName": "Steamboat Springs",
+  "destination": "Colorado",
+  "region": "mountain",
+  "country": "USA",
+  "state": "Colorado",
+  "timezone": "UTC",
+  "unitTypes": [
+    {
+      "id": "one-bedroom",
+      "name": "1 BR",
+      "bedrooms": 1,
+      "maxOccupancy": 4,
+      "roomType": "standard",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "one-bedroom-deluxe",
+      "name": "1 BR Deluxe",
+      "bedrooms": 1,
+      "maxOccupancy": 4,
+      "roomType": "deluxe",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "two-bedroom",
+      "name": "2 BR",
+      "bedrooms": 2,
+      "maxOccupancy": 6,
+      "roomType": "standard"
+    },
+    {
+      "id": "two-bedroom-deluxe",
+      "name": "2 BR Deluxe",
+      "bedrooms": 2,
+      "maxOccupancy": 6,
+      "roomType": "deluxe"
+    },
+    {
+      "id": "two-bedroom-penthouse",
+      "name": "2 BR Penthouse",
+      "bedrooms": 2,
+      "maxOccupancy": 6,
+      "roomType": "penthouse"
+    },
+    {
+      "id": "two-bedroom-presidential",
+      "name": "2 BR Presidential",
+      "bedrooms": 2,
+      "maxOccupancy": 6,
+      "roomType": "presidential"
+    },
+    {
+      "id": "three-bedroom",
+      "name": "3 BR",
+      "bedrooms": 3,
+      "maxOccupancy": 8,
+      "roomType": "standard"
+    },
+    {
+      "id": "three-bedroom-deluxe",
+      "name": "3 BR Deluxe",
+      "bedrooms": 3,
+      "maxOccupancy": 8,
+      "roomType": "deluxe"
+    },
+    {
+      "id": "three-bedroom-penthouse",
+      "name": "3 BR Penthouse",
+      "bedrooms": 3,
+      "maxOccupancy": 8,
+      "roomType": "penthouse"
+    },
+    {
+      "id": "three-bedroom-presidential",
+      "name": "3 BR Presidential",
+      "bedrooms": 3,
+      "maxOccupancy": 8,
+      "roomType": "presidential",
+      "accessibilityType": "accessible"
+    }
+  ],
+  "seasons": [
+    {
+      "id": "prime",
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "dateRanges": [
+        {
+          "start": "2026-01-01",
+          "end": "2026-03-19"
+        },
+        {
+          "start": "2026-05-01",
+          "end": "2026-09-03"
+        },
+        {
+          "start": "2026-10-30",
+          "end": "2026-12-31"
+        },
+        {
+          "start": "2027-01-01",
+          "end": "2027-03-18"
+        },
+        {
+          "start": "2027-04-30",
+          "end": "2027-09-02"
+        },
+        {
+          "start": "2027-10-29",
+          "end": "2027-12-31"
+        }
+      ]
+    },
+    {
+      "id": "average",
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "dateRanges": [
+        {
+          "start": "2026-03-20",
+          "end": "2026-04-30"
+        },
+        {
+          "start": "2026-09-04",
+          "end": "2026-10-01"
+        },
+        {
+          "start": "2027-03-19",
+          "end": "2027-04-29"
+        },
+        {
+          "start": "2027-09-03",
+          "end": "2027-09-30"
+        }
+      ]
+    },
+    {
+      "id": "slow",
+      "name": "slow",
+      "meaning": "Off-peak - not the best time to visit",
+      "dateRanges": [
+        {
+          "start": "2026-10-02",
+          "end": "2026-10-29"
+        },
+        {
+          "start": "2027-10-01",
+          "end": "2027-10-28"
+        }
+      ]
+    }
+  ],
+  "creditRates": [
+    {
+      "seasonId": "prime",
+      "unitTypeId": "one-bedroom",
+      "weekdayCredits": 875,
+      "weekendCredits": 1750,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1000
+      },
+      "weeklyCredits": 8000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "one-bedroom-deluxe",
+      "weekdayCredits": 1150,
+      "weekendCredits": 2300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1800
+      },
+      "weeklyCredits": 11000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "two-bedroom",
+      "weekdayCredits": 1100,
+      "weekendCredits": 2200,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1200
+      },
+      "weeklyCredits": 10000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "two-bedroom-deluxe",
+      "weekdayCredits": 1450,
+      "weekendCredits": 2900,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2400
+      },
+      "weeklyCredits": 14000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "two-bedroom-penthouse",
+      "weekdayCredits": 2050,
+      "weekendCredits": 4100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 3600
+      },
+      "weeklyCredits": 20000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "two-bedroom-presidential",
+      "weekdayCredits": 2650,
+      "weekendCredits": 5300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 4800
+      },
+      "weeklyCredits": 26000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "three-bedroom",
+      "weekdayCredits": 1300,
+      "weekendCredits": 2600,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1600
+      },
+      "weeklyCredits": 12000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "three-bedroom-deluxe",
+      "weekdayCredits": 1650,
+      "weekendCredits": 3300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2800
+      },
+      "weeklyCredits": 16000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "three-bedroom-penthouse",
+      "weekdayCredits": 2250,
+      "weekendCredits": 4500,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 4000
+      },
+      "weeklyCredits": 22000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "three-bedroom-presidential",
+      "weekdayCredits": 3050,
+      "weekendCredits": 6100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 5600
+      },
+      "weeklyCredits": 30000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "one-bedroom",
+      "weekdayCredits": 675,
+      "weekendCredits": 1300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 700
+      },
+      "weeklyCredits": 6000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "one-bedroom-deluxe",
+      "weekdayCredits": 950,
+      "weekendCredits": 1900,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1400
+      },
+      "weeklyCredits": 9000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "two-bedroom",
+      "weekdayCredits": 775,
+      "weekendCredits": 1550,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 800
+      },
+      "weeklyCredits": 7000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "two-bedroom-deluxe",
+      "weekdayCredits": 1250,
+      "weekendCredits": 2500,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2000
+      },
+      "weeklyCredits": 12000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "two-bedroom-penthouse",
+      "weekdayCredits": 1850,
+      "weekendCredits": 3700,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 3200
+      },
+      "weeklyCredits": 18000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "two-bedroom-presidential",
+      "weekdayCredits": 2450,
+      "weekendCredits": 4900,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 4400
+      },
+      "weeklyCredits": 24000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "three-bedroom",
+      "weekdayCredits": 875,
+      "weekendCredits": 1750,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1000
+      },
+      "weeklyCredits": 8000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "three-bedroom-deluxe",
+      "weekdayCredits": 1450,
+      "weekendCredits": 2900,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2400
+      },
+      "weeklyCredits": 14000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "three-bedroom-penthouse",
+      "weekdayCredits": 2050,
+      "weekendCredits": 4100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 3600
+      },
+      "weeklyCredits": 20000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "three-bedroom-presidential",
+      "weekdayCredits": 2850,
+      "weekendCredits": 5700,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 5200
+      },
+      "weeklyCredits": 28000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "one-bedroom",
+      "weekdayCredits": 425,
+      "weekendCredits": 900,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 500
+      },
+      "weeklyCredits": 4000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "one-bedroom-deluxe",
+      "weekdayCredits": 750,
+      "weekendCredits": 1500,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1000
+      },
+      "weeklyCredits": 7000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "two-bedroom",
+      "weekdayCredits": 550,
+      "weekendCredits": 1100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 600
+      },
+      "weeklyCredits": 5000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "two-bedroom-deluxe",
+      "weekdayCredits": 1050,
+      "weekendCredits": 2100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1600
+      },
+      "weeklyCredits": 10000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "two-bedroom-penthouse",
+      "weekdayCredits": 1650,
+      "weekendCredits": 3300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2800
+      },
+      "weeklyCredits": 16000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "two-bedroom-presidential",
+      "weekdayCredits": 2250,
+      "weekendCredits": 4500,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 4000
+      },
+      "weeklyCredits": 22000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "three-bedroom",
+      "weekdayCredits": 675,
+      "weekendCredits": 1300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 700
+      },
+      "weeklyCredits": 6000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "three-bedroom-deluxe",
+      "weekdayCredits": 1250,
+      "weekendCredits": 2500,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2000
+      },
+      "weeklyCredits": 12000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "three-bedroom-penthouse",
+      "weekdayCredits": 1850,
+      "weekendCredits": 3700,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 3200
+      },
+      "weeklyCredits": 18000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "three-bedroom-presidential",
+      "weekdayCredits": 2650,
+      "weekendCredits": 5300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 4800
+      },
+      "weeklyCredits": 26000
+    }
+  ],
+  "dateOverrides": [],
+  "rules": {
+    "weekendNights": [
+      "FRIDAY",
+      "SATURDAY"
+    ],
+    "daySpecificNights": [
+      "SUNDAY"
+    ],
+    "weeklyPricingStrategy": "lowest-valid-rate",
+    "weeklyRequiresSingleSeason": true,
+    "useCheckInSeasonForEntireStay": false,
+    "allowSplitSeasonCalculation": true,
+    "minimumStay": 1
+  },
+  "source": {
+    "sourceFile": "Resort_Info_WBW/Colorado/WBW Steamboat Springs/steamboat_springs.json",
+    "sourcePointer": "CreditChart.png",
+    "effectiveYear": 2026,
+    "effectiveStart": "2026-01-01",
+    "effectiveEnd": "2027-12-31",
+    "importedAt": "2026-07-16T19:07:02.844Z"
+  },
+  "status": "active"
+}

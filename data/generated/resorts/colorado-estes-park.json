@@ -1,0 +1,307 @@
+{
+  "resortId": "colorado-estes-park",
+  "resortName": "Estes Park",
+  "destination": "Colorado",
+  "region": "mountain",
+  "country": "USA",
+  "state": "Colorado",
+  "timezone": "UTC",
+  "unitTypes": [
+    {
+      "id": "studio-hotel",
+      "name": "Studio Hotel",
+      "bedrooms": 0,
+      "maxOccupancy": 4,
+      "roomType": "standard"
+    },
+    {
+      "id": "one-bedroom",
+      "name": "1 BR",
+      "bedrooms": 1,
+      "maxOccupancy": 4,
+      "roomType": "standard"
+    },
+    {
+      "id": "one-bedroom-deluxe",
+      "name": "1 BR Deluxe",
+      "bedrooms": 1,
+      "maxOccupancy": 4,
+      "roomType": "deluxe"
+    },
+    {
+      "id": "two-bedroom-hotel",
+      "name": "2 BR Hotel",
+      "bedrooms": 2,
+      "maxOccupancy": 6,
+      "roomType": "standard"
+    },
+    {
+      "id": "two-bedroom",
+      "name": "2 BR",
+      "bedrooms": 2,
+      "maxOccupancy": 6,
+      "roomType": "standard",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "three-bedroom",
+      "name": "3 BR",
+      "bedrooms": 3,
+      "maxOccupancy": 8,
+      "roomType": "standard"
+    },
+    {
+      "id": "three-bedroom-deluxe",
+      "name": "3 BR Deluxe",
+      "bedrooms": 3,
+      "maxOccupancy": 8,
+      "roomType": "deluxe"
+    },
+    {
+      "id": "three-bedroom-presidential",
+      "name": "3 BR Presidential",
+      "bedrooms": 3,
+      "maxOccupancy": 8,
+      "roomType": "presidential",
+      "accessibilityType": "accessible"
+    }
+  ],
+  "seasons": [
+    {
+      "id": "prime",
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "dateRanges": [
+        {
+          "start": "2026-01-01",
+          "end": "2026-01-01"
+        },
+        {
+          "start": "2026-02-06",
+          "end": "2026-09-10"
+        },
+        {
+          "start": "2026-11-13",
+          "end": "2026-12-31"
+        },
+        {
+          "start": "2027-02-05",
+          "end": "2027-09-09"
+        },
+        {
+          "start": "2027-11-12",
+          "end": "2027-12-31"
+        }
+      ]
+    },
+    {
+      "id": "average",
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "dateRanges": [
+        {
+          "start": "2026-01-02",
+          "end": "2026-02-05"
+        },
+        {
+          "start": "2026-09-11",
+          "end": "2026-11-12"
+        },
+        {
+          "start": "2027-01-01",
+          "end": "2027-02-04"
+        },
+        {
+          "start": "2027-09-10",
+          "end": "2027-11-11"
+        }
+      ]
+    }
+  ],
+  "creditRates": [
+    {
+      "seasonId": "prime",
+      "unitTypeId": "studio-hotel",
+      "weekdayCredits": 775,
+      "weekendCredits": 1550,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 800
+      },
+      "weeklyCredits": 7000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "one-bedroom",
+      "weekdayCredits": 875,
+      "weekendCredits": 1750,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1000
+      },
+      "weeklyCredits": 8000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "one-bedroom-deluxe",
+      "weekdayCredits": 1000,
+      "weekendCredits": 1950,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1100
+      },
+      "weeklyCredits": 9000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "two-bedroom-hotel",
+      "weekdayCredits": 1100,
+      "weekendCredits": 2200,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1200
+      },
+      "weeklyCredits": 10000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "two-bedroom",
+      "weekdayCredits": 1200,
+      "weekendCredits": 2450,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1300
+      },
+      "weeklyCredits": 11000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "three-bedroom",
+      "weekdayCredits": 1300,
+      "weekendCredits": 2600,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1600
+      },
+      "weeklyCredits": 12000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "three-bedroom-deluxe",
+      "weekdayCredits": 2000,
+      "weekendCredits": 2750,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2500
+      },
+      "weeklyCredits": 16000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "three-bedroom-presidential",
+      "weekdayCredits": 2800,
+      "weekendCredits": 5600,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 3600
+      },
+      "weeklyCredits": 26000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "studio-hotel",
+      "weekdayCredits": 550,
+      "weekendCredits": 1100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 600
+      },
+      "weeklyCredits": 5000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "one-bedroom",
+      "weekdayCredits": 675,
+      "weekendCredits": 1300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 700
+      },
+      "weeklyCredits": 6000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "one-bedroom-deluxe",
+      "weekdayCredits": 775,
+      "weekendCredits": 1550,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 800
+      },
+      "weeklyCredits": 7000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "two-bedroom-hotel",
+      "weekdayCredits": 875,
+      "weekendCredits": 1750,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1000
+      },
+      "weeklyCredits": 8000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "two-bedroom",
+      "weekdayCredits": 1000,
+      "weekendCredits": 1950,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1100
+      },
+      "weeklyCredits": 9000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "three-bedroom",
+      "weekdayCredits": 1100,
+      "weekendCredits": 2200,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1200
+      },
+      "weeklyCredits": 10000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "three-bedroom-deluxe",
+      "weekdayCredits": 1750,
+      "weekendCredits": 2450,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2100
+      },
+      "weeklyCredits": 14000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "three-bedroom-presidential",
+      "weekdayCredits": 2600,
+      "weekendCredits": 5200,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 3200
+      },
+      "weeklyCredits": 24000
+    }
+  ],
+  "dateOverrides": [],
+  "rules": {
+    "weekendNights": [
+      "FRIDAY",
+      "SATURDAY"
+    ],
+    "daySpecificNights": [
+      "SUNDAY"
+    ],
+    "weeklyPricingStrategy": "lowest-valid-rate",
+    "weeklyRequiresSingleSeason": true,
+    "useCheckInSeasonForEntireStay": false,
+    "allowSplitSeasonCalculation": true,
+    "minimumStay": 1
+  },
+  "source": {
+    "sourceFile": "Resort_Info_WBW/Colorado/WBW Estes Park/estes_park.json",
+    "sourcePointer": "CreditChart.png",
+    "effectiveYear": 2026,
+    "effectiveStart": "2026-01-01",
+    "effectiveEnd": "2027-12-31",
+    "importedAt": "2026-07-16T19:07:02.843Z"
+  },
+  "status": "active"
+}

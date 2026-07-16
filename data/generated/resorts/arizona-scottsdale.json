@@ -1,0 +1,327 @@
+{
+  "resortId": "arizona-scottsdale",
+  "resortName": "Scottsdale",
+  "destination": "Arizona",
+  "region": "desert-southwest",
+  "country": "USA",
+  "state": "Arizona",
+  "timezone": "UTC",
+  "unitTypes": [
+    {
+      "id": "studio-hotel",
+      "name": "Studio Hotel",
+      "bedrooms": 0,
+      "maxOccupancy": 4,
+      "roomType": "standard",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "one-bedroom-suite",
+      "name": "1 BR Suite",
+      "bedrooms": 1,
+      "maxOccupancy": 4,
+      "roomType": "suite",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "one-bedroom-deluxe",
+      "name": "1 BR Deluxe",
+      "bedrooms": 1,
+      "maxOccupancy": 4,
+      "roomType": "deluxe",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "one-bedroom-penthouse",
+      "name": "1 BR Penthouse",
+      "bedrooms": 1,
+      "maxOccupancy": 4,
+      "roomType": "penthouse",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "one-bedroom-presidential",
+      "name": "1 BR Presidential",
+      "bedrooms": 1,
+      "maxOccupancy": 4,
+      "roomType": "presidential",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "two-bedroom",
+      "name": "2 BR",
+      "bedrooms": 2,
+      "maxOccupancy": 6,
+      "roomType": "standard",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "two-bedroom-presidential",
+      "name": "2 BR Presidential",
+      "bedrooms": 2,
+      "maxOccupancy": 6,
+      "roomType": "presidential"
+    },
+    {
+      "id": "three-bedroom",
+      "name": "3 BR",
+      "bedrooms": 3,
+      "maxOccupancy": 8,
+      "roomType": "standard"
+    },
+    {
+      "id": "four-bedroom-presidential",
+      "name": "4 BR Presidential",
+      "bedrooms": 4,
+      "maxOccupancy": 10,
+      "roomType": "presidential",
+      "accessibilityType": "accessible"
+    }
+  ],
+  "seasons": [
+    {
+      "id": "prime",
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "dateRanges": [
+        {
+          "start": "2026-01-01",
+          "end": "2026-05-29"
+        },
+        {
+          "start": "2026-09-05",
+          "end": "2026-12-31"
+        },
+        {
+          "start": "2027-01-01",
+          "end": "2027-05-27"
+        },
+        {
+          "start": "2027-09-03",
+          "end": "2027-12-31"
+        }
+      ]
+    },
+    {
+      "id": "average",
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "dateRanges": [
+        {
+          "start": "2026-05-30",
+          "end": "2026-09-04"
+        },
+        {
+          "start": "2027-05-28",
+          "end": "2027-09-02"
+        }
+      ]
+    }
+  ],
+  "creditRates": [
+    {
+      "seasonId": "prime",
+      "unitTypeId": "studio-hotel",
+      "weekdayCredits": 850,
+      "weekendCredits": 1700,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1200
+      },
+      "weeklyCredits": 8000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "one-bedroom-suite",
+      "weekdayCredits": 1050,
+      "weekendCredits": 2100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1600
+      },
+      "weeklyCredits": 10000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "one-bedroom-deluxe",
+      "weekdayCredits": 1150,
+      "weekendCredits": 2300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1800
+      },
+      "weeklyCredits": 11000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "one-bedroom-penthouse",
+      "weekdayCredits": 1450,
+      "weekendCredits": 2900,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2400
+      },
+      "weeklyCredits": 14000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "one-bedroom-presidential",
+      "weekdayCredits": 2250,
+      "weekendCredits": 4500,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 4000
+      },
+      "weeklyCredits": 22000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "two-bedroom",
+      "weekdayCredits": 1350,
+      "weekendCredits": 2700,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2200
+      },
+      "weeklyCredits": 13000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "two-bedroom-presidential",
+      "weekdayCredits": 2650,
+      "weekendCredits": 5300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 4800
+      },
+      "weeklyCredits": 26000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "three-bedroom",
+      "weekdayCredits": 1550,
+      "weekendCredits": 3100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2600
+      },
+      "weeklyCredits": 15000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "four-bedroom-presidential",
+      "weekdayCredits": 3550,
+      "weekendCredits": 7100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 6600
+      },
+      "weeklyCredits": 35000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "studio-hotel",
+      "weekdayCredits": 650,
+      "weekendCredits": 1300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 800
+      },
+      "weeklyCredits": 6000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "one-bedroom-suite",
+      "weekdayCredits": 850,
+      "weekendCredits": 1700,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1200
+      },
+      "weeklyCredits": 8000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "one-bedroom-deluxe",
+      "weekdayCredits": 950,
+      "weekendCredits": 1900,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1400
+      },
+      "weeklyCredits": 9000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "one-bedroom-penthouse",
+      "weekdayCredits": 1250,
+      "weekendCredits": 2500,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2000
+      },
+      "weeklyCredits": 12000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "one-bedroom-presidential",
+      "weekdayCredits": 2050,
+      "weekendCredits": 4100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 3600
+      },
+      "weeklyCredits": 20000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "two-bedroom",
+      "weekdayCredits": 1150,
+      "weekendCredits": 2300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1800
+      },
+      "weeklyCredits": 11000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "two-bedroom-presidential",
+      "weekdayCredits": 2450,
+      "weekendCredits": 4900,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 4400
+      },
+      "weeklyCredits": 24000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "three-bedroom",
+      "weekdayCredits": 1350,
+      "weekendCredits": 2700,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2200
+      },
+      "weeklyCredits": 13000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "four-bedroom-presidential",
+      "weekdayCredits": 3350,
+      "weekendCredits": 6700,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 6200
+      },
+      "weeklyCredits": 33000
+    }
+  ],
+  "dateOverrides": [],
+  "rules": {
+    "weekendNights": [
+      "FRIDAY",
+      "SATURDAY"
+    ],
+    "daySpecificNights": [
+      "SUNDAY"
+    ],
+    "weeklyPricingStrategy": "lowest-valid-rate",
+    "weeklyRequiresSingleSeason": true,
+    "useCheckInSeasonForEntireStay": false,
+    "allowSplitSeasonCalculation": true,
+    "minimumStay": 1
+  },
+  "source": {
+    "sourceFile": "Resort_Info_WBW/Arizona/WBW Scottsdale/scottsdale.json",
+    "sourcePointer": "CreditChart.png",
+    "effectiveYear": 2026,
+    "effectiveStart": "2026-01-01",
+    "effectiveEnd": "2027-12-31",
+    "importedAt": "2026-07-16T19:07:02.839Z"
+  },
+  "status": "active"
+}

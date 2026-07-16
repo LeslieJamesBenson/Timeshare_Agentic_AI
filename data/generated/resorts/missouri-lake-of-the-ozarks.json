@@ -1,0 +1,322 @@
+{
+  "resortId": "missouri-lake-of-the-ozarks",
+  "resortName": "Lake of the Ozarks",
+  "destination": "Missouri",
+  "region": "midwest",
+  "country": "USA",
+  "state": "Missouri",
+  "timezone": "UTC",
+  "unitTypes": [
+    {
+      "id": "one-bedroom",
+      "name": "1 BR",
+      "bedrooms": 1,
+      "maxOccupancy": 4,
+      "roomType": "standard",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "two-bedroom",
+      "name": "2 BR",
+      "bedrooms": 2,
+      "maxOccupancy": 6,
+      "roomType": "standard"
+    },
+    {
+      "id": "three-bedroom",
+      "name": "3 BR",
+      "bedrooms": 3,
+      "maxOccupancy": 8,
+      "roomType": "standard"
+    },
+    {
+      "id": "three-bedroom-penthouse",
+      "name": "3 BR Penthouse",
+      "bedrooms": 3,
+      "maxOccupancy": 8,
+      "roomType": "penthouse"
+    },
+    {
+      "id": "four-bedroom-penthouse",
+      "name": "4 BR Penthouse",
+      "bedrooms": 4,
+      "maxOccupancy": 10,
+      "roomType": "penthouse"
+    }
+  ],
+  "seasons": [
+    {
+      "id": "prime",
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "dateRanges": [
+        {
+          "start": "2026-01-01",
+          "end": "2026-01-01"
+        },
+        {
+          "start": "2026-03-13",
+          "end": "2026-04-02"
+        },
+        {
+          "start": "2026-04-17",
+          "end": "2026-10-08"
+        },
+        {
+          "start": "2026-11-20",
+          "end": "2026-12-03"
+        },
+        {
+          "start": "2026-12-18",
+          "end": "2026-12-31"
+        },
+        {
+          "start": "2027-03-12",
+          "end": "2027-04-01"
+        },
+        {
+          "start": "2027-04-16",
+          "end": "2027-10-07"
+        },
+        {
+          "start": "2027-11-19",
+          "end": "2027-12-02"
+        },
+        {
+          "start": "2027-12-17",
+          "end": "2027-12-31"
+        }
+      ]
+    },
+    {
+      "id": "average",
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "dateRanges": [
+        {
+          "start": "2026-02-27",
+          "end": "2026-03-12"
+        },
+        {
+          "start": "2026-04-03",
+          "end": "2026-04-16"
+        },
+        {
+          "start": "2026-10-09",
+          "end": "2026-11-19"
+        },
+        {
+          "start": "2027-02-26",
+          "end": "2027-03-11"
+        },
+        {
+          "start": "2027-04-02",
+          "end": "2027-04-15"
+        },
+        {
+          "start": "2027-10-08",
+          "end": "2027-11-17"
+        }
+      ]
+    },
+    {
+      "id": "slow",
+      "name": "slow",
+      "meaning": "Off-peak - not the best time to visit",
+      "dateRanges": [
+        {
+          "start": "2026-01-02",
+          "end": "2026-02-26"
+        },
+        {
+          "start": "2026-12-04",
+          "end": "2026-12-17"
+        },
+        {
+          "start": "2027-01-01",
+          "end": "2027-02-25"
+        },
+        {
+          "start": "2027-12-03",
+          "end": "2027-12-16"
+        }
+      ]
+    }
+  ],
+  "creditRates": [
+    {
+      "seasonId": "prime",
+      "unitTypeId": "one-bedroom",
+      "weekdayCredits": 875,
+      "weekendCredits": 1750,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1000
+      },
+      "weeklyCredits": 8000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "two-bedroom",
+      "weekdayCredits": 1100,
+      "weekendCredits": 2200,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1200
+      },
+      "weeklyCredits": 10000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "three-bedroom",
+      "weekdayCredits": 1300,
+      "weekendCredits": 2600,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1600
+      },
+      "weeklyCredits": 12000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "three-bedroom-penthouse",
+      "weekdayCredits": 2000,
+      "weekendCredits": 3900,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2200
+      },
+      "weeklyCredits": 18000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "four-bedroom-penthouse",
+      "weekdayCredits": 2300,
+      "weekendCredits": 4200,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2400
+      },
+      "weeklyCredits": 20000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "one-bedroom",
+      "weekdayCredits": 675,
+      "weekendCredits": 1300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 700
+      },
+      "weeklyCredits": 6000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "two-bedroom",
+      "weekdayCredits": 875,
+      "weekendCredits": 1750,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1000
+      },
+      "weeklyCredits": 8000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "three-bedroom",
+      "weekdayCredits": 1100,
+      "weekendCredits": 2200,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1200
+      },
+      "weeklyCredits": 10000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "three-bedroom-penthouse",
+      "weekdayCredits": 1750,
+      "weekendCredits": 3450,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2100
+      },
+      "weeklyCredits": 16000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "four-bedroom-penthouse",
+      "weekdayCredits": 2000,
+      "weekendCredits": 3900,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2200
+      },
+      "weeklyCredits": 18000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "one-bedroom",
+      "weekdayCredits": 450,
+      "weekendCredits": 825,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 550
+      },
+      "weeklyCredits": 4000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "two-bedroom",
+      "weekdayCredits": 675,
+      "weekendCredits": 1300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 700
+      },
+      "weeklyCredits": 6000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "three-bedroom",
+      "weekdayCredits": 875,
+      "weekendCredits": 1750,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1000
+      },
+      "weeklyCredits": 8000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "three-bedroom-penthouse",
+      "weekdayCredits": 1550,
+      "weekendCredits": 3050,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1700
+      },
+      "weeklyCredits": 14000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "four-bedroom-penthouse",
+      "weekdayCredits": 1750,
+      "weekendCredits": 3450,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2100
+      },
+      "weeklyCredits": 16000
+    }
+  ],
+  "dateOverrides": [],
+  "rules": {
+    "weekendNights": [
+      "FRIDAY",
+      "SATURDAY"
+    ],
+    "daySpecificNights": [
+      "SUNDAY"
+    ],
+    "weeklyPricingStrategy": "lowest-valid-rate",
+    "weeklyRequiresSingleSeason": true,
+    "useCheckInSeasonForEntireStay": false,
+    "allowSplitSeasonCalculation": true,
+    "minimumStay": 1
+  },
+  "source": {
+    "sourceFile": "Resort_Info_WBW/Missouri/WBW Lake of the Ozarks/lake_of_the_ozarks.json",
+    "sourcePointer": "CreditChart.png",
+    "effectiveYear": 2026,
+    "effectiveStart": "2026-01-01",
+    "effectiveEnd": "2027-12-31",
+    "importedAt": "2026-07-16T19:07:02.847Z"
+  },
+  "status": "warning"
+}

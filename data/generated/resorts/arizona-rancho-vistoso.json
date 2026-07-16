@@ -1,0 +1,216 @@
+{
+  "resortId": "arizona-rancho-vistoso",
+  "resortName": "Rancho Vistoso",
+  "destination": "Arizona",
+  "region": "desert-southwest",
+  "country": "USA",
+  "state": "Arizona",
+  "timezone": "UTC",
+  "unitTypes": [
+    {
+      "id": "studio",
+      "name": "Studio",
+      "bedrooms": 0,
+      "maxOccupancy": 4,
+      "roomType": "standard"
+    },
+    {
+      "id": "one-bedroom",
+      "name": "1 BR",
+      "bedrooms": 1,
+      "maxOccupancy": 4,
+      "roomType": "standard",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "two-bedroom",
+      "name": "2 BR",
+      "bedrooms": 2,
+      "maxOccupancy": 6,
+      "roomType": "standard",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "three-bedroom",
+      "name": "3 BR",
+      "bedrooms": 3,
+      "maxOccupancy": 8,
+      "roomType": "standard",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "three-bedroom-penthouse",
+      "name": "3 BR Penthouse",
+      "bedrooms": 3,
+      "maxOccupancy": 8,
+      "roomType": "penthouse",
+      "accessibilityType": "accessible"
+    }
+  ],
+  "seasons": [
+    {
+      "id": "prime",
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "dateRanges": [
+        {
+          "start": "2026-01-01",
+          "end": "2026-07-02"
+        },
+        {
+          "start": "2026-07-31",
+          "end": "2026-12-31"
+        },
+        {
+          "start": "2027-01-01",
+          "end": "2027-07-01"
+        },
+        {
+          "start": "2027-07-30",
+          "end": "2027-12-31"
+        }
+      ]
+    },
+    {
+      "id": "average",
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "dateRanges": [
+        {
+          "start": "2026-07-03",
+          "end": "2026-07-30"
+        },
+        {
+          "start": "2027-07-02",
+          "end": "2027-07-29"
+        }
+      ]
+    }
+  ],
+  "creditRates": [
+    {
+      "seasonId": "prime",
+      "unitTypeId": "studio",
+      "weekdayCredits": 675,
+      "weekendCredits": 1300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 700
+      },
+      "weeklyCredits": 6000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "one-bedroom",
+      "weekdayCredits": 875,
+      "weekendCredits": 1750,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1000
+      },
+      "weeklyCredits": 8000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "two-bedroom",
+      "weekdayCredits": 1100,
+      "weekendCredits": 2200,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1200
+      },
+      "weeklyCredits": 10000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "three-bedroom",
+      "weekdayCredits": 1300,
+      "weekendCredits": 2600,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1600
+      },
+      "weeklyCredits": 12000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "three-bedroom-penthouse",
+      "weekdayCredits": 2000,
+      "weekendCredits": 3900,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2200
+      },
+      "weeklyCredits": 18000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "studio",
+      "weekdayCredits": 550,
+      "weekendCredits": 1100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 600
+      },
+      "weeklyCredits": 5000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "one-bedroom",
+      "weekdayCredits": 675,
+      "weekendCredits": 1300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 700
+      },
+      "weeklyCredits": 6000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "two-bedroom",
+      "weekdayCredits": 775,
+      "weekendCredits": 1550,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 800
+      },
+      "weeklyCredits": 7000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "three-bedroom",
+      "weekdayCredits": 875,
+      "weekendCredits": 1750,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1000
+      },
+      "weeklyCredits": 8000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "three-bedroom-penthouse",
+      "weekdayCredits": 1750,
+      "weekendCredits": 3450,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2100
+      },
+      "weeklyCredits": 16000
+    }
+  ],
+  "dateOverrides": [],
+  "rules": {
+    "weekendNights": [
+      "FRIDAY",
+      "SATURDAY"
+    ],
+    "daySpecificNights": [
+      "SUNDAY"
+    ],
+    "weeklyPricingStrategy": "lowest-valid-rate",
+    "weeklyRequiresSingleSeason": true,
+    "useCheckInSeasonForEntireStay": false,
+    "allowSplitSeasonCalculation": true,
+    "minimumStay": 1
+  },
+  "source": {
+    "sourceFile": "Resort_Info_WBW/Arizona/WBW Rancho Vistoso/rancho_vistoso.json",
+    "sourcePointer": "CreditChart.png",
+    "effectiveYear": 2026,
+    "effectiveStart": "2026-01-01",
+    "effectiveEnd": "2027-12-31",
+    "importedAt": "2026-07-16T19:07:02.838Z"
+  },
+  "status": "active"
+}

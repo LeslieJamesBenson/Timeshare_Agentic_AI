@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Annual Travel Planner</title>
+<style>
+  :root { --bg:#f6f7f9; --card:#fff; --ink:#1a1f29; --muted:#5b6472; --line:#e3e7ec; --accent:#1f5fa8;
+    --good:#17693a; --bad:#a12222; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; }
+  a { color:var(--accent); }
+  .wrap { max-width:860px; margin:0 auto; padding:24px 20px 64px; }
+  header.top { display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-bottom:20px; }
+  h1 { font-size:22px; margin:0; } .nav a { margin-left:16px; font-size:14px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin-bottom:18px; }
+  label { font-weight:600; font-size:13px; display:block; margin-bottom:6px; }
+  input { font:inherit; padding:10px 12px; border:1px solid var(--line); border-radius:8px; background:#fff; color:var(--ink); }
+  table { width:100%; border-collapse:collapse; font-size:14px; } .tablewrap{ overflow-x:auto; }
+  th,td { text-align:left; padding:8px 10px; border-bottom:1px solid var(--line); white-space:nowrap; }
+  td.num,th.num{ text-align:right; } th{ font-size:12px; text-transform:uppercase; color:var(--muted); }
+  button.ghost { background:#fff; border:1px solid var(--line); border-radius:8px; padding:6px 12px; cursor:pointer; font:inherit; }
+  .total { font-size:32px; font-weight:700; letter-spacing:-.02em; }
+  .short { color:var(--bad); } .surplus { color:var(--good); }
+  .muted { color:var(--muted); }
+  .rowsum { display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid var(--line); }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#12151b; --card:#1b1f27; --ink:#e8ebef; --muted:#9aa4b2; --line:#2b313b; --accent:#4f93d6; }
+    input,button.ghost{ background:#232a34; color:var(--ink);}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>Annual Travel Planner</h1>
+    <nav class="nav"><a href="/calculator">Calculator</a><a href="/planner">Planner</a><a href="/data-status">Data status</a></nav>
+  </header>
+
+  <div class="card">
+    <label for="annual">Owner annual credits</label>
+    <input type="number" id="annual" min="0" step="1" placeholder="e.g. 20000" />
+    <p class="muted" style="margin:8px 0 0">Trips are saved locally in this browser. Add trips from the <a href="/calculator">calculator</a>.</p>
+  </div>
+
+  <div class="card" id="planCard">
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Resort</th><th>Unit</th><th>Dates</th><th class="num">Rooms</th><th class="num">Credits</th><th></th></tr></thead>
+        <tbody id="tripRows"></tbody>
+      </table>
+    </div>
+    <div id="summary" style="margin-top:16px"></div>
+    <div style="margin-top:14px"><button class="ghost" id="clearBtn">Clear all trips</button></div>
+  </div>
+</div>
+<script>
+const KEY='wbw-plan';
+const fmt=(n)=>n.toLocaleString('en-US');
+const MONTHS=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const shortDate=(iso)=>{const[y,m,d]=iso.split('-').map(Number);return MONTHS[m-1]+' '+d;};
+function getPlan(){ return JSON.parse(localStorage.getItem(KEY)||'[]'); }
+function setPlan(p){ localStorage.setItem(KEY, JSON.stringify(p)); render(); }
+
+function render(){
+  const plan=getPlan();
+  document.getElementById('tripRows').innerHTML = plan.length ? plan.map(t=>
+    `<tr>
+      <td>${t.resortName}</td><td>${t.unitTypeName}</td>
+      <td>${shortDate(t.checkIn)}–${shortDate(t.checkOut)}</td>
+      <td class="num">${t.roomCount}</td><td class="num">${fmt(t.creditsRequired)}</td>
+      <td><button class="ghost" data-id="${t.id}">Remove</button></td>
+    </tr>`).join('') : '<tr><td colspan="6" class="muted">No trips yet. Add one from the calculator.</td></tr>';
+
+  const need = plan.reduce((a,t)=>a+t.creditsRequired,0);
+  const annual = Number(document.getElementById('annual').value)||0;
+  const byResort = {};
+  plan.forEach(t=>{ byResort[t.resortName]=(byResort[t.resortName]||0)+t.creditsRequired; });
+  let html = `<div class="rowsum"><span>Owner annual credits</span><strong>${annual?fmt(annual):'—'}</strong></div>`;
+  Object.entries(byResort).forEach(([n,c])=>{ html+=`<div class="rowsum"><span>${n}</span><span>${fmt(c)}</span></div>`; });
+  html += `<div class="rowsum"><span>Annual travel need</span><strong>${fmt(need)}</strong></div>`;
+  if(annual){
+    const diff = annual-need;
+    const cls = diff>=0?'surplus':'short';
+    const label = diff>=0?'Annual credits remaining':'Annual credit difference';
+    html += `<div style="margin-top:12px" class="total ${cls}">${fmt(Math.abs(diff))} <span style="font-size:14px" class="muted">${diff>=0?'remaining':'short'}</span></div>`;
+    html += `<p class="muted">${label} · ${need>0?Math.round(annual/need*100):100}% of annual need covered</p>`;
+  }
+  document.getElementById('summary').innerHTML = html;
+}
+document.getElementById('tripRows').addEventListener('click',(e)=>{
+  const b=e.target.closest('button[data-id]'); if(!b) return;
+  setPlan(getPlan().filter(t=>t.id!==b.dataset.id));
+});
+document.getElementById('clearBtn').addEventListener('click',()=>{ if(confirm('Remove all planned trips?')) setPlan([]); });
+document.getElementById('annual').addEventListener('input',render);
+const savedAnnual = localStorage.getItem('wbw-annual'); if(savedAnnual) document.getElementById('annual').value=savedAnnual;
+document.getElementById('annual').addEventListener('change',(e)=>localStorage.setItem('wbw-annual',e.target.value));
+render();
+</script>
+</body>
+</html>

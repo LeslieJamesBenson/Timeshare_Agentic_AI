@@ -4,14 +4,24 @@ const path = require('path');
 const fs = require('fs');
 const { loadResorts } = require('./lib/resortData');
 const { planTrip } = require('./lib/tripPlanner');
+const { registerCreditRoutes } = require('./lib/credits/routes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
 
+// The deterministic Resort Credit Calculator (and trip planner) need no API
+// key. Only the AI chat endpoints do, so a missing key is a warning, not a
+// fatal error — the calculator must still run during a live sales call.
 if (!ANTHROPIC_API_KEY) {
-  console.error('ERROR: ANTHROPIC_API_KEY is not set in .env');
-  process.exit(1);
+  console.warn('WARNING: ANTHROPIC_API_KEY is not set — AI chat endpoints are disabled; the credit calculator and trip planner still work.');
+}
+function requireApiKey(res) {
+  if (!ANTHROPIC_API_KEY) {
+    res.status(503).json({ error: 'AI features are disabled: ANTHROPIC_API_KEY is not configured.' });
+    return false;
+  }
+  return true;
 }
 
 // Real WorldMark dataset (100 resorts) — loaded and normalized once at startup.
@@ -136,6 +146,7 @@ const tools = [
 ];
 
 app.post('/api/chat', async (req, res) => {
+  if (!requireApiKey(res)) return;
   try {
     const { model, max_tokens, system, messages } = req.body;
     let currentMessages = [...messages];
@@ -249,6 +260,7 @@ function runSalesTool(name, input) {
 }
 
 app.post('/api/sales-chat', async (req, res) => {
+  if (!requireApiKey(res)) return;
   try {
     const { model, max_tokens, system, messages } = req.body;
     let currentMessages = [...messages];
@@ -286,8 +298,19 @@ app.post('/api/sales-chat', async (req, res) => {
   }
 });
 
+// ── RESORT CREDIT CALCULATOR ────────────────────────────────────────────────
+// Deterministic per-resort credit calculator over the normalized charts in
+// data/generated/ (built by `npm run credits:build`). No AI, no API key.
+registerCreditRoutes(app);
+
+// Friendly page routes for the calculator UI (files live in public/).
+app.get('/calculator', (req, res) => res.sendFile(path.join(__dirname, 'public', 'calculator.html')));
+app.get('/planner', (req, res) => res.sendFile(path.join(__dirname, 'public', 'planner.html')));
+app.get('/data-status', (req, res) => res.sendFile(path.join(__dirname, 'public', 'data-status.html')));
+
 app.listen(PORT, () => {
   console.log(`Timeshare AI running at http://localhost:${PORT}`);
   console.log(`Owner concierge: http://localhost:${PORT}/index.html`);
   console.log(`Sales rep agent: http://localhost:${PORT}/sales-agent.html`);
+  console.log(`Credit calculator: http://localhost:${PORT}/calculator`);
 });

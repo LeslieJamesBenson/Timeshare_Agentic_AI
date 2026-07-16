@@ -1,0 +1,179 @@
+{
+  "resortId": "florida-kingstown-reef",
+  "resortName": "Kingstown Reef",
+  "destination": "Florida",
+  "region": "southeast",
+  "country": "USA",
+  "state": "Florida",
+  "timezone": "UTC",
+  "unitTypes": [
+    {
+      "id": "studio-deluxe",
+      "name": "Studio Deluxe",
+      "bedrooms": 0,
+      "maxOccupancy": 4,
+      "roomType": "deluxe"
+    },
+    {
+      "id": "one-bedroom",
+      "name": "1 BR",
+      "bedrooms": 1,
+      "maxOccupancy": 4,
+      "roomType": "standard",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "one-bedroom-deluxe",
+      "name": "1 BR Deluxe",
+      "bedrooms": 1,
+      "maxOccupancy": 4,
+      "roomType": "deluxe",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "two-bedroom",
+      "name": "2 BR",
+      "bedrooms": 2,
+      "maxOccupancy": 6,
+      "roomType": "standard",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "two-bedroom-deluxe",
+      "name": "2 BR Deluxe",
+      "bedrooms": 2,
+      "maxOccupancy": 6,
+      "roomType": "deluxe",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "three-bedroom",
+      "name": "3 BR",
+      "bedrooms": 3,
+      "maxOccupancy": 8,
+      "roomType": "standard",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "three-bedroom-deluxe",
+      "name": "3 BR Deluxe",
+      "bedrooms": 3,
+      "maxOccupancy": 8,
+      "roomType": "deluxe",
+      "accessibilityType": "accessible"
+    }
+  ],
+  "seasons": [
+    {
+      "id": "prime",
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "dateRanges": [
+        {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        {
+          "start": "2027-01-01",
+          "end": "2027-12-31"
+        }
+      ]
+    }
+  ],
+  "creditRates": [
+    {
+      "seasonId": "prime",
+      "unitTypeId": "studio-deluxe",
+      "weekdayCredits": 850,
+      "weekendCredits": 1700,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1200
+      },
+      "weeklyCredits": 8000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "one-bedroom",
+      "weekdayCredits": 1000,
+      "weekendCredits": 1950,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1100
+      },
+      "weeklyCredits": 9000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "one-bedroom-deluxe",
+      "weekdayCredits": 1050,
+      "weekendCredits": 2100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1600
+      },
+      "weeklyCredits": 10000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "two-bedroom",
+      "weekdayCredits": 1200,
+      "weekendCredits": 2450,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1300
+      },
+      "weeklyCredits": 11000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "two-bedroom-deluxe",
+      "weekdayCredits": 1250,
+      "weekendCredits": 2500,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2000
+      },
+      "weeklyCredits": 12000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "three-bedroom",
+      "weekdayCredits": 1425,
+      "weekendCredits": 2875,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1550
+      },
+      "weeklyCredits": 13000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "three-bedroom-deluxe",
+      "weekdayCredits": 1450,
+      "weekendCredits": 2900,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2400
+      },
+      "weeklyCredits": 14000
+    }
+  ],
+  "dateOverrides": [],
+  "rules": {
+    "weekendNights": [
+      "FRIDAY",
+      "SATURDAY"
+    ],
+    "daySpecificNights": [
+      "SUNDAY"
+    ],
+    "weeklyPricingStrategy": "lowest-valid-rate",
+    "weeklyRequiresSingleSeason": true,
+    "useCheckInSeasonForEntireStay": false,
+    "allowSplitSeasonCalculation": true,
+    "minimumStay": 1
+  },
+  "source": {
+    "sourceFile": "Resort_Info_WBW/Florida/WBW Kingstown Reef/kingstown_reef.json",
+    "sourcePointer": "CreditChart.png",
+    "effectiveYear": 2026,
+    "effectiveStart": "2026-01-01",
+    "effectiveEnd": "2027-12-31",
+    "importedAt": "2026-07-16T19:07:02.844Z"
+  },
+  "status": "active"
+}

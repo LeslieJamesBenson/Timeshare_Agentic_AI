@@ -1,0 +1,186 @@
+{
+  "resortId": "virginia-kingsgate",
+  "resortName": "Kingsgate",
+  "destination": "Virginia",
+  "region": "mid-atlantic",
+  "country": "USA",
+  "state": "Virginia",
+  "timezone": "UTC",
+  "unitTypes": [
+    {
+      "id": "one-bedroom-suite",
+      "name": "1 BR Suite",
+      "bedrooms": 1,
+      "maxOccupancy": 4,
+      "roomType": "suite"
+    },
+    {
+      "id": "two-bedroom-suite",
+      "name": "2 BR Suite",
+      "bedrooms": 2,
+      "maxOccupancy": 6,
+      "roomType": "suite"
+    }
+  ],
+  "seasons": [
+    {
+      "id": "prime",
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "dateRanges": [
+        {
+          "start": "2026-01-01",
+          "end": "2026-01-01"
+        },
+        {
+          "start": "2026-06-05",
+          "end": "2026-09-03"
+        },
+        {
+          "start": "2026-12-18",
+          "end": "2026-12-31"
+        },
+        {
+          "start": "2027-06-04",
+          "end": "2027-09-02"
+        },
+        {
+          "start": "2027-12-17",
+          "end": "2027-12-31"
+        }
+      ]
+    },
+    {
+      "id": "average",
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "dateRanges": [
+        {
+          "start": "2026-04-10",
+          "end": "2026-06-04"
+        },
+        {
+          "start": "2026-09-04",
+          "end": "2026-11-26"
+        },
+        {
+          "start": "2027-04-09",
+          "end": "2027-06-03"
+        },
+        {
+          "start": "2027-09-03",
+          "end": "2027-11-25"
+        }
+      ]
+    },
+    {
+      "id": "slow",
+      "name": "slow",
+      "meaning": "Off-peak - not the best time to visit",
+      "dateRanges": [
+        {
+          "start": "2026-01-02",
+          "end": "2026-04-09"
+        },
+        {
+          "start": "2026-11-27",
+          "end": "2026-12-17"
+        },
+        {
+          "start": "2027-01-01",
+          "end": "2027-04-08"
+        },
+        {
+          "start": "2027-11-26",
+          "end": "2027-12-16"
+        }
+      ]
+    }
+  ],
+  "creditRates": [
+    {
+      "seasonId": "prime",
+      "unitTypeId": "one-bedroom-suite",
+      "weekdayCredits": 850,
+      "weekendCredits": 1700,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1200
+      },
+      "weeklyCredits": 8000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "two-bedroom-suite",
+      "weekdayCredits": 1150,
+      "weekendCredits": 2300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1800
+      },
+      "weeklyCredits": 11000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "one-bedroom-suite",
+      "weekdayCredits": 650,
+      "weekendCredits": 1300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 800
+      },
+      "weeklyCredits": 6000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "two-bedroom-suite",
+      "weekdayCredits": 950,
+      "weekendCredits": 1900,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1400
+      },
+      "weeklyCredits": 9000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "one-bedroom-suite",
+      "weekdayCredits": 450,
+      "weekendCredits": 825,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 550
+      },
+      "weeklyCredits": 4000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "two-bedroom-suite",
+      "weekdayCredits": 750,
+      "weekendCredits": 1500,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1000
+      },
+      "weeklyCredits": 7000
+    }
+  ],
+  "dateOverrides": [],
+  "rules": {
+    "weekendNights": [
+      "FRIDAY",
+      "SATURDAY"
+    ],
+    "daySpecificNights": [
+      "SUNDAY"
+    ],
+    "weeklyPricingStrategy": "lowest-valid-rate",
+    "weeklyRequiresSingleSeason": true,
+    "useCheckInSeasonForEntireStay": false,
+    "allowSplitSeasonCalculation": true,
+    "minimumStay": 1
+  },
+  "source": {
+    "sourceFile": "Resort_Info_WBW/Virginia/WBW Kingsgate/kingsgate.json",
+    "sourcePointer": "CreditChart.png",
+    "effectiveYear": 2026,
+    "effectiveStart": "2026-01-01",
+    "effectiveEnd": "2027-12-31",
+    "importedAt": "2026-07-16T19:07:02.853Z"
+  },
+  "status": "active"
+}

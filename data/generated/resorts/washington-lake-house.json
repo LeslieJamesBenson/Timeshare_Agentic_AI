@@ -1,0 +1,332 @@
+{
+  "resortId": "washington-lake-house",
+  "resortName": "Lake House",
+  "destination": "Washington",
+  "region": "pacific-northwest",
+  "country": "USA",
+  "state": "Washington",
+  "timezone": "UTC",
+  "unitTypes": [
+    {
+      "id": "one-bedroom-deluxe",
+      "name": "1 BR Deluxe",
+      "bedrooms": 1,
+      "maxOccupancy": 4,
+      "roomType": "deluxe",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "three-bedroom",
+      "name": "3 BR",
+      "bedrooms": 3,
+      "maxOccupancy": 8,
+      "roomType": "standard"
+    },
+    {
+      "id": "three-bedroom-lake-view",
+      "name": "3 BR Lake View",
+      "bedrooms": 3,
+      "maxOccupancy": 8,
+      "roomType": "standard",
+      "viewType": "lake"
+    },
+    {
+      "id": "three-bedroom-deluxe",
+      "name": "3 BR Deluxe",
+      "bedrooms": 3,
+      "maxOccupancy": 8,
+      "roomType": "deluxe"
+    },
+    {
+      "id": "three-bedroom-deluxe-lake-view",
+      "name": "3 BR Deluxe Lake View",
+      "bedrooms": 3,
+      "maxOccupancy": 8,
+      "roomType": "deluxe",
+      "viewType": "lake"
+    }
+  ],
+  "seasons": [
+    {
+      "id": "prime",
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "dateRanges": [
+        {
+          "start": "2026-01-01",
+          "end": "2026-01-01"
+        },
+        {
+          "start": "2026-02-13",
+          "end": "2026-02-19"
+        },
+        {
+          "start": "2026-05-22",
+          "end": "2026-09-03"
+        },
+        {
+          "start": "2026-11-20",
+          "end": "2026-12-03"
+        },
+        {
+          "start": "2026-12-18",
+          "end": "2026-12-31"
+        },
+        {
+          "start": "2027-02-12",
+          "end": "2027-02-18"
+        },
+        {
+          "start": "2027-05-21",
+          "end": "2027-09-02"
+        },
+        {
+          "start": "2027-11-19",
+          "end": "2027-12-02"
+        },
+        {
+          "start": "2027-12-17",
+          "end": "2027-12-31"
+        }
+      ]
+    },
+    {
+      "id": "average",
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "dateRanges": [
+        {
+          "start": "2026-03-20",
+          "end": "2026-05-21"
+        },
+        {
+          "start": "2026-09-04",
+          "end": "2026-09-24"
+        },
+        {
+          "start": "2027-03-19",
+          "end": "2027-05-20"
+        },
+        {
+          "start": "2027-09-03",
+          "end": "2027-09-23"
+        }
+      ]
+    },
+    {
+      "id": "slow",
+      "name": "slow",
+      "meaning": "Off-peak - not the best time to visit",
+      "dateRanges": [
+        {
+          "start": "2026-01-02",
+          "end": "2026-02-12"
+        },
+        {
+          "start": "2026-02-20",
+          "end": "2026-03-19"
+        },
+        {
+          "start": "2026-09-25",
+          "end": "2026-11-19"
+        },
+        {
+          "start": "2026-12-04",
+          "end": "2026-12-17"
+        },
+        {
+          "start": "2027-01-01",
+          "end": "2027-02-11"
+        },
+        {
+          "start": "2027-02-19",
+          "end": "2027-03-18"
+        },
+        {
+          "start": "2027-09-24",
+          "end": "2027-11-18"
+        },
+        {
+          "start": "2027-12-03",
+          "end": "2027-12-16"
+        }
+      ]
+    }
+  ],
+  "creditRates": [
+    {
+      "seasonId": "prime",
+      "unitTypeId": "one-bedroom-deluxe",
+      "weekdayCredits": 1250,
+      "weekendCredits": 2500,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2000
+      },
+      "weeklyCredits": 12000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "three-bedroom",
+      "weekdayCredits": 1550,
+      "weekendCredits": 3100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2600
+      },
+      "weeklyCredits": 15000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "three-bedroom-lake-view",
+      "weekdayCredits": 1750,
+      "weekendCredits": 3500,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 3000
+      },
+      "weeklyCredits": 17000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "three-bedroom-deluxe",
+      "weekdayCredits": 1650,
+      "weekendCredits": 3300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2800
+      },
+      "weeklyCredits": 16000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "three-bedroom-deluxe-lake-view",
+      "weekdayCredits": 1850,
+      "weekendCredits": 3700,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 3200
+      },
+      "weeklyCredits": 18000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "one-bedroom-deluxe",
+      "weekdayCredits": 1050,
+      "weekendCredits": 2100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1600
+      },
+      "weeklyCredits": 10000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "three-bedroom",
+      "weekdayCredits": 1350,
+      "weekendCredits": 2700,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2200
+      },
+      "weeklyCredits": 13000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "three-bedroom-lake-view",
+      "weekdayCredits": 1550,
+      "weekendCredits": 3100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2600
+      },
+      "weeklyCredits": 15000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "three-bedroom-deluxe",
+      "weekdayCredits": 1450,
+      "weekendCredits": 2900,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2400
+      },
+      "weeklyCredits": 14000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "three-bedroom-deluxe-lake-view",
+      "weekdayCredits": 1650,
+      "weekendCredits": 3300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2800
+      },
+      "weeklyCredits": 16000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "one-bedroom-deluxe",
+      "weekdayCredits": 850,
+      "weekendCredits": 1700,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1200
+      },
+      "weeklyCredits": 8000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "three-bedroom",
+      "weekdayCredits": 1150,
+      "weekendCredits": 2300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1800
+      },
+      "weeklyCredits": 11000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "three-bedroom-lake-view",
+      "weekdayCredits": 1350,
+      "weekendCredits": 2700,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2200
+      },
+      "weeklyCredits": 13000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "three-bedroom-deluxe",
+      "weekdayCredits": 1250,
+      "weekendCredits": 2500,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2000
+      },
+      "weeklyCredits": 12000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "three-bedroom-deluxe-lake-view",
+      "weekdayCredits": 1450,
+      "weekendCredits": 2900,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2400
+      },
+      "weeklyCredits": 14000
+    }
+  ],
+  "dateOverrides": [],
+  "rules": {
+    "weekendNights": [
+      "FRIDAY",
+      "SATURDAY"
+    ],
+    "daySpecificNights": [
+      "SUNDAY"
+    ],
+    "weeklyPricingStrategy": "lowest-valid-rate",
+    "weeklyRequiresSingleSeason": true,
+    "useCheckInSeasonForEntireStay": false,
+    "allowSplitSeasonCalculation": true,
+    "minimumStay": 1
+  },
+  "source": {
+    "sourceFile": "Resort_Info_WBW/Washington/WBW Lake House/lake_house.json",
+    "sourcePointer": "CreditChart.png",
+    "effectiveYear": 2026,
+    "effectiveStart": "2026-01-01",
+    "effectiveEnd": "2027-12-31",
+    "importedAt": "2026-07-16T19:07:02.854Z"
+  },
+  "status": "active"
+}

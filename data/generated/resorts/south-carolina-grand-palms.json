@@ -1,0 +1,416 @@
+{
+  "resortId": "south-carolina-grand-palms",
+  "resortName": "Grand Palms",
+  "destination": "South Carolina",
+  "region": "southeast",
+  "country": "USA",
+  "state": "South Carolina",
+  "timezone": "UTC",
+  "unitTypes": [
+    {
+      "id": "studio",
+      "name": "Studio",
+      "bedrooms": 0,
+      "maxOccupancy": 4,
+      "roomType": "standard"
+    },
+    {
+      "id": "one-bedroom",
+      "name": "1 BR",
+      "bedrooms": 1,
+      "maxOccupancy": 4,
+      "roomType": "standard"
+    },
+    {
+      "id": "one-bedroom-deluxe",
+      "name": "1 BR Deluxe",
+      "bedrooms": 1,
+      "maxOccupancy": 4,
+      "roomType": "deluxe"
+    },
+    {
+      "id": "one-bedroom-loft",
+      "name": "1 BR Loft",
+      "bedrooms": 1,
+      "maxOccupancy": 4,
+      "roomType": "loft"
+    },
+    {
+      "id": "two-bedroom",
+      "name": "2 BR",
+      "bedrooms": 2,
+      "maxOccupancy": 6,
+      "roomType": "standard"
+    },
+    {
+      "id": "two-bedroom-deluxe",
+      "name": "2 BR Deluxe",
+      "bedrooms": 2,
+      "maxOccupancy": 6,
+      "roomType": "deluxe"
+    },
+    {
+      "id": "two-bedroom-loft",
+      "name": "2 BR Loft",
+      "bedrooms": 2,
+      "maxOccupancy": 6,
+      "roomType": "loft"
+    },
+    {
+      "id": "three-bedroom-plus",
+      "name": "3 BR Plus",
+      "bedrooms": 3,
+      "maxOccupancy": 8,
+      "roomType": "plus"
+    }
+  ],
+  "seasons": [
+    {
+      "id": "prime",
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "dateRanges": [
+        {
+          "start": "2026-01-01",
+          "end": "2026-01-01"
+        },
+        {
+          "start": "2026-04-24",
+          "end": "2026-10-01"
+        },
+        {
+          "start": "2026-11-20",
+          "end": "2026-12-03"
+        },
+        {
+          "start": "2026-12-18",
+          "end": "2026-12-31"
+        },
+        {
+          "start": "2027-04-23",
+          "end": "2027-09-30"
+        },
+        {
+          "start": "2027-11-19",
+          "end": "2027-12-02"
+        },
+        {
+          "start": "2027-12-17",
+          "end": "2027-12-31"
+        }
+      ]
+    },
+    {
+      "id": "average",
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "dateRanges": [
+        {
+          "start": "2026-02-06",
+          "end": "2026-04-23"
+        },
+        {
+          "start": "2026-10-02",
+          "end": "2026-11-19"
+        },
+        {
+          "start": "2027-02-05",
+          "end": "2027-04-22"
+        },
+        {
+          "start": "2027-10-01",
+          "end": "2027-11-18"
+        }
+      ]
+    },
+    {
+      "id": "slow",
+      "name": "slow",
+      "meaning": "Off-peak - not the best time to visit",
+      "dateRanges": [
+        {
+          "start": "2026-01-02",
+          "end": "2026-02-05"
+        },
+        {
+          "start": "2026-12-04",
+          "end": "2026-12-17"
+        },
+        {
+          "start": "2027-01-01",
+          "end": "2027-02-04"
+        },
+        {
+          "start": "2027-12-03",
+          "end": "2027-12-16"
+        }
+      ]
+    }
+  ],
+  "creditRates": [
+    {
+      "seasonId": "prime",
+      "unitTypeId": "studio",
+      "weekdayCredits": 750,
+      "weekendCredits": 1500,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1000
+      },
+      "weeklyCredits": 7000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "one-bedroom",
+      "weekdayCredits": 850,
+      "weekendCredits": 1700,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1200
+      },
+      "weeklyCredits": 8000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "one-bedroom-deluxe",
+      "weekdayCredits": 950,
+      "weekendCredits": 1900,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1400
+      },
+      "weeklyCredits": 9000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "one-bedroom-loft",
+      "weekdayCredits": 1250,
+      "weekendCredits": 2500,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2000
+      },
+      "weeklyCredits": 12000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "two-bedroom",
+      "weekdayCredits": 1050,
+      "weekendCredits": 2100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1600
+      },
+      "weeklyCredits": 10000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "two-bedroom-deluxe",
+      "weekdayCredits": 1150,
+      "weekendCredits": 2300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1800
+      },
+      "weeklyCredits": 11000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "two-bedroom-loft",
+      "weekdayCredits": 1350,
+      "weekendCredits": 2700,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2200
+      },
+      "weeklyCredits": 13000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "three-bedroom-plus",
+      "weekdayCredits": 1450,
+      "weekendCredits": 2900,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2400
+      },
+      "weeklyCredits": 14000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "studio",
+      "weekdayCredits": 550,
+      "weekendCredits": 1100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 600
+      },
+      "weeklyCredits": 5000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "one-bedroom",
+      "weekdayCredits": 650,
+      "weekendCredits": 1300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 800
+      },
+      "weeklyCredits": 6000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "one-bedroom-deluxe",
+      "weekdayCredits": 750,
+      "weekendCredits": 1500,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1000
+      },
+      "weeklyCredits": 7000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "one-bedroom-loft",
+      "weekdayCredits": 1050,
+      "weekendCredits": 2100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1600
+      },
+      "weeklyCredits": 10000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "two-bedroom",
+      "weekdayCredits": 850,
+      "weekendCredits": 1700,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1200
+      },
+      "weeklyCredits": 8000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "two-bedroom-deluxe",
+      "weekdayCredits": 950,
+      "weekendCredits": 1900,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1400
+      },
+      "weeklyCredits": 9000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "two-bedroom-loft",
+      "weekdayCredits": 1150,
+      "weekendCredits": 2300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1800
+      },
+      "weeklyCredits": 11000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "three-bedroom-plus",
+      "weekdayCredits": 1250,
+      "weekendCredits": 2500,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2000
+      },
+      "weeklyCredits": 12000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "studio",
+      "weekdayCredits": 350,
+      "weekendCredits": 700,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 200
+      },
+      "weeklyCredits": 3000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "one-bedroom",
+      "weekdayCredits": 450,
+      "weekendCredits": 900,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 400
+      },
+      "weeklyCredits": 4000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "one-bedroom-deluxe",
+      "weekdayCredits": 550,
+      "weekendCredits": 1100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 600
+      },
+      "weeklyCredits": 5000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "one-bedroom-loft",
+      "weekdayCredits": 850,
+      "weekendCredits": 1700,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1200
+      },
+      "weeklyCredits": 8000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "two-bedroom",
+      "weekdayCredits": 650,
+      "weekendCredits": 1300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 800
+      },
+      "weeklyCredits": 6000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "two-bedroom-deluxe",
+      "weekdayCredits": 750,
+      "weekendCredits": 1500,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1000
+      },
+      "weeklyCredits": 7000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "two-bedroom-loft",
+      "weekdayCredits": 950,
+      "weekendCredits": 1900,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1400
+      },
+      "weeklyCredits": 9000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "three-bedroom-plus",
+      "weekdayCredits": 1050,
+      "weekendCredits": 2100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1600
+      },
+      "weeklyCredits": 10000
+    }
+  ],
+  "dateOverrides": [],
+  "rules": {
+    "weekendNights": [
+      "FRIDAY",
+      "SATURDAY"
+    ],
+    "daySpecificNights": [
+      "SUNDAY"
+    ],
+    "weeklyPricingStrategy": "lowest-valid-rate",
+    "weeklyRequiresSingleSeason": true,
+    "useCheckInSeasonForEntireStay": false,
+    "allowSplitSeasonCalculation": true,
+    "minimumStay": 1
+  },
+  "source": {
+    "sourceFile": "Resort_Info_WBW/South Carolina/WBW Grand Palms/grand_palms.json",
+    "sourcePointer": "CreditChart.png",
+    "effectiveYear": 2026,
+    "effectiveStart": "2026-01-01",
+    "effectiveEnd": "2027-12-31",
+    "importedAt": "2026-07-16T19:07:02.850Z"
+  },
+  "status": "active"
+}

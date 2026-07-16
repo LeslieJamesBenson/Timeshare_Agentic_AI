@@ -1,0 +1,254 @@
+{
+  "resortId": "utah-estancia",
+  "resortName": "Estancia",
+  "destination": "Utah",
+  "region": "mountain",
+  "country": "USA",
+  "state": "Utah",
+  "timezone": "UTC",
+  "unitTypes": [
+    {
+      "id": "three-bedroom-penthouse",
+      "name": "3 BR Penthouse",
+      "bedrooms": 3,
+      "maxOccupancy": 8,
+      "roomType": "penthouse",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "three-bedroom-presidential",
+      "name": "3 BR Presidential",
+      "bedrooms": 3,
+      "maxOccupancy": 8,
+      "roomType": "presidential",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "four-bedroom-penthouse",
+      "name": "4 BR Penthouse",
+      "bedrooms": 4,
+      "maxOccupancy": 10,
+      "roomType": "penthouse"
+    },
+    {
+      "id": "four-bedroom-presidential",
+      "name": "4 BR Presidential",
+      "bedrooms": 4,
+      "maxOccupancy": 10,
+      "roomType": "presidential"
+    }
+  ],
+  "seasons": [
+    {
+      "id": "prime",
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "dateRanges": [
+        {
+          "start": "2026-01-01",
+          "end": "2026-01-01"
+        },
+        {
+          "start": "2026-03-13",
+          "end": "2026-08-27"
+        },
+        {
+          "start": "2026-11-20",
+          "end": "2026-12-31"
+        },
+        {
+          "start": "2027-03-12",
+          "end": "2027-08-26"
+        },
+        {
+          "start": "2027-11-19",
+          "end": "2027-12-31"
+        }
+      ]
+    },
+    {
+      "id": "average",
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "dateRanges": [
+        {
+          "start": "2026-01-02",
+          "end": "2026-03-12"
+        },
+        {
+          "start": "2026-08-28",
+          "end": "2026-10-22"
+        },
+        {
+          "start": "2027-01-01",
+          "end": "2027-03-11"
+        },
+        {
+          "start": "2027-08-27",
+          "end": "2027-10-21"
+        }
+      ]
+    },
+    {
+      "id": "slow",
+      "name": "slow",
+      "meaning": "Off-peak - not the best time to visit",
+      "dateRanges": [
+        {
+          "start": "2026-10-23",
+          "end": "2026-11-19"
+        },
+        {
+          "start": "2027-10-22",
+          "end": "2027-11-18"
+        }
+      ]
+    }
+  ],
+  "creditRates": [
+    {
+      "seasonId": "prime",
+      "unitTypeId": "three-bedroom-penthouse",
+      "weekdayCredits": 2000,
+      "weekendCredits": 3900,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2200
+      },
+      "weeklyCredits": 18000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "three-bedroom-presidential",
+      "weekdayCredits": 3050,
+      "weekendCredits": 6100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 5600
+      },
+      "weeklyCredits": 30000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "four-bedroom-penthouse",
+      "weekdayCredits": 2050,
+      "weekendCredits": 4100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 3600
+      },
+      "weeklyCredits": 20000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "four-bedroom-presidential",
+      "weekdayCredits": 3550,
+      "weekendCredits": 7100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 6600
+      },
+      "weeklyCredits": 35000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "three-bedroom-penthouse",
+      "weekdayCredits": 1750,
+      "weekendCredits": 3450,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2100
+      },
+      "weeklyCredits": 16000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "three-bedroom-presidential",
+      "weekdayCredits": 2850,
+      "weekendCredits": 5700,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 5200
+      },
+      "weeklyCredits": 28000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "four-bedroom-penthouse",
+      "weekdayCredits": 1850,
+      "weekendCredits": 3700,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 3200
+      },
+      "weeklyCredits": 18000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "four-bedroom-presidential",
+      "weekdayCredits": 3350,
+      "weekendCredits": 6700,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 6200
+      },
+      "weeklyCredits": 33000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "three-bedroom-penthouse",
+      "weekdayCredits": 1550,
+      "weekendCredits": 3050,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1700
+      },
+      "weeklyCredits": 14000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "three-bedroom-presidential",
+      "weekdayCredits": 2650,
+      "weekendCredits": 5300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 4800
+      },
+      "weeklyCredits": 26000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "four-bedroom-penthouse",
+      "weekdayCredits": 1650,
+      "weekendCredits": 3300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2800
+      },
+      "weeklyCredits": 16000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "four-bedroom-presidential",
+      "weekdayCredits": 3150,
+      "weekendCredits": 6300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 5800
+      },
+      "weeklyCredits": 31000
+    }
+  ],
+  "dateOverrides": [],
+  "rules": {
+    "weekendNights": [
+      "FRIDAY",
+      "SATURDAY"
+    ],
+    "daySpecificNights": [
+      "SUNDAY"
+    ],
+    "weeklyPricingStrategy": "lowest-valid-rate",
+    "weeklyRequiresSingleSeason": true,
+    "useCheckInSeasonForEntireStay": false,
+    "allowSplitSeasonCalculation": true,
+    "minimumStay": 1
+  },
+  "source": {
+    "sourceFile": "Resort_Info_WBW/Utah/WBW Estancia/estancia.json",
+    "sourcePointer": "CreditChart.png",
+    "effectiveYear": 2026,
+    "effectiveStart": "2026-01-01",
+    "effectiveEnd": "2027-12-31",
+    "importedAt": "2026-07-16T19:07:02.852Z"
+  },
+  "status": "active"
+}

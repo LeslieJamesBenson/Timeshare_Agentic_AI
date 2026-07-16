@@ -1,0 +1,222 @@
+{
+  "resortId": "florida-santa-barbara",
+  "resortName": "Santa Barbara",
+  "destination": "Florida",
+  "region": "southeast",
+  "country": "USA",
+  "state": "Florida",
+  "timezone": "UTC",
+  "unitTypes": [
+    {
+      "id": "studio-deluxe",
+      "name": "Studio Deluxe",
+      "bedrooms": 0,
+      "maxOccupancy": 4,
+      "roomType": "deluxe",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "one-bedroom-deluxe",
+      "name": "1 BR Deluxe",
+      "bedrooms": 1,
+      "maxOccupancy": 4,
+      "roomType": "deluxe",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "two-bedroom-deluxe",
+      "name": "2 BR Deluxe",
+      "bedrooms": 2,
+      "maxOccupancy": 6,
+      "roomType": "deluxe",
+      "accessibilityType": "accessible"
+    }
+  ],
+  "seasons": [
+    {
+      "id": "prime",
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "dateRanges": [
+        {
+          "start": "2026-01-01",
+          "end": "2026-08-06"
+        },
+        {
+          "start": "2026-09-18",
+          "end": "2026-12-03"
+        },
+        {
+          "start": "2026-12-18",
+          "end": "2026-12-31"
+        },
+        {
+          "start": "2027-01-01",
+          "end": "2027-08-05"
+        },
+        {
+          "start": "2027-09-17",
+          "end": "2027-12-02"
+        },
+        {
+          "start": "2027-12-17",
+          "end": "2027-12-31"
+        }
+      ]
+    },
+    {
+      "id": "average",
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "dateRanges": [
+        {
+          "start": "2026-08-07",
+          "end": "2026-08-20"
+        },
+        {
+          "start": "2026-12-04",
+          "end": "2026-12-17"
+        },
+        {
+          "start": "2027-08-06",
+          "end": "2027-08-19"
+        },
+        {
+          "start": "2027-12-03",
+          "end": "2027-12-16"
+        }
+      ]
+    },
+    {
+      "id": "slow",
+      "name": "slow",
+      "meaning": "Off-peak - not the best time to visit",
+      "dateRanges": [
+        {
+          "start": "2026-08-21",
+          "end": "2026-09-17"
+        },
+        {
+          "start": "2027-08-20",
+          "end": "2027-09-16"
+        }
+      ]
+    }
+  ],
+  "creditRates": [
+    {
+      "seasonId": "prime",
+      "unitTypeId": "studio-deluxe",
+      "weekdayCredits": 850,
+      "weekendCredits": 1700,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1400
+      },
+      "weeklyCredits": 8200
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "one-bedroom-deluxe",
+      "weekdayCredits": 950,
+      "weekendCredits": 1900,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1500
+      },
+      "weeklyCredits": 9100
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "two-bedroom-deluxe",
+      "weekdayCredits": 1200,
+      "weekendCredits": 2500,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2000
+      },
+      "weeklyCredits": 11800
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "studio-deluxe",
+      "weekdayCredits": 700,
+      "weekendCredits": 1400,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1000
+      },
+      "weeklyCredits": 6600
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "one-bedroom-deluxe",
+      "weekdayCredits": 750,
+      "weekendCredits": 1600,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1100
+      },
+      "weeklyCredits": 7300
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "two-bedroom-deluxe",
+      "weekdayCredits": 1150,
+      "weekendCredits": 2300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1700
+      },
+      "weeklyCredits": 10900
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "studio-deluxe",
+      "weekdayCredits": 600,
+      "weekendCredits": 1275,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 750
+      },
+      "weeklyCredits": 5700
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "one-bedroom-deluxe",
+      "weekdayCredits": 625,
+      "weekendCredits": 1300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 800
+      },
+      "weeklyCredits": 5900
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "two-bedroom-deluxe",
+      "weekdayCredits": 1050,
+      "weekendCredits": 2100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1400
+      },
+      "weeklyCredits": 9800
+    }
+  ],
+  "dateOverrides": [],
+  "rules": {
+    "weekendNights": [
+      "FRIDAY",
+      "SATURDAY"
+    ],
+    "daySpecificNights": [
+      "SUNDAY"
+    ],
+    "weeklyPricingStrategy": "lowest-valid-rate",
+    "weeklyRequiresSingleSeason": true,
+    "useCheckInSeasonForEntireStay": false,
+    "allowSplitSeasonCalculation": true,
+    "minimumStay": 1
+  },
+  "source": {
+    "sourceFile": "Resort_Info_WBW/Florida/WBW Santa Barbara/santa_barbara.json",
+    "sourcePointer": "CreditChart.png",
+    "effectiveYear": 2026,
+    "effectiveStart": "2026-01-01",
+    "effectiveEnd": "2027-12-31",
+    "importedAt": "2026-07-16T19:07:02.845Z"
+  },
+  "status": "active"
+}

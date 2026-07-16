@@ -1,0 +1,363 @@
+{
+  "resortId": "california-indio",
+  "resortName": "Indio",
+  "destination": "California",
+  "region": "california",
+  "country": "USA",
+  "state": "California",
+  "timezone": "UTC",
+  "unitTypes": [
+    {
+      "id": "studio",
+      "name": "Studio",
+      "bedrooms": 0,
+      "maxOccupancy": 4,
+      "roomType": "standard",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "one-bedroom",
+      "name": "1 BR",
+      "bedrooms": 1,
+      "maxOccupancy": 4,
+      "roomType": "standard",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "two-bedroom",
+      "name": "2 BR",
+      "bedrooms": 2,
+      "maxOccupancy": 6,
+      "roomType": "standard",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "three-bedroom",
+      "name": "3 BR",
+      "bedrooms": 3,
+      "maxOccupancy": 8,
+      "roomType": "standard"
+    },
+    {
+      "id": "three-bedroom-penthouse",
+      "name": "3 BR Penthouse",
+      "bedrooms": 3,
+      "maxOccupancy": 8,
+      "roomType": "penthouse"
+    },
+    {
+      "id": "three-bedroom-presidential",
+      "name": "3 BR Presidential",
+      "bedrooms": 3,
+      "maxOccupancy": 8,
+      "roomType": "presidential"
+    },
+    {
+      "id": "four-bedroom-presidential",
+      "name": "4 BR Presidential",
+      "bedrooms": 4,
+      "maxOccupancy": 10,
+      "roomType": "presidential",
+      "accessibilityType": "accessible"
+    }
+  ],
+  "seasons": [
+    {
+      "id": "prime",
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "dateRanges": [
+        {
+          "start": "2026-01-01",
+          "end": "2026-06-04"
+        },
+        {
+          "start": "2026-08-28",
+          "end": "2026-12-31"
+        },
+        {
+          "start": "2027-01-01",
+          "end": "2027-06-03"
+        },
+        {
+          "start": "2027-08-27",
+          "end": "2027-12-31"
+        }
+      ]
+    },
+    {
+      "id": "average",
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "dateRanges": [
+        {
+          "start": "2026-06-05",
+          "end": "2026-07-02"
+        },
+        {
+          "start": "2026-07-17",
+          "end": "2026-08-27"
+        },
+        {
+          "start": "2027-06-04",
+          "end": "2027-07-01"
+        },
+        {
+          "start": "2027-07-16",
+          "end": "2027-08-26"
+        }
+      ]
+    },
+    {
+      "id": "slow",
+      "name": "slow",
+      "meaning": "Off-peak - not the best time to visit",
+      "dateRanges": [
+        {
+          "start": "2026-07-03",
+          "end": "2026-07-16"
+        },
+        {
+          "start": "2027-07-02",
+          "end": "2027-07-15"
+        }
+      ]
+    }
+  ],
+  "creditRates": [
+    {
+      "seasonId": "prime",
+      "unitTypeId": "studio",
+      "weekdayCredits": 775,
+      "weekendCredits": 1550,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 800
+      },
+      "weeklyCredits": 7000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "one-bedroom",
+      "weekdayCredits": 1000,
+      "weekendCredits": 1950,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1100
+      },
+      "weeklyCredits": 9000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "two-bedroom",
+      "weekdayCredits": 1200,
+      "weekendCredits": 2450,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1300
+      },
+      "weeklyCredits": 11000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "three-bedroom",
+      "weekdayCredits": 1425,
+      "weekendCredits": 2875,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1550
+      },
+      "weeklyCredits": 13000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "three-bedroom-penthouse",
+      "weekdayCredits": 2000,
+      "weekendCredits": 3900,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2200
+      },
+      "weeklyCredits": 18000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "three-bedroom-presidential",
+      "weekdayCredits": 2600,
+      "weekendCredits": 5200,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 3200
+      },
+      "weeklyCredits": 24000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "four-bedroom-presidential",
+      "weekdayCredits": 3300,
+      "weekendCredits": 6600,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 3600
+      },
+      "weeklyCredits": 30000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "studio",
+      "weekdayCredits": 550,
+      "weekendCredits": 1100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 600
+      },
+      "weeklyCredits": 5000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "one-bedroom",
+      "weekdayCredits": 775,
+      "weekendCredits": 1550,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 800
+      },
+      "weeklyCredits": 7000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "two-bedroom",
+      "weekdayCredits": 1000,
+      "weekendCredits": 1950,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1100
+      },
+      "weeklyCredits": 9000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "three-bedroom",
+      "weekdayCredits": 1200,
+      "weekendCredits": 2450,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1300
+      },
+      "weeklyCredits": 11000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "three-bedroom-penthouse",
+      "weekdayCredits": 1750,
+      "weekendCredits": 3450,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2100
+      },
+      "weeklyCredits": 16000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "three-bedroom-presidential",
+      "weekdayCredits": 2400,
+      "weekendCredits": 4800,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2800
+      },
+      "weeklyCredits": 22000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "four-bedroom-presidential",
+      "weekdayCredits": 3100,
+      "weekendCredits": 6100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 3400
+      },
+      "weeklyCredits": 28000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "studio",
+      "weekdayCredits": 425,
+      "weekendCredits": 900,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 500
+      },
+      "weeklyCredits": 4000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "one-bedroom",
+      "weekdayCredits": 550,
+      "weekendCredits": 1100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 600
+      },
+      "weeklyCredits": 5000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "two-bedroom",
+      "weekdayCredits": 775,
+      "weekendCredits": 1550,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 800
+      },
+      "weeklyCredits": 7000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "three-bedroom",
+      "weekdayCredits": 1000,
+      "weekendCredits": 1950,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1100
+      },
+      "weeklyCredits": 9000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "three-bedroom-penthouse",
+      "weekdayCredits": 1550,
+      "weekendCredits": 3050,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1700
+      },
+      "weeklyCredits": 14000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "three-bedroom-presidential",
+      "weekdayCredits": 2200,
+      "weekendCredits": 4400,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2400
+      },
+      "weeklyCredits": 20000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "four-bedroom-presidential",
+      "weekdayCredits": 2600,
+      "weekendCredits": 5200,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 3200
+      },
+      "weeklyCredits": 24000
+    }
+  ],
+  "dateOverrides": [],
+  "rules": {
+    "weekendNights": [
+      "FRIDAY",
+      "SATURDAY"
+    ],
+    "daySpecificNights": [
+      "SUNDAY"
+    ],
+    "weeklyPricingStrategy": "lowest-valid-rate",
+    "weeklyRequiresSingleSeason": true,
+    "useCheckInSeasonForEntireStay": false,
+    "allowSplitSeasonCalculation": true,
+    "minimumStay": 1
+  },
+  "source": {
+    "sourceFile": "Resort_Info_WBW/California/WBW Indio/indio.json",
+    "sourcePointer": "CreditChart.png",
+    "effectiveYear": 2026,
+    "effectiveStart": "2026-01-01",
+    "effectiveEnd": "2027-12-31",
+    "importedAt": "2026-07-16T19:07:02.841Z"
+  },
+  "status": "active"
+}

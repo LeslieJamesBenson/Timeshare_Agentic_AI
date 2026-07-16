@@ -1,0 +1,30 @@
+{
+  "resortId": "test-split",
+  "resortName": "Test Split Season Resort",
+  "state": "Testland",
+  "region": "test",
+  "country": "USA",
+  "timezone": "UTC",
+  "unitTypes": [
+    { "id": "one-bedroom", "name": "1 BR", "bedrooms": 1, "maxOccupancy": 4 }
+  ],
+  "seasons": [
+    { "id": "red", "name": "red", "dateRanges": [{ "start": "2026-09-01", "end": "2026-09-30" }, { "start": "2027-09-01", "end": "2027-09-30" }] },
+    { "id": "white", "name": "white", "dateRanges": [{ "start": "2026-10-01", "end": "2026-10-31" }, { "start": "2027-10-01", "end": "2027-10-31" }] }
+  ],
+  "creditRates": [
+    { "seasonId": "red", "unitTypeId": "one-bedroom", "weekdayCredits": 2000, "weekendCredits": 3000, "nightlyCreditsByDay": { "SUNDAY": 2000 }, "weeklyCredits": 15000 },
+    { "seasonId": "white", "unitTypeId": "one-bedroom", "weekdayCredits": 1000, "weekendCredits": 1500, "nightlyCreditsByDay": { "SUNDAY": 1000 }, "weeklyCredits": 8000 }
+  ],
+  "dateOverrides": [],
+  "rules": {
+    "weekendNights": ["FRIDAY", "SATURDAY"],
+    "daySpecificNights": ["SUNDAY"],
+    "weeklyPricingStrategy": "lowest-valid-rate",
+    "weeklyRequiresSingleSeason": true,
+    "useCheckInSeasonForEntireStay": false,
+    "allowSplitSeasonCalculation": true,
+    "minimumStay": 1
+  },
+  "source": { "sourceFile": "fixtures/split-season-resort.json", "effectiveYear": 2026, "effectiveStart": "2026-01-01", "effectiveEnd": "2027-12-31", "importedAt": "2026-01-01T00:00:00.000Z" }
+}

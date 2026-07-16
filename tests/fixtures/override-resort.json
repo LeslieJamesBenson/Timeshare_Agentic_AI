@@ -1,0 +1,30 @@
+{
+  "resortId": "test-override",
+  "resortName": "Test Override Resort",
+  "state": "Testland",
+  "region": "test",
+  "country": "USA",
+  "timezone": "UTC",
+  "unitTypes": [
+    { "id": "one-bedroom", "name": "1 BR", "bedrooms": 1, "maxOccupancy": 4 }
+  ],
+  "seasons": [
+    { "id": "red", "name": "red", "dateRanges": [{ "start": "2026-01-01", "end": "2027-12-31" }] }
+  ],
+  "creditRates": [
+    { "seasonId": "red", "unitTypeId": "one-bedroom", "weekdayCredits": 1000, "weekendCredits": 1000, "nightlyCreditsByDay": { "SUNDAY": 1000 }, "weeklyCredits": 6000 }
+  ],
+  "dateOverrides": [
+    { "id": "july4", "name": "Independence Day", "start": "2026-07-03", "end": "2026-07-05", "nightlyCredits": 5000, "priority": 10 }
+  ],
+  "rules": {
+    "weekendNights": ["FRIDAY", "SATURDAY"],
+    "daySpecificNights": ["SUNDAY"],
+    "weeklyPricingStrategy": "lowest-valid-rate",
+    "weeklyRequiresSingleSeason": true,
+    "useCheckInSeasonForEntireStay": false,
+    "allowSplitSeasonCalculation": true,
+    "minimumStay": 1
+  },
+  "source": { "sourceFile": "fixtures/override-resort.json", "effectiveYear": 2026, "effectiveStart": "2026-01-01", "effectiveEnd": "2027-12-31", "importedAt": "2026-01-01T00:00:00.000Z" }
+}

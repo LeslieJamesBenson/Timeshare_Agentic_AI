@@ -6,7 +6,13 @@
   "scripts": {
     "start": "node server.js",
     "validate-data": "node scripts/validate-resort-data.js",
-    "test": "node scripts/test-trip-planner.js"
+    "test": "node scripts/test-trip-planner.js",
+    "test:credits": "node --test tests/credits/*.test.js",
+    "test:e2e": "node tests/e2e/calculator.spec.js",
+    "credits:audit": "node scripts/credit-charts/audit.js",
+    "credits:import": "node scripts/credit-charts/import.js",
+    "credits:validate": "node scripts/credit-charts/validate.js",
+    "credits:build": "npm run credits:audit && npm run credits:import && npm run credits:validate"
   },
   "dependencies": {
     "dotenv": "^16.4.5",

@@ -1,0 +1,332 @@
+{
+  "resortId": "florida-palm-aire",
+  "resortName": "Palm-Aire",
+  "destination": "Florida",
+  "region": "southeast",
+  "country": "USA",
+  "state": "Florida",
+  "timezone": "UTC",
+  "unitTypes": [
+    {
+      "id": "studio",
+      "name": "Studio",
+      "bedrooms": 0,
+      "maxOccupancy": 4,
+      "roomType": "standard",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "studio-deluxe",
+      "name": "Studio Deluxe",
+      "bedrooms": 0,
+      "maxOccupancy": 4,
+      "roomType": "deluxe"
+    },
+    {
+      "id": "one-bedroom",
+      "name": "1 BR",
+      "bedrooms": 1,
+      "maxOccupancy": 4,
+      "roomType": "standard"
+    },
+    {
+      "id": "one-bedroom-deluxe",
+      "name": "1 BR Deluxe",
+      "bedrooms": 1,
+      "maxOccupancy": 4,
+      "roomType": "deluxe",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "two-bedroom",
+      "name": "2 BR",
+      "bedrooms": 2,
+      "maxOccupancy": 6,
+      "roomType": "standard"
+    },
+    {
+      "id": "two-bedroom-deluxe",
+      "name": "2 BR Deluxe",
+      "bedrooms": 2,
+      "maxOccupancy": 6,
+      "roomType": "deluxe"
+    }
+  ],
+  "seasons": [
+    {
+      "id": "prime",
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "dateRanges": [
+        {
+          "start": "2026-01-01",
+          "end": "2026-08-06"
+        },
+        {
+          "start": "2026-09-18",
+          "end": "2026-12-03"
+        },
+        {
+          "start": "2026-12-18",
+          "end": "2026-12-31"
+        },
+        {
+          "start": "2027-01-01",
+          "end": "2027-08-05"
+        },
+        {
+          "start": "2027-09-17",
+          "end": "2027-12-02"
+        },
+        {
+          "start": "2027-12-17",
+          "end": "2027-12-31"
+        }
+      ]
+    },
+    {
+      "id": "average",
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "dateRanges": [
+        {
+          "start": "2026-08-07",
+          "end": "2026-08-20"
+        },
+        {
+          "start": "2026-12-04",
+          "end": "2026-12-17"
+        },
+        {
+          "start": "2027-08-06",
+          "end": "2027-08-19"
+        },
+        {
+          "start": "2027-12-03",
+          "end": "2027-12-16"
+        }
+      ]
+    },
+    {
+      "id": "slow",
+      "name": "slow",
+      "meaning": "Off-peak - not the best time to visit",
+      "dateRanges": [
+        {
+          "start": "2026-08-21",
+          "end": "2026-09-17"
+        },
+        {
+          "start": "2027-08-20",
+          "end": "2027-09-16"
+        }
+      ]
+    }
+  ],
+  "creditRates": [
+    {
+      "seasonId": "prime",
+      "unitTypeId": "studio",
+      "weekdayCredits": 800,
+      "weekendCredits": 1300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 800
+      },
+      "weeklyCredits": 6600
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "studio-deluxe",
+      "weekdayCredits": 900,
+      "weekendCredits": 1400,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 900
+      },
+      "weeklyCredits": 7300
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "one-bedroom",
+      "weekdayCredits": 700,
+      "weekendCredits": 1500,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1000
+      },
+      "weeklyCredits": 6800
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "one-bedroom-deluxe",
+      "weekdayCredits": 750,
+      "weekendCredits": 1600,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1300
+      },
+      "weeklyCredits": 7500
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "two-bedroom",
+      "weekdayCredits": 1050,
+      "weekendCredits": 2100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1600
+      },
+      "weeklyCredits": 10000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "two-bedroom-deluxe",
+      "weekdayCredits": 1150,
+      "weekendCredits": 2300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1700
+      },
+      "weeklyCredits": 10900
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "studio",
+      "weekdayCredits": 600,
+      "weekendCredits": 1300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 700
+      },
+      "weeklyCredits": 5700
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "studio-deluxe",
+      "weekdayCredits": 700,
+      "weekendCredits": 1200,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 700
+      },
+      "weeklyCredits": 5900
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "one-bedroom",
+      "weekdayCredits": 650,
+      "weekendCredits": 1250,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 800
+      },
+      "weeklyCredits": 5900
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "one-bedroom-deluxe",
+      "weekdayCredits": 700,
+      "weekendCredits": 1400,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1000
+      },
+      "weeklyCredits": 6600
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "two-bedroom",
+      "weekdayCredits": 900,
+      "weekendCredits": 1800,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1200
+      },
+      "weeklyCredits": 8400
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "two-bedroom-deluxe",
+      "weekdayCredits": 1000,
+      "weekendCredits": 1900,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1500
+      },
+      "weeklyCredits": 9300
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "studio",
+      "weekdayCredits": 600,
+      "weekendCredits": 900,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 600
+      },
+      "weeklyCredits": 4800
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "studio-deluxe",
+      "weekdayCredits": 600,
+      "weekendCredits": 1000,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 600
+      },
+      "weeklyCredits": 5000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "one-bedroom",
+      "weekdayCredits": 550,
+      "weekendCredits": 1000,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 600
+      },
+      "weeklyCredits": 4800
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "one-bedroom-deluxe",
+      "weekdayCredits": 550,
+      "weekendCredits": 1050,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 700
+      },
+      "weeklyCredits": 5000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "two-bedroom",
+      "weekdayCredits": 900,
+      "weekendCredits": 1500,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1200
+      },
+      "weeklyCredits": 7800
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "two-bedroom-deluxe",
+      "weekdayCredits": 900,
+      "weekendCredits": 1800,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1600
+      },
+      "weeklyCredits": 8800
+    }
+  ],
+  "dateOverrides": [],
+  "rules": {
+    "weekendNights": [
+      "FRIDAY",
+      "SATURDAY"
+    ],
+    "daySpecificNights": [
+      "SUNDAY"
+    ],
+    "weeklyPricingStrategy": "lowest-valid-rate",
+    "weeklyRequiresSingleSeason": true,
+    "useCheckInSeasonForEntireStay": false,
+    "allowSplitSeasonCalculation": true,
+    "minimumStay": 1
+  },
+  "source": {
+    "sourceFile": "Resort_Info_WBW/Florida/WBW Palm-Aire/palm_aire.json",
+    "sourcePointer": "CreditChart.png",
+    "effectiveYear": 2026,
+    "effectiveStart": "2026-01-01",
+    "effectiveEnd": "2027-12-31",
+    "importedAt": "2026-07-16T19:07:02.844Z"
+  },
+  "status": "active"
+}

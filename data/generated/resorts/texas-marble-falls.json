@@ -1,0 +1,389 @@
+{
+  "resortId": "texas-marble-falls",
+  "resortName": "Marble Falls",
+  "destination": "Texas",
+  "region": "south-central",
+  "country": "USA",
+  "state": "Texas",
+  "timezone": "UTC",
+  "unitTypes": [
+    {
+      "id": "one-bedroom",
+      "name": "1 BR",
+      "bedrooms": 1,
+      "maxOccupancy": 4,
+      "roomType": "standard",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "one-bedroom-presidential",
+      "name": "1 BR Presidential",
+      "bedrooms": 1,
+      "maxOccupancy": 4,
+      "roomType": "presidential"
+    },
+    {
+      "id": "two-bedroom",
+      "name": "2 BR",
+      "bedrooms": 2,
+      "maxOccupancy": 6,
+      "roomType": "standard"
+    },
+    {
+      "id": "two-bedroom-penthouse",
+      "name": "2 BR Penthouse",
+      "bedrooms": 2,
+      "maxOccupancy": 6,
+      "roomType": "penthouse"
+    },
+    {
+      "id": "two-bedroom-presidential",
+      "name": "2 BR Presidential",
+      "bedrooms": 2,
+      "maxOccupancy": 6,
+      "roomType": "presidential"
+    },
+    {
+      "id": "three-bedroom",
+      "name": "3 BR",
+      "bedrooms": 3,
+      "maxOccupancy": 8,
+      "roomType": "standard"
+    },
+    {
+      "id": "three-bedroom-penthouse",
+      "name": "3 BR Penthouse",
+      "bedrooms": 3,
+      "maxOccupancy": 8,
+      "roomType": "penthouse",
+      "accessibilityType": "accessible"
+    }
+  ],
+  "seasons": [
+    {
+      "id": "prime",
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "dateRanges": [
+        {
+          "start": "2026-01-01",
+          "end": "2026-01-01"
+        },
+        {
+          "start": "2026-03-20",
+          "end": "2026-09-17"
+        },
+        {
+          "start": "2026-11-20",
+          "end": "2026-12-03"
+        },
+        {
+          "start": "2026-12-18",
+          "end": "2026-12-31"
+        },
+        {
+          "start": "2027-03-19",
+          "end": "2027-09-16"
+        },
+        {
+          "start": "2027-11-19",
+          "end": "2027-12-02"
+        },
+        {
+          "start": "2027-12-17",
+          "end": "2027-12-31"
+        }
+      ]
+    },
+    {
+      "id": "average",
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "dateRanges": [
+        {
+          "start": "2026-01-16",
+          "end": "2026-03-19"
+        },
+        {
+          "start": "2026-09-18",
+          "end": "2026-10-29"
+        },
+        {
+          "start": "2027-01-15",
+          "end": "2027-03-18"
+        },
+        {
+          "start": "2027-09-17",
+          "end": "2027-10-28"
+        }
+      ]
+    },
+    {
+      "id": "slow",
+      "name": "slow",
+      "meaning": "Off-peak - not the best time to visit",
+      "dateRanges": [
+        {
+          "start": "2026-01-02",
+          "end": "2026-01-15"
+        },
+        {
+          "start": "2026-10-30",
+          "end": "2026-11-19"
+        },
+        {
+          "start": "2026-12-04",
+          "end": "2026-12-17"
+        },
+        {
+          "start": "2027-01-01",
+          "end": "2027-01-14"
+        },
+        {
+          "start": "2027-10-29",
+          "end": "2027-11-18"
+        },
+        {
+          "start": "2027-12-03",
+          "end": "2027-12-16"
+        }
+      ]
+    }
+  ],
+  "creditRates": [
+    {
+      "seasonId": "prime",
+      "unitTypeId": "one-bedroom",
+      "weekdayCredits": 1100,
+      "weekendCredits": 2200,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1700
+      },
+      "weeklyCredits": 10500
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "one-bedroom-presidential",
+      "weekdayCredits": 2250,
+      "weekendCredits": 4500,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 4000
+      },
+      "weeklyCredits": 22000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "two-bedroom",
+      "weekdayCredits": 1300,
+      "weekendCredits": 2600,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2100
+      },
+      "weeklyCredits": 12500
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "two-bedroom-penthouse",
+      "weekdayCredits": 1650,
+      "weekendCredits": 3300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2800
+      },
+      "weeklyCredits": 16000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "two-bedroom-presidential",
+      "weekdayCredits": 2650,
+      "weekendCredits": 5300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 4800
+      },
+      "weeklyCredits": 26000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "three-bedroom",
+      "weekdayCredits": 1450,
+      "weekendCredits": 2900,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2400
+      },
+      "weeklyCredits": 14000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "three-bedroom-penthouse",
+      "weekdayCredits": 1850,
+      "weekendCredits": 3700,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 3200
+      },
+      "weeklyCredits": 18000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "one-bedroom",
+      "weekdayCredits": 900,
+      "weekendCredits": 1800,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1300
+      },
+      "weeklyCredits": 8500
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "one-bedroom-presidential",
+      "weekdayCredits": 2050,
+      "weekendCredits": 4100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 3600
+      },
+      "weeklyCredits": 20000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "two-bedroom",
+      "weekdayCredits": 1100,
+      "weekendCredits": 2200,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1700
+      },
+      "weeklyCredits": 10500
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "two-bedroom-penthouse",
+      "weekdayCredits": 1450,
+      "weekendCredits": 2900,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2400
+      },
+      "weeklyCredits": 14000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "two-bedroom-presidential",
+      "weekdayCredits": 2450,
+      "weekendCredits": 4900,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 4400
+      },
+      "weeklyCredits": 24000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "three-bedroom",
+      "weekdayCredits": 1250,
+      "weekendCredits": 2500,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2000
+      },
+      "weeklyCredits": 12000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "three-bedroom-penthouse",
+      "weekdayCredits": 1650,
+      "weekendCredits": 3300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2800
+      },
+      "weeklyCredits": 16000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "one-bedroom",
+      "weekdayCredits": 700,
+      "weekendCredits": 1400,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 900
+      },
+      "weeklyCredits": 6500
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "one-bedroom-presidential",
+      "weekdayCredits": 1850,
+      "weekendCredits": 3700,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 3200
+      },
+      "weeklyCredits": 18000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "two-bedroom",
+      "weekdayCredits": 900,
+      "weekendCredits": 1800,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1300
+      },
+      "weeklyCredits": 8500
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "two-bedroom-penthouse",
+      "weekdayCredits": 1250,
+      "weekendCredits": 2500,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2000
+      },
+      "weeklyCredits": 12000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "two-bedroom-presidential",
+      "weekdayCredits": 2250,
+      "weekendCredits": 4500,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 4000
+      },
+      "weeklyCredits": 22000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "three-bedroom",
+      "weekdayCredits": 1050,
+      "weekendCredits": 2100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1600
+      },
+      "weeklyCredits": 10000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "three-bedroom-penthouse",
+      "weekdayCredits": 1450,
+      "weekendCredits": 2900,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2400
+      },
+      "weeklyCredits": 14000
+    }
+  ],
+  "dateOverrides": [],
+  "rules": {
+    "weekendNights": [
+      "FRIDAY",
+      "SATURDAY"
+    ],
+    "daySpecificNights": [
+      "SUNDAY"
+    ],
+    "weeklyPricingStrategy": "lowest-valid-rate",
+    "weeklyRequiresSingleSeason": true,
+    "useCheckInSeasonForEntireStay": false,
+    "allowSplitSeasonCalculation": true,
+    "minimumStay": 1
+  },
+  "source": {
+    "sourceFile": "Resort_Info_WBW/Texas/WBW Marble Falls/marble_falls.json",
+    "sourcePointer": "CreditChart.png",
+    "effectiveYear": 2026,
+    "effectiveStart": "2026-01-01",
+    "effectiveEnd": "2027-12-31",
+    "importedAt": "2026-07-16T19:07:02.851Z"
+  },
+  "status": "active"
+}

@@ -1,0 +1,240 @@
+{
+  "resortId": "texas-new-braunfels",
+  "resortName": "New Braunfels",
+  "destination": "Texas",
+  "region": "south-central",
+  "country": "USA",
+  "state": "Texas",
+  "timezone": "UTC",
+  "unitTypes": [
+    {
+      "id": "two-bedroom-deluxe",
+      "name": "2 BR Deluxe",
+      "bedrooms": 2,
+      "maxOccupancy": 6,
+      "roomType": "deluxe",
+      "accessibilityType": "accessible"
+    },
+    {
+      "id": "three-bedroom-deluxe",
+      "name": "3 BR Deluxe",
+      "bedrooms": 3,
+      "maxOccupancy": 8,
+      "roomType": "deluxe"
+    },
+    {
+      "id": "three-bedroom-penthouse",
+      "name": "3 BR Penthouse",
+      "bedrooms": 3,
+      "maxOccupancy": 8,
+      "roomType": "penthouse"
+    }
+  ],
+  "seasons": [
+    {
+      "id": "prime",
+      "name": "prime",
+      "meaning": "Highly sought after - peak demand",
+      "dateRanges": [
+        {
+          "start": "2026-01-01",
+          "end": "2026-01-01"
+        },
+        {
+          "start": "2026-03-13",
+          "end": "2026-09-10"
+        },
+        {
+          "start": "2026-11-20",
+          "end": "2026-12-03"
+        },
+        {
+          "start": "2026-12-11",
+          "end": "2026-12-31"
+        },
+        {
+          "start": "2027-03-12",
+          "end": "2027-09-09"
+        },
+        {
+          "start": "2027-11-19",
+          "end": "2027-12-02"
+        },
+        {
+          "start": "2027-12-10",
+          "end": "2027-12-31"
+        }
+      ]
+    },
+    {
+      "id": "average",
+      "name": "average",
+      "meaning": "Solid time to visit - moderate demand",
+      "dateRanges": [
+        {
+          "start": "2026-02-06",
+          "end": "2026-03-12"
+        },
+        {
+          "start": "2026-09-11",
+          "end": "2026-10-29"
+        },
+        {
+          "start": "2027-02-05",
+          "end": "2027-03-11"
+        },
+        {
+          "start": "2027-09-10",
+          "end": "2027-10-28"
+        }
+      ]
+    },
+    {
+      "id": "slow",
+      "name": "slow",
+      "meaning": "Off-peak - not the best time to visit",
+      "dateRanges": [
+        {
+          "start": "2026-01-02",
+          "end": "2026-02-05"
+        },
+        {
+          "start": "2026-10-30",
+          "end": "2026-11-19"
+        },
+        {
+          "start": "2026-12-04",
+          "end": "2026-12-10"
+        },
+        {
+          "start": "2027-01-01",
+          "end": "2027-02-04"
+        },
+        {
+          "start": "2027-10-29",
+          "end": "2027-11-18"
+        },
+        {
+          "start": "2027-12-03",
+          "end": "2027-12-09"
+        }
+      ]
+    }
+  ],
+  "creditRates": [
+    {
+      "seasonId": "prime",
+      "unitTypeId": "two-bedroom-deluxe",
+      "weekdayCredits": 1400,
+      "weekendCredits": 2800,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2300
+      },
+      "weeklyCredits": 13500
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "three-bedroom-deluxe",
+      "weekdayCredits": 1550,
+      "weekendCredits": 3100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2600
+      },
+      "weeklyCredits": 15000
+    },
+    {
+      "seasonId": "prime",
+      "unitTypeId": "three-bedroom-penthouse",
+      "weekdayCredits": 2050,
+      "weekendCredits": 4100,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 3600
+      },
+      "weeklyCredits": 20000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "two-bedroom-deluxe",
+      "weekdayCredits": 1200,
+      "weekendCredits": 2400,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1900
+      },
+      "weeklyCredits": 11500
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "three-bedroom-deluxe",
+      "weekdayCredits": 1350,
+      "weekendCredits": 2700,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2200
+      },
+      "weeklyCredits": 13000
+    },
+    {
+      "seasonId": "average",
+      "unitTypeId": "three-bedroom-penthouse",
+      "weekdayCredits": 1850,
+      "weekendCredits": 3700,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 3200
+      },
+      "weeklyCredits": 18000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "two-bedroom-deluxe",
+      "weekdayCredits": 1000,
+      "weekendCredits": 2000,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1500
+      },
+      "weeklyCredits": 9500
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "three-bedroom-deluxe",
+      "weekdayCredits": 1150,
+      "weekendCredits": 2300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 1800
+      },
+      "weeklyCredits": 11000
+    },
+    {
+      "seasonId": "slow",
+      "unitTypeId": "three-bedroom-penthouse",
+      "weekdayCredits": 1650,
+      "weekendCredits": 3300,
+      "nightlyCreditsByDay": {
+        "SUNDAY": 2800
+      },
+      "weeklyCredits": 16000
+    }
+  ],
+  "dateOverrides": [],
+  "rules": {
+    "weekendNights": [
+      "FRIDAY",
+      "SATURDAY"
+    ],
+    "daySpecificNights": [
+      "SUNDAY"
+    ],
+    "weeklyPricingStrategy": "lowest-valid-rate",
+    "weeklyRequiresSingleSeason": true,
+    "useCheckInSeasonForEntireStay": false,
+    "allowSplitSeasonCalculation": true,
+    "minimumStay": 1
+  },
+  "source": {
+    "sourceFile": "Resort_Info_WBW/Texas/WBW New Braunfels/new_braunfels.json",
+    "sourcePointer": "CreditChart.png",
+    "effectiveYear": 2026,
+    "effectiveStart": "2026-01-01",
+    "effectiveEnd": "2027-12-31",
+    "importedAt": "2026-07-16T19:07:02.851Z"
+  },
+  "status": "active"
+}

@@ -108,6 +108,36 @@ Anthropic Claude API (claude-sonnet-5)
 
 ---
 
+## Resort Credit Calculator
+
+A deterministic, per-resort credit calculator over all 100 real WBW charts in
+`Resort_Info_WBW/`. **No AI and no API key required** — it works during a live
+sales call.
+
+```bash
+npm run credits:build      # normalize + validate the charts into data/generated/
+npm start                  # then open the pages below
+```
+
+- **`/calculator`** — search a resort, pick dates + unit + rooms, get the total
+  credits, a night-by-night breakdown (season, weekday/weekend/day-rate), weekly
+  adjustments, warnings, and an optional owner-credit comparison. Copy breakdown
+  and add-to-plan included.
+- **`/planner`** — a local (localStorage) annual travel plan: add calculated
+  trips and see the annual credit need vs. the owner's annual credits.
+- **`/data-status`** — internal chart health: active / warning / blocked /
+  unsupported per resort, with source file, effective period, and issues.
+
+**Design:** the calculation engine (`lib/credits/`) is pure and isolated from
+the UI, validated by Zod-style runtime checks, and covered by
+`npm run test:credits` (unit) and `npm run test:e2e` (Playwright). It never
+guesses missing chart data — unpriceable or ambiguous dates return a clear error
+instead of a number. See `docs/calculation-rules.md`,
+`docs/credit-chart-audit.md`, `docs/data-import-guide.md`,
+`docs/adding-new-resorts.md`, and `docs/testing-guide.md`.
+
+---
+
 ## Limitations & Roadmap
 
 - **No live booking data** — `availability.json` is a mock dataset. Marked with `TODO` in `server.js` for replacement with a real WBW database connection.

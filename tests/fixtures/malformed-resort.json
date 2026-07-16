@@ -1,0 +1,30 @@
+{
+  "resortId": "test-malformed",
+  "resortName": "Test Malformed Resort",
+  "state": "Testland",
+  "region": "test",
+  "country": "USA",
+  "timezone": "UTC",
+  "unitTypes": [
+    { "id": "one-bedroom", "name": "1 BR", "bedrooms": 1, "maxOccupancy": 4 },
+    { "id": "two-bedroom", "name": "2 BR", "bedrooms": 2, "maxOccupancy": 6 }
+  ],
+  "seasons": [
+    { "id": "red", "name": "red", "dateRanges": [{ "start": "2026-01-01", "end": "2026-06-30" }, { "start": "2026-06-15", "end": "2026-12-31" }] },
+    { "id": "white", "name": "white", "dateRanges": [{ "start": "2026-08-01", "end": "2026-07-01" }] }
+  ],
+  "creditRates": [
+    { "seasonId": "red", "unitTypeId": "one-bedroom", "weekdayCredits": -100, "weekendCredits": 1200.5, "nightlyCreditsByDay": { "SUNDAY": 900 }, "weeklyCredits": 6000 },
+    { "seasonId": "red", "unitTypeId": "two-bedroom", "weekdayCredits": 1500, "weekendCredits": 2000, "nightlyCreditsByDay": { "SUNDAY": 1800 }, "weeklyCredits": 9000 },
+    { "seasonId": "ghost", "unitTypeId": "one-bedroom", "weekdayCredits": 100, "weekendCredits": 100, "nightlyCreditsByDay": { "SUNDAY": 100 }, "weeklyCredits": 100 }
+  ],
+  "dateOverrides": [],
+  "rules": {
+    "weekendNights": ["FRIDAY", "SATURDAY"],
+    "daySpecificNights": ["SUNDAY"],
+    "weeklyPricingStrategy": "lowest-valid-rate",
+    "weeklyRequiresSingleSeason": true,
+    "minimumStay": 1
+  },
+  "source": { "sourceFile": "fixtures/malformed-resort.json", "importedAt": "2026-01-01T00:00:00.000Z" }
+}

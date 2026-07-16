@@ -1,0 +1,30 @@
+{
+  "resortId": "test-weekly",
+  "resortName": "Test Weekly Resort",
+  "state": "Testland",
+  "region": "test",
+  "country": "USA",
+  "timezone": "UTC",
+  "unitTypes": [
+    { "id": "one-bedroom", "name": "1 BR", "bedrooms": 1, "maxOccupancy": 4 },
+    { "id": "no-week", "name": "1 BR No Week", "bedrooms": 1, "maxOccupancy": 4 }
+  ],
+  "seasons": [
+    { "id": "red", "name": "red", "dateRanges": [{ "start": "2026-01-01", "end": "2027-12-31" }] }
+  ],
+  "creditRates": [
+    { "seasonId": "red", "unitTypeId": "one-bedroom", "weekdayCredits": 2000, "weekendCredits": 3000, "nightlyCreditsByDay": { "SUNDAY": 2000 }, "weeklyCredits": 10000 },
+    { "seasonId": "red", "unitTypeId": "no-week", "weekdayCredits": 2000, "weekendCredits": 3000, "nightlyCreditsByDay": { "SUNDAY": 2000 } }
+  ],
+  "dateOverrides": [],
+  "rules": {
+    "weekendNights": ["FRIDAY", "SATURDAY"],
+    "daySpecificNights": ["SUNDAY"],
+    "weeklyPricingStrategy": "lowest-valid-rate",
+    "weeklyRequiresSingleSeason": true,
+    "useCheckInSeasonForEntireStay": false,
+    "allowSplitSeasonCalculation": true,
+    "minimumStay": 1
+  },
+  "source": { "sourceFile": "fixtures/weekly-resort.json", "effectiveYear": 2026, "effectiveStart": "2026-01-01", "effectiveEnd": "2027-12-31", "importedAt": "2026-01-01T00:00:00.000Z" }
+}
